@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply focus:outline-offset-0;
+}
+
+.table th:first-child {
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+.table.sticky th:first-child {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  left: 0px;
+  z-index: 11;
+}
