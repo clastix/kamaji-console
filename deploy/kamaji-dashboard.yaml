@@ -53,7 +53,7 @@ data:
   # URL where the dashboard is accessible, eg. https://kamaji.labs.clastix.io/
   NEXTAUTH_URL: #############################################
   # Secret used to sign the browser session
-  NEXTAUTH_SECRET: #########
+  JWT_SECRET: #########
   # Credentials to access the dashboard
   ADMIN_EMAIL: ##################
   ADMIN_PASSWORD: #########

@@ -15,7 +15,9 @@ export interface LoginInput {
 }
 
 export class Auth {
-  constructor(private readonly secret: string) {}
+  constructor(private readonly secret: string) {
+    console.log("constructing auth service");
+  }
 
   async getServerAuthSession(req: NextApiRequest): Promise<Session> {
     const token = req.headers.authorization?.replace("Bearer ", "");

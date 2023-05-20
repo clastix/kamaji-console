@@ -5,7 +5,6 @@ import { TRPCError } from "@trpc/server";
 import { generateKubeadmToken, parseCa } from "./kubeadm/kubeadm";
 import { getTokenSecret } from "./kubeadm/kubeadm";
 import { replaceKubeconfigWithInternalConn } from "./k8s-utils";
-import { env } from "@/env/server.mjs";
 
 export function getK8sCli(kc: k8s.KubeConfig) {
   return {
@@ -92,7 +91,7 @@ export class ClastixCli {
   ) {
     let kubeConfig = await this.getTcpKubeConfigOrThrow(tcp);
     const _kc = new k8s.KubeConfig();
-    if (env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV === "production") {
       kubeConfig = replaceKubeconfigWithInternalConn(kubeConfig, tcp);
     }
     _kc.loadFromString(kubeConfig);

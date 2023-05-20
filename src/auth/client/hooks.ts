@@ -26,13 +26,21 @@ export function useRefreshToken() {
       return undefined;
     }
     if (isTokenExpired(refreshToken)) {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
       return undefined;
     }
-    const m = await vanillaAPI.auth.refreshToken.mutate({
-      refreshToken,
-    });
-    localStorage.setItem("accessToken", m.accessToken);
-    return m.accessToken;
+    try {
+      const m = await vanillaAPI.auth.refreshToken.mutate({
+        refreshToken,
+      });
+      localStorage.setItem("accessToken", m.accessToken);
+      return m.accessToken;
+    } catch (e) {
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("refreshToken");
+      return undefined;
+    }
   };
 }
 

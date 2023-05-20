@@ -22,6 +22,7 @@ import superjson from "superjson";
 import { getK8sCli, ClastixCli } from "../k8s";
 import { KubeConfig } from "@kubernetes/client-node";
 import { Auth, Session } from "../../auth/server";
+import { env } from "@/env/server.mjs";
 
 const kc = new KubeConfig();
 kc.loadFromDefault();
@@ -38,12 +39,12 @@ type CreateContextOptions = {
  * it, you can export it from here
  *
  * Examples of things you may need it for:
- * - testing, so we dont have to mock Next.js' req/res
+ * - testing, so we dont have to mockx Next.js' req/res
  * - trpc's `createSSGHelpers` where we don't have req/res
  * @see https://create.t3.gg/en/usage/trpc#-servertrpccontextts
  */
 
-const auth = new Auth("test");
+const auth = new Auth(env.JWT_SECRET);
 
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
