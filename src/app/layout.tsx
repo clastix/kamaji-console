@@ -1,22 +1,30 @@
 "use client";
-import { env } from "@/env/client.mjs";
-import { SessionProvider } from "next-auth/react";
+import { createCli, reactApi } from "@/utils/api";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useMemo, useState } from "react";
 import "../styles/globals.css";
+import { useGetAccessToken } from "@/auth/client/hooks";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [queryClient] = useState(() => new QueryClient());
+  const getToken = useGetAccessToken();
+  const trpcClient = useMemo(() => createCli(getToken), [getToken]);
+
   return (
-    <SessionProvider basePath={`${env.NEXT_PUBLIC_BASE_PATH || ""}/api/auth`}>
-      <html>
-        <head>
-          <Head />
-        </head>
-        <body>{children}</body>
-      </html>
-    </SessionProvider>
+    <reactApi.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <html>
+          <head>
+            <Head />
+          </head>
+          <body>{children}</body>
+        </html>
+      </QueryClientProvider>
+    </reactApi.Provider>
   );
 }
 

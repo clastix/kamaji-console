@@ -1,12 +1,14 @@
 "use client";
 
-import { signIn, useSession } from "next-auth/react";
+import { useSession } from "@/auth/client";
+import { useLogin } from "@/auth/client/hooks";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SVGProps, useEffect } from "react";
+import { useEffect } from "react";
 import { z } from "zod";
 import { ClastixLogo } from "../../../components/clastix/logos/logo";
-import { ZodForm } from "../../../components/zod-form/form";
 import { TextField } from "../../../components/forms/text-field";
+import { ZodForm } from "../../../components/zod-form/form";
+import { TRPCClientError } from "@trpc/client";
 
 export type SignInErrorTypes =
   | "Signin"
@@ -80,6 +82,8 @@ const LoginSchema = z.object({
 });
 
 const SignInWithCredentials = () => {
+  const login = useLogin();
+
   return (
     <ZodForm
       schema={LoginSchema}
@@ -88,9 +92,13 @@ const SignInWithCredentials = () => {
         password: "",
       }}
       onSubmit={async (values) => {
-        const res = await signIn("credentials", { ...values, redirect: false });
-        if (res?.error) {
-          return { login: res.error };
+        try {
+          const res = await login(values);
+        } catch (error) {
+          if (error instanceof TRPCClientError) {
+            return { login: error.message };
+          } 
+          return { login: "unknown error" };
         }
       }}
     >

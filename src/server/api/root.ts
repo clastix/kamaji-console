@@ -1,5 +1,6 @@
 import { createTRPCRouter } from "./trpc";
 import { k8sRouter } from "./routers/k8s";
+import { authRouter } from "./routers/auth";
 
 /**
  * This is the primary router for your server.
@@ -8,6 +9,7 @@ import { k8sRouter } from "./routers/k8s";
  */
 export const appRouter = createTRPCRouter({
   k8s: k8sRouter,
+  auth: authRouter,
 });
 
 // export type definition of API

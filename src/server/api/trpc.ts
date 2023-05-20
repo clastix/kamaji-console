@@ -18,11 +18,10 @@
  */
 import { initTRPC, TRPCError } from "@trpc/server";
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
-import { type Session } from "next-auth";
 import superjson from "superjson";
-import { getServerAuthSession } from "../auth";
 import { getK8sCli, ClastixCli } from "../k8s";
 import { KubeConfig } from "@kubernetes/client-node";
+import { Auth, Session } from "../../auth/server";
 
 const kc = new KubeConfig();
 kc.loadFromDefault();
@@ -31,7 +30,7 @@ const k8sCli = getK8sCli(kc);
 const clastixCli = new ClastixCli(k8sCli);
 
 type CreateContextOptions = {
-  session: Session | null;
+  session: Session;
 };
 
 /**
@@ -43,11 +42,15 @@ type CreateContextOptions = {
  * - trpc's `createSSGHelpers` where we don't have req/res
  * @see https://create.t3.gg/en/usage/trpc#-servertrpccontextts
  */
+
+const auth = new Auth("test");
+
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
     k8s: k8sCli,
     clastix: clastixCli,
+    auth: auth,
   };
 };
 
@@ -57,10 +60,10 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
  * @link https://trpc.io/docs/context
  */
 export const createTRPCContext = async (opts: CreateNextContextOptions) => {
-  const { req, res } = opts;
+  const { req } = opts;
 
   // Get the session from the server using the getServerSession wrapper function
-  const session = await getServerAuthSession({ req, res });
+  const session = await auth.getServerAuthSession(req);
 
   return createInnerTRPCContext({
     session,
@@ -108,7 +111,7 @@ export const publicProcedure = t.procedure;
  * procedure
  */
 const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
-  if (!ctx.session || !ctx.session.user) {
+  if (!ctx.session || ctx.session.status !== "authenticated") {
     throw new TRPCError({ code: "UNAUTHORIZED" });
   }
   return next({

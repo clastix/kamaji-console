@@ -1,16 +1,19 @@
+import { useSession, useSignin as useSignIn } from "@/auth/client";
+import { useSignOut } from "@/auth/client/hooks";
 import { Menu, Transition } from "@headlessui/react";
 import clsx from "clsx";
-import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { Fragment } from "react";
 
 export const ProfileMenu = () => {
-  const { data: session, status } = useSession();
+  const session = useSession();
+  const signIn = useSignIn();
+  const userNavigation = useUserNavigation();
 
-  if (status === "loading") {
+  if (session.status === "loading") {
     return null;
   }
-  if (status === "unauthenticated") {
+  if (session.status === "unauthenticated") {
     return (
       <button
         className="btn-primary btn"
@@ -31,8 +34,8 @@ export const ProfileMenu = () => {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="h-8 w-8 rounded-full"
-            src={session?.user?.image || ""}
-            alt={session?.user?.name || "user"}
+            src={session.user.image}
+            alt={session.user.email}
           />
         </Menu.Button>
       </div>
@@ -82,23 +85,23 @@ export const ProfileMenu = () => {
   );
 };
 
-const userNavigation: UserMenu[] = [
-  {
-    type: "nav",
-    name: "Dashboard",
-    href: "/dashboard/tcps",
-  },
-  {
-    type: "action",
-    name: "Sign out",
-    action: () => {
-      signOut({
-        callbackUrl: "/",
-        redirect: true,
-      });
+function useUserNavigation(): UserMenu[] {
+  const signOut = useSignOut();
+  return [
+    {
+      type: "nav",
+      name: "Dashboard",
+      href: "/dashboard/tcps",
     },
-  },
-];
+    {
+      type: "action",
+      name: "Sign out",
+      action: () => {
+        signOut();
+      },
+    },
+  ];
+}
 
 interface UserAction {
   type: "action";

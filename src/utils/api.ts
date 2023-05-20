@@ -5,7 +5,7 @@
  *
  * We also create a few inference helpers for input and output types
  */
-import { loggerLink } from "@trpc/client";
+import { createTRPCProxyClient, loggerLink } from "@trpc/client";
 import { httpLink } from "@trpc/client/links/httpLink";
 import { createTRPCNext } from "@trpc/next";
 import { createTRPCReact } from "@trpc/react-query";
@@ -58,7 +58,16 @@ export const api = createTRPCNext<AppRouter>({
 
 export const reactApi = createTRPCReact<AppRouter>();
 
-export function createCli() {
+export const vanillaAPI = createTRPCProxyClient<AppRouter>({
+  transformer: superjson,
+  links: [
+    httpLink({
+      url: `${getBaseUrl()}/api/trpc`,
+    }),
+  ],
+});
+
+export function createCli(getToken: () => Promise<string | null>) {
   return reactApi.createClient({
     links: [
       loggerLink({
@@ -68,8 +77,11 @@ export function createCli() {
       }),
       httpLink({
         url: `${getBaseUrl()}/api/trpc`,
-        headers() {
-          return {};
+        async headers() {
+          const token = await getToken();
+          return {
+            authorization: token ? "Bearer " + token : undefined,
+          };
         },
       }),
     ],

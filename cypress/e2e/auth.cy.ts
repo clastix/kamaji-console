@@ -1,4 +1,7 @@
 describe("First Auth Check", () => {
+  beforeEach(() => {
+    cy.clearLocalStorage();
+  });
   it("Should redirect to /auth/signin", () => {
     cy.visit("http://localhost:3000/");
     // The new url should include "/about"

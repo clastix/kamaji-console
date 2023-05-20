@@ -17,11 +17,12 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
-import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useCallback, type SVGProps } from "react";
 import { useSidebarStore } from "./sidebar.store";
+import { useSession } from "@/auth/client";
+import { useSignOut } from "@/auth/client/hooks";
 
 export function SideBar() {
   const { isOpen, setIsOpen } = useSidebarStore();
@@ -176,7 +177,7 @@ const Navigation = () => {
               {item.name}
 
               <span className="ml-auto inline-flex items-center gap-x-1.5 rounded-full bg-primary-100 px-1.5 py-0.5 text-xs font-medium text-primary-700">
-                 PRO
+                PRO
               </span>
             </div>
           );
@@ -276,14 +277,16 @@ interface SectionNav {
 type Nav = LinkNav | SectionNav | ComingSoonNav | ExternalLinkNav;
 
 const SidebarProfile = () => {
-  const { data: session, status } = useSession();
-  if (status !== "authenticated") {
+  const session = useSession();
+  const signOut = useSignOut();
+
+  if (session.status !== "authenticated") {
     return null;
   }
 
   return (
     <div className="flex items-center justify-between border-t border-primary-800 px-2 py-4 text-sm text-primary-200">
-      <div>{session.user?.email}</div>
+      <div>{session.user.email}</div>
       <div className="tooltip tooltip-left" data-tip="signout">
         <button
           className="btn-ghost btn-sm btn-circle btn"

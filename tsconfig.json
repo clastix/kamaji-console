@@ -33,7 +33,7 @@
     ".next/types/**/*.ts",
     "src/env/server.tjs"
   ],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "src/gen"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
