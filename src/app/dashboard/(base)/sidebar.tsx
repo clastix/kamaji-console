@@ -161,9 +161,10 @@ const Navigation = () => {
           );
         } else if (item.type === "coming-soon") {
           return (
-            <span
+            <div
               key={id}
               className={clsx(
+                "flex items-center",
                 "cursor-pointer text-primary-100 hover:bg-primary-600",
                 "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
               )}
@@ -173,7 +174,11 @@ const Navigation = () => {
                 aria-hidden="true"
               />
               {item.name}
-            </span>
+
+              <span className="ml-auto inline-flex items-center gap-x-1.5 rounded-full bg-primary-100 px-1.5 py-0.5 text-xs font-medium text-primary-700">
+                 PRO
+              </span>
+            </div>
           );
         } else if (item.type === "section") {
           return (
