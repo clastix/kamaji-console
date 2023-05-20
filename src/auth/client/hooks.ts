@@ -1,6 +1,8 @@
 import { vanillaAPI, reactApi } from "@/utils/api";
 import { ClientSession } from "../types";
 import { useRouter, usePathname } from "next/navigation";
+import { env } from "@/env/client.mjs";
+import path from "path";
 
 export function useSession(): ClientSession {
   const q = reactApi.auth.getSession.useQuery();
@@ -90,7 +92,14 @@ export function useSignIn() {
 
   return () => {
     if (session.status === "unauthenticated") {
-      router.push("/auth/signin?callbackUrl=" + pathname);
+      let p = pathname || "";
+      if (
+        env.NEXT_PUBLIC_BASE_PATH &&
+        pathname?.startsWith(env.NEXT_PUBLIC_BASE_PATH)
+      ) {
+        p = p?.replace(env.NEXT_PUBLIC_BASE_PATH, "");
+      }
+      router.push("/auth/signin?callbackUrl=" + p);
     }
   };
 }

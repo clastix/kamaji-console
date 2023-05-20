@@ -228,10 +228,9 @@ function useNavigation(): Nav[] {
       icon: ClipboardIcon,
     },
     {
-      type: "external-link",
+      type: "coming-soon",
       name: "Monitoring",
       icon: ComputerDesktopIcon,
-      href: "/monitoring",
     },
     {
       type: "coming-soon",
@@ -239,10 +238,9 @@ function useNavigation(): Nav[] {
       icon: ArrowUpTrayIcon,
     },
     {
-      type: "external-link",
+      type: "coming-soon",
       name: "Support",
       icon: PhoneIcon,
-      href: "mailto:support@clastix.io",
     },
   ];
 
