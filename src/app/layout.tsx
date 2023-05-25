@@ -4,12 +4,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import "../styles/globals.css";
 import { useGetAccessToken } from "@/auth/client/hooks";
+import { AuthProvider } from "@/auth/client/provider";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function Layout({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
   const getToken = useGetAccessToken();
   const trpcClient = useMemo(() => createCli(getToken), [getToken]);
@@ -25,6 +22,18 @@ export default function RootLayout({
         </html>
       </QueryClientProvider>
     </reactApi.Provider>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <AuthProvider>
+      <Layout>{children}</Layout>
+    </AuthProvider>
   );
 }
 

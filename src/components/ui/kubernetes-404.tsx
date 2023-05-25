@@ -1,4 +1,8 @@
+"use client"
+import { useSignOut } from "@/auth/client";
+
 export function NotFoundK8s() {
+  const signOut = useSignOut();
   return (
     <>
       <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -13,6 +17,7 @@ export function NotFoundK8s() {
             Sorry, it seams that kubernetes API server is not reachable from our
             server, pleace check your installation.
           </p>
+          <button onClick={() => signOut()}> SignOut</button>
         </div>
       </main>
     </>

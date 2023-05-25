@@ -28,6 +28,7 @@
     "@trpc/react-query": "^10.27.1",
     "@trpc/server": "^10.27.1",
     "@uiw/react-codemirror": "^4.20.2",
+    "@xstate/react": "^3.2.2",
     "bufferutil": "^4.0.7",
     "clsx": "^1.2.1",
     "daisyui": "^2.51.6",
@@ -41,6 +42,7 @@
     "react-final-form": "^6.5.9",
     "superjson": "1.12.3",
     "utf-8-validate": "^6.0.3",
+    "xstate": "^4.37.2",
     "yaml": "^2.2.2",
     "zod": "^3.21.4",
     "zustand": "^4.3.8"

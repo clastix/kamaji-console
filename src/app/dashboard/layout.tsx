@@ -1,3 +1,4 @@
+import { ProtectAuth } from "@/auth/client/protect";
 import { NotFoundK8s } from "@/components/ui/kubernetes-404";
 import { KubernetesCli, getK8sCli } from "@/server/k8s";
 import { KubeConfig } from "@kubernetes/client-node";
@@ -8,10 +9,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Layout({ children }: { children: ReactNode }) {
   const res = await pingKubernetes();
-  if (!res) {
-    return <NotFoundK8s />;
-  }
-  return <>{children}</>;
+  return <ProtectAuth>{res ? children : <NotFoundK8s />}</ProtectAuth>;
 }
 
 async function pingKubernetes() {

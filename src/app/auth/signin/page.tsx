@@ -9,6 +9,7 @@ import { ClastixLogo } from "../../../components/clastix/logos/logo";
 import { TextField } from "../../../components/forms/text-field";
 import { ZodForm } from "../../../components/zod-form/form";
 import { TRPCClientError } from "@trpc/client";
+import clsx from "clsx";
 
 export type SignInErrorTypes =
   | "Signin"
@@ -93,40 +94,35 @@ const SignInWithCredentials = () => {
       }}
       onSubmit={async (values) => {
         try {
-          const res = await login(values);
+          await login(values.email, values.password);
         } catch (error) {
           if (error instanceof TRPCClientError) {
             return { login: error.message };
-          } 
+          }
           return { login: "unknown error" };
         }
       }}
     >
-      {({
-        handleSubmit,
-        hasValidationErrors,
-        hasSubmitErrors,
-        dirtySinceLastSubmit,
-        errors,
-        submitErrors,
-      }) => {
+      {({ handleSubmit, dirtySinceLastSubmit, submitErrors, submitting }) => {
         return (
           <form onSubmit={handleSubmit}>
             <TextField name="email" label="Email" />
             <TextField name="password" label="Password" type="password" />
-            <div className="text-sm text-red-400">
-              <span> {!dirtySinceLastSubmit && submitErrors?.login}</span>
-            </div>
             <button
               type="submit"
-              className="btn-primary btn w-full"
-              disabled={
-                hasValidationErrors ||
-                (hasSubmitErrors && !dirtySinceLastSubmit)
-              }
+              className={clsx("btn-primary btn w-full", {
+                loading: submitting,
+              })}
             >
               Sign In
             </button>
+            <div className="h-12 text-sm text-red-400">
+              {!dirtySinceLastSubmit && submitErrors?.login && (
+                <p className="my-4 rounded bg-red-400 py-2 text-center text-white ring-2 ring-red-600">
+                  {submitErrors.login}
+                </p>
+              )}
+            </div>
           </form>
         );
       }}

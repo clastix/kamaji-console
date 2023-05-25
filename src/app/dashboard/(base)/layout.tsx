@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession, useSignin } from "@/auth/client";
+import { useSession, useSignIn } from "@/auth/client";
 import { DialogProvider } from "@/components/ui/dialog";
 import { Loading } from "@/components/ui/loading";
 import { ToolBarContainer } from "@/components/ui/toolbar";
@@ -9,7 +9,7 @@ import { SideBar } from "./sidebar";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const { status } = useSession();
-  const signIn = useSignin();
+  const signIn = useSignIn();
 
   useEffect(() => {
     if (status === "unauthenticated") {
