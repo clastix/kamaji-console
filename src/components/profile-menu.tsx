@@ -1,4 +1,4 @@
-import { useSession, useSignin as useSignIn } from "@/auth/client";
+import { useSession,  useSignIn } from "@/auth/client";
 import { useSignOut } from "@/auth/client/hooks";
 import { Menu, Transition } from "@headlessui/react";
 import clsx from "clsx";
