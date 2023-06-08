@@ -1,0 +1,51 @@
+name: Helm Chart
+
+on:
+  push:
+    branches: [ "*" ]
+    tags: [ "helm-v*" ]
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: azure/setup-helm@v1
+        with:
+          version: 3.3.4
+      - name: Linting Chart
+        run: helm lint ./charts/console
+      - name: Setup Chart Linting
+        id: lint
+        uses: helm/chart-testing-action@v2.3.0
+      - name: Helm Chart README check
+        id: helm-docs
+        run: |-
+          make -C charts/console helm-docs
+          if [[ $(git diff --stat) != '' ]]; then
+            echo -e '\033[0;31mDocumentation outdated! (Run make helm-docs locally and commit)\033[0m ❌'
+            git diff --color
+            exit 1
+          fi
+          echo -e '\033[0;32mDocumentation up to date\033[0m ✔'
+  release:
+    if: startsWith(github.ref, 'refs/tags/helm-v')
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Helm chart
+        uses: stefanprodan/helm-gh-pages@master
+        with:
+          token: ${{ secrets.BOT_GITHUB_TOKEN }}
+          charts_dir: charts
+          charts_url: https://clastix.github.io/charts
+          owner: clastix
+          repository: charts
+          branch: gh-pages
+          target_dir: .
+          commit_username: prometherion
+          commit_email: dario@tranchitella.eu
