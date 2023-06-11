@@ -26,7 +26,7 @@ data:
   ADMIN_PASSWORD: <password>
   # Secret used to sign the browser session
   JWT_SECRET: <jwtSecret>
-  # URL where the console is accessible
+  # URL where the console is accessible: https://<hostname>/ui
   NEXTAUTH_URL: <nextAuthUrl>
 EOF
 ```
@@ -37,37 +37,21 @@ To install the Chart with the release name `kamaji-console` in the `kamaji-syste
 
         helm repo add clastix https://clastix.github.io/charts
         helm repo update
-        helm install kamaji-console clastix/console -n kamaji-system --create-namespace
+        helm install console clastix/kamaji-console -n kamaji-system --create-namespace
 
 Show the status:
 
-        helm status kamaji-console -n kamaji-system
+        helm status console -n kamaji-system
 
 Upgrade the Chart
 
-        helm upgrade kamaji-console -n kamaji-system clastix/console
+        helm upgrade console -n kamaji-system clastix/kamaji-console
 
 Uninstall the Chart
 
-        helm uninstall kamaji-console -n kamaji-system
+        helm uninstall console -n kamaji-system
 
 ## Customize the installation
-
-There are two methods for specifying overrides of values during Chart installation: `--values` and `--set`.
-
-The `--values` option is the preferred method because it allows you to keep your overrides in a YAML file, rather than specifying them all on the command line.
-Create a copy of the YAML file `values.yaml` and add your overrides to it.
-
-Specify your overrides file when you install the Chart:
-
-        helm upgrade kamaji-console --install --namespace kamaji-system --create-namespace kamaji-system --values myvalues.yaml
-
-The values in your overrides file `myvalues.yaml` will override their counterparts in the Chart's values.yaml file.
-Any values in `values.yaml` that weren't overridden will keep their defaults.
-
-If you only need to make minor customizations, you can specify them on the command line by using the `--set` option. For example:
-
-        helm upgrade kamaji-console --install --namespace kamaji-system --create-namespace kamaji-system --set replicas=2
 
 Here the values you can override:
 

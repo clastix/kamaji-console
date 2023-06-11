@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: clastix/console
+  repository: clastix/kamaji-console
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -22,7 +22,7 @@ fullnameOverride: ""
 credentialsSecret:
   generate: false
   # name of the secret hosting sensitive info
-  name: "console"
+  name: "kamaji-console"
   # URL where the console is accessible, eg. https://kamaji.labs.clastix.io/
   nextAuthUrl: ""
   # Secret used to sign the browser session
@@ -65,14 +65,14 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: clastix.local
+    - host: kamaji.localhost
       paths:
         - path: /ui
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
-  #      - chart-example.local
+  #      - kamaji.localhost
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

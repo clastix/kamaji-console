@@ -18,14 +18,14 @@ jobs:
         with:
           version: 3.3.4
       - name: Linting Chart
-        run: helm lint ./charts/console
+        run: helm lint ./charts/kamaji-console
       - name: Setup Chart Linting
         id: lint
         uses: helm/chart-testing-action@v2.3.0
       - name: Helm Chart README check
         id: helm-docs
         run: |-
-          make -C charts/console helm-docs
+          make -C charts/kamaji-console helm-docs
           if [[ $(git diff --stat) != '' ]]; then
             echo -e '\033[0;31mDocumentation outdated! (Run make helm-docs locally and commit)\033[0m ❌'
             git diff --color
