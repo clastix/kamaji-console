@@ -1,17 +1,16 @@
 import { vanillaAPI } from "@/utils/api";
 import { ClientSession } from "../types";
 import { AuthMachineContext } from "./provider";
+import jwt from "jsonwebtoken";
 
 export function useSession(): ClientSession {
   const ctx = AuthMachineContext.useSelector((state) => state.context);
   if (ctx.status === "authenticated") {
+    const token = ctx.tokens?.accessToken!;
+    const user = jwt.decode(token) as any;
     return {
       status: "authenticated",
-      user: {
-        email: "test@email.com",
-        id: "xxx",
-        image: "xxx",
-      },
+      user: user,
     };
   }
 
