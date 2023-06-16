@@ -166,7 +166,7 @@ const Navigation = () => {
               key={id}
               className={clsx(
                 "flex items-center",
-                "cursor-pointer text-primary-100 hover:bg-primary-600",
+                "text-primary-400 ",
                 "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
               )}
             >
@@ -176,7 +176,7 @@ const Navigation = () => {
               />
               {item.name}
 
-              <span className="ml-auto inline-flex items-center gap-x-1.5 rounded-full bg-primary-100 px-1.5 py-0.5 text-xs font-medium text-primary-700">
+              <span className="ml-auto inline-flex items-center gap-x-1.5 rounded-full bg-primary-300 leading-none px-[4px] py-[2px] text-[8px] font-light text-primary-700">
                 PRO
               </span>
             </div>
