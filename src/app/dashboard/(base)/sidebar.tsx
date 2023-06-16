@@ -247,23 +247,28 @@ function useNavigation(): Nav[] {
   return navigation;
 }
 
+type Icon = React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
+  title?: string | undefined;
+  titleId?: string | undefined;
+} & React.RefAttributes<SVGSVGElement>>
+
 interface LinkNav {
   readonly type: "link";
   name: string;
   href: string;
-  icon: (props: Omit<SVGProps<SVGSVGElement>, "ref">) => JSX.Element | null;
+  icon: Icon;
 }
 
 interface ComingSoonNav {
   readonly type: "coming-soon";
   name: string;
-  icon: (props: Omit<SVGProps<SVGSVGElement>, "ref">) => JSX.Element | null;
+  icon: Icon;
 }
 
 interface ExternalLinkNav {
   readonly type: "external-link";
   name: string;
-  icon: (props: Omit<SVGProps<SVGSVGElement>, "ref">) => JSX.Element | null;
+  icon: Icon;
   href: string;
 }
 

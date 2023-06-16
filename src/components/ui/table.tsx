@@ -1,9 +1,15 @@
 import clsx from "clsx";
 import { SVGProps } from "react";
 
+
+type Icon = React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
+  title?: string | undefined;
+  titleId?: string | undefined;
+} & React.RefAttributes<SVGSVGElement>>
+
 export type TableFunc<T> = (o: T) => void;
 export type TableAction<T> = {
-  icon: (props: Omit<SVGProps<SVGSVGElement>, "ref">) => JSX.Element | null;
+  icon: Icon;
   action: TableFunc<T>;
   tooltip: string;
 };
