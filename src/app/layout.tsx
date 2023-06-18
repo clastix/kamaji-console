@@ -40,7 +40,7 @@ export default function RootLayout({
 function Head() {
   return (
     <>
-      <title>Clastix Dashboard</title>
+      <title>Kamaji Console</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link
         rel="apple-touch-icon"
