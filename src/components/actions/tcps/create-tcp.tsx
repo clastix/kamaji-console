@@ -94,57 +94,32 @@ const CreateTCP = () => {
 };
 
 const getBaseYtaml = () => {
-  return `apiVersion: kamaji.clastix.io/v1alpha1
-kind: TenantControlPlane
-metadata:
-  name: #name
-  namespace: #namespace
-spec:
-  dataStore: default
-  controlPlane:
-    deployment:
-      replicas: 1
-      additionalMetadata: {}
-      extraArgs:
-        apiServer: []
-        controllerManager: []
-        scheduler: []
-      resources:
-        apiServer:
-          requests: {}
-          limits: {}
-        controllerManager:
-          requests: {}
-          limits: {}
-        scheduler:
-          requests: {}
-          limits: {}
-    service:
-      additionalMetadata: {}
-      serviceType: ClusterIP
-  kubernetes:
-    version: v1.25.2
-    kubelet:
-      cgroupfs: systemd
-      preferredAddressTypes: 
-      - InternalIP
-    admissionControllers:
-      - ResourceQuota
-      - LimitRanger
-  networkProfile:
-    address: # tcp endpoint address
-    port: # tcp endpoint port
-    certSANs: []
-    serviceCidr: # k8s services cidr
-    podCidr: # k8s pods cidr
-    dnsServiceIPs: []
-  addons:
-    coreDNS: {}
-    kubeProxy: {}
-    konnectivity:
-      server:
-        port: 8132 
-        resources: {}
-      agent: {}
+  return `
+  apiVersion: kamaji.clastix.io/v1alpha1
+  kind: TenantControlPlane
+  metadata:
+    name: #name
+    namespace: #namespace
+  spec:
+    dataStore: default
+    controlPlane:
+      deployment:
+        replicas: 2
+      service:
+        serviceType: LoadBalancer
+    kubernetes:
+      version: v1.25.2
+      kubelet:
+        cgroupfs: systemd
+    networkProfile:
+      port: 6443
+    addons:
+      coreDNS: {}
+      kubeProxy: {}
+      konnectivity:
+        server:
+          port: 8132
+          resources: {}
+        agent: {}
 	`;
 };
