@@ -209,12 +209,12 @@ function useNavigation(): Nav[] {
     },
     {
       type: "coming-soon",
-      name: "Node Drivers",
+      name: "Infrastructure Drivers",
       icon: CpuChipIcon,
     },
     {
       type: "coming-soon",
-      name: "GitOps Controller",
+      name: "Applications Delivery",
       icon: ArrowPathIcon,
     },
     {
