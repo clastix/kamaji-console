@@ -31,7 +31,7 @@
     "@xstate/react": "^3.2.2",
     "bufferutil": "^4.0.7",
     "clsx": "^1.2.1",
-    "daisyui": "^2.51.6",
+    "daisyui": "^3.4.0",
     "date-fns": "^2.30.0",
     "final-form": "^4.20.9",
     "fuse.js": "^6.6.2",
