@@ -16,7 +16,7 @@ export const serverSchema = z.object({
     // Since NextAuth.js automatically uses the VERCEL_URL if present.
     (str) => process.env.VERCEL_URL ?? str,
     // VERCEL_URL doesn't include `https` so it cant be validated as a URL
-    process.env.VERCEL ? z.string() : z.string().url()
+    process.env.VERCEL ? z.string() : z.string().url(),
   ),
   // admin user
   ADMIN_EMAIL: z.string().email(),
@@ -49,7 +49,7 @@ export const serverEnv = {
  * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
  */
 export const clientSchema = z.object({
-  NEXT_PUBLIC_BASE_PATH: z.string().startsWith("/").optional(),
+  NEXT_PUBLIC_BASE_PATH: z.string().optional(),
 });
 
 /**

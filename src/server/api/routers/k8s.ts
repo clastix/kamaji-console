@@ -1,5 +1,6 @@
 import { KubernetesObject } from "@kubernetes/client-node";
 import { TRPCError } from "@trpc/server";
+//@ts-ignore
 import * as yaml from "js-yaml";
 import { z } from "zod";
 import { handleKubernetesError } from "../httperr";
@@ -17,7 +18,7 @@ export const k8sRouter = createTRPCRouter({
     .input(
       z.object({
         namespace: z.string().default("default"),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       if (input.namespace === "*") {
@@ -27,7 +28,7 @@ export const k8sRouter = createTRPCRouter({
       }
       const res =
         await ctx.k8s.clastix.listKamajiClastixIoV1alpha1NamespacedTenantControlPlane(
-          input.namespace
+          input.namespace,
         );
       return res.body.items;
     }),
@@ -36,7 +37,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         yaml: z.string(),
         namespace: z.string().default("default"),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const obj = yaml.load(input.yaml) as KubernetesObject;
@@ -45,7 +46,7 @@ export const k8sRouter = createTRPCRouter({
         const res =
           await ctx.k8s.clastix.createKamajiClastixIoV1alpha1NamespacedTenantControlPlane(
             namespace,
-            obj
+            obj,
           );
         return res.body;
       } catch (e) {
@@ -56,7 +57,7 @@ export const k8sRouter = createTRPCRouter({
     .input(
       z.object({
         yaml: z.string(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const obj = yaml.load(input.yaml) as KubernetesObject;
@@ -74,7 +75,7 @@ export const k8sRouter = createTRPCRouter({
         namespace: z.string(),
         name: z.string(),
         replicas: z.number(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       const patch = [
@@ -93,7 +94,9 @@ export const k8sRouter = createTRPCRouter({
             undefined,
             undefined,
             undefined,
-            { headers: { "Content-Type": "application/json-patch+json" } }
+            undefined,
+            undefined,
+            { headers: { "Content-Type": "application/json-patch+json" } },
           );
         return res;
       } catch (e) {
@@ -105,14 +108,14 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       try {
         const res =
           await ctx.k8s.clastix.deleteKamajiClastixIoV1alpha1NamespacedTenantControlPlane(
             input.name,
-            input.namespace
+            input.namespace,
           );
         return res;
       } catch (e) {
@@ -126,7 +129,7 @@ export const k8sRouter = createTRPCRouter({
           namespace: z.string(),
           name: z.string(),
         })
-        .array()
+        .array(),
     )
     .mutation(async ({ ctx, input }) => {
       try {
@@ -134,9 +137,9 @@ export const k8sRouter = createTRPCRouter({
           input.map((tcp) =>
             ctx.k8s.clastix.deleteKamajiClastixIoV1alpha1NamespacedTenantControlPlane(
               tcp.name,
-              tcp.namespace
-            )
-          )
+              tcp.namespace,
+            ),
+          ),
         );
       } catch (e) {}
     }),
@@ -146,14 +149,14 @@ export const k8sRouter = createTRPCRouter({
         .object({
           name: z.string(),
         })
-        .array()
+        .array(),
     )
     .mutation(async ({ ctx, input }) => {
       try {
         await Promise.all(
           input.map((tcp) =>
-            ctx.k8s.clastix.deleteKamajiClastixIoV1alpha1DataStore(tcp.name)
-          )
+            ctx.k8s.clastix.deleteKamajiClastixIoV1alpha1DataStore(tcp.name),
+          ),
         );
       } catch (e) {}
     }),
@@ -161,13 +164,13 @@ export const k8sRouter = createTRPCRouter({
     .input(
       z.object({
         name: z.string(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       try {
         const res =
           await ctx.k8s.clastix.deleteKamajiClastixIoV1alpha1DataStore(
-            input.name
+            input.name,
           );
         return res;
       } catch (e) {
@@ -182,12 +185,12 @@ export const k8sRouter = createTRPCRouter({
     .input(
       z.object({
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       try {
         const res = await ctx.k8s.clastix.readKamajiClastixIoV1alpha1DataStore(
-          input.name
+          input.name,
         );
         return res.body;
       } catch (e) {
@@ -199,7 +202,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       return ctx.clastix.getTcpOrThrow(input.name, input.namespace);
@@ -209,7 +212,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const tcp = await ctx.clastix.getTcpOrThrow(input.name, input.namespace);
@@ -220,13 +223,13 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const tcpRes =
         await ctx.k8s.clastix.readKamajiClastixIoV1alpha1NamespacedTenantControlPlane(
           input.name,
-          input.namespace
+          input.namespace,
         );
       const selector =
         tcpRes.body.status?.kubernetesResources?.deployment?.selector;
@@ -239,7 +242,7 @@ export const k8sRouter = createTRPCRouter({
         undefined,
         undefined,
         undefined,
-        selector
+        selector,
       );
 
       return res.body?.items;
@@ -249,7 +252,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const res = await ctx.k8s.appV1.listNamespacedDeployment(
@@ -258,7 +261,7 @@ export const k8sRouter = createTRPCRouter({
         undefined,
         undefined,
         undefined,
-        `kamaji.clastix.io/name=${input.name}`
+        `kamaji.clastix.io/name=${input.name}`,
       );
       return res.body.items;
     }),
@@ -267,7 +270,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const res = await ctx.k8s.coreV1.listNamespacedSecret(
@@ -276,7 +279,7 @@ export const k8sRouter = createTRPCRouter({
         undefined,
         undefined,
         undefined,
-        `kamaji.clastix.io/name=${input.name}`
+        `kamaji.clastix.io/name=${input.name}`,
       );
 
       return res.body.items;
@@ -286,7 +289,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const tcp = await ctx.clastix.getTcpOrThrow(input.name, input.namespace);
@@ -297,7 +300,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const res = await ctx.k8s.coreV1.listNamespacedConfigMap(
@@ -306,7 +309,7 @@ export const k8sRouter = createTRPCRouter({
         undefined,
         undefined,
         undefined,
-        `kamaji.clastix.io/name=${input.name}`
+        `kamaji.clastix.io/name=${input.name}`,
       );
 
       return res.body.items;
@@ -316,7 +319,7 @@ export const k8sRouter = createTRPCRouter({
       z.object({
         namespace: z.string(),
         name: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const res = await ctx.k8s.coreV1.listNamespacedService(
@@ -325,7 +328,7 @@ export const k8sRouter = createTRPCRouter({
         undefined,
         undefined,
         undefined,
-        `kamaji.clastix.io/name=${input.name}`
+        `kamaji.clastix.io/name=${input.name}`,
       );
       return res.body.items;
     }),
@@ -333,7 +336,7 @@ export const k8sRouter = createTRPCRouter({
     .input(
       z.object({
         yaml: z.string(),
-      })
+      }),
     )
     .mutation(async ({ ctx, input }) => {
       try {

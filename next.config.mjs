@@ -10,7 +10,7 @@ const config = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    appDir: true,
+    missingSuspenseWithCSRBailout: false,
   },
   output: "standalone",
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,

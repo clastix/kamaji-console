@@ -110,7 +110,7 @@ const SignInWithCredentials = () => {
             <TextField name="password" label="Password" type="password" />
             <button
               type="submit"
-              className={clsx("btn-primary btn w-full", {
+              className={clsx("btn btn-primary w-full", {
                 loading: submitting,
               })}
             >

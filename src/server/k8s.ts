@@ -43,7 +43,7 @@ export class ClastixCli {
       const res =
         await this.k8sCli.clastix.readKamajiClastixIoV1alpha1NamespacedTenantControlPlane(
           name,
-          namespace
+          namespace,
         );
       const tcp = res.body;
       if (!tcp) {
@@ -58,7 +58,7 @@ export class ClastixCli {
   }
 
   async getTcpKubeConfigOrThrow(
-    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
+    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane,
   ) {
     const namespace = tcp.metadata?.namespace!;
     const secretName = tcp.status?.kubeconfig?.admin?.secretName;
@@ -67,7 +67,7 @@ export class ClastixCli {
     }
     const res = await this.k8sCli.coreV1.readNamespacedSecret(
       secretName,
-      namespace
+      namespace,
     );
 
     const hashedConf = res.body?.data?.["admin.conf"] as string;
@@ -79,7 +79,7 @@ export class ClastixCli {
   }
 
   async getTcpNodesOrThrow(
-    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
+    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane,
   ): Promise<k8s.V1Node[]> {
     const cli = await this.getTcpK8sApiCliOrThrow(tcp);
     const res = await cli.coreV1.listNode();
@@ -87,7 +87,7 @@ export class ClastixCli {
   }
 
   async getTcpK8sApiCliOrThrow(
-    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
+    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane,
   ) {
     let kubeConfig = await this.getTcpKubeConfigOrThrow(tcp);
     const _kc = new k8s.KubeConfig();
@@ -99,14 +99,14 @@ export class ClastixCli {
   }
 
   async createConnectionSecret(
-    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
+    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane,
   ) {
     const cli = await this.getTcpK8sApiCliOrThrow(tcp);
     const token = generateKubeadmToken();
     const secret = getTokenSecret(token);
     await cli.coreV1.createNamespacedSecret(
       secret.metadata!.namespace!,
-      secret
+      secret,
     );
     const caCommands = cli.kc
       .getClusters()
@@ -119,11 +119,11 @@ export class ClastixCli {
 
   addNodePoolMetadata(
     nodePoolId: string,
-    metadata: api.IoClastixKamajiV1alpha1TenantControlPlane["metadata"] = {}
+    metadata: api.IoClastixKamajiV1alpha1TenantControlPlane["metadata"] = {},
   ): api.IoClastixKamajiV1alpha1TenantControlPlane["metadata"] {
     const annotations = metadata.annotations || {};
     let nodePools = (annotations[nodePoolMetadataKey]?.split(",") || []).filter(
-      (s) => !!s
+      (s) => !!s,
     );
     nodePools = [...nodePools, nodePoolId];
     annotations[nodePoolMetadataKey] = nodePools.join(",");
@@ -135,7 +135,7 @@ export class ClastixCli {
 
   removeNodePoolMetadata(
     nodePoolId: string,
-    metadata: api.IoClastixKamajiV1alpha1TenantControlPlane["metadata"] = {}
+    metadata: api.IoClastixKamajiV1alpha1TenantControlPlane["metadata"] = {},
   ): api.IoClastixKamajiV1alpha1TenantControlPlane["metadata"] {
     const annotations = metadata.annotations || {};
     const nodePools = (
@@ -149,7 +149,7 @@ export class ClastixCli {
   }
 
   getNodePoolsIds(
-    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
+    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane,
   ): string[] {
     const annotations = tcp.metadata?.annotations || {};
     const nodePools = annotations[nodePoolMetadataKey]?.split(",") || [];
@@ -162,7 +162,7 @@ export class ClastixCli {
         await this.k8sCli.clastix.replaceKamajiClastixIoV1alpha1NamespacedTenantControlPlane(
           tcp.metadata!.name!,
           tcp.metadata!.namespace!,
-          tcp
+          tcp,
         );
       const newTcp = res.body;
       if (!newTcp) {
