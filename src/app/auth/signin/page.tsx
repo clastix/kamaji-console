@@ -2,14 +2,14 @@
 
 import { useSession } from "@/auth/client";
 import { useLogin } from "@/auth/client/hooks";
+import { TRPCClientError } from "@trpc/client";
+import clsx from "clsx";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { z } from "zod";
 import { ClastixLogo } from "../../../components/clastix/logos/logo";
 import { TextField } from "../../../components/forms/text-field";
 import { ZodForm } from "../../../components/zod-form/form";
-import { TRPCClientError } from "@trpc/client";
-import clsx from "clsx";
 
 export type SignInErrorTypes =
   | "Signin"
@@ -43,20 +43,17 @@ const errors: Record<SignInErrorTypes, string> = {
 export default function SignIn() {
   const { status } = useSession();
   const router = useRouter();
-  const query = useSearchParams();
 
   useEffect(() => {
     if (status === "authenticated") {
-      const url = query?.get("callbackUrl") || "/";
+      const url = getCallbackURL();
       router.push(url);
     }
-  }, [status, router, query]);
+  }, [status, router]);
 
   if (status !== "unauthenticated") {
     return null;
   }
-
-  const error = query?.get("error") as SignInErrorTypes | undefined;
 
   return (
     <div className="flex min-h-screen w-screen flex-col  bg-gray-100 py-12 sm:px-6 lg:px-8">
@@ -65,7 +62,10 @@ export default function SignIn() {
           <div className="mb-10 sm:mx-auto sm:w-full sm:max-w-md">
             <ClastixLogo className="m-auto w-32" />
           </div>
-          {error && <p className="mb-4 text-center">{errors[error]}</p>}
+          <Suspense fallback={null}>
+            <ErrorLogin />
+          </Suspense>
+
           <div className="mt-0 space-y-6">
             <div>
               <SignInWithCredentials />
@@ -110,7 +110,7 @@ const SignInWithCredentials = () => {
             <TextField name="password" label="Password" type="password" />
             <button
               type="submit"
-              className={clsx("btn btn-primary w-full", {
+              className={clsx("btn btn-primary btn-sm w-full", {
                 loading: submitting,
               })}
             >
@@ -128,4 +128,24 @@ const SignInWithCredentials = () => {
       }}
     </ZodForm>
   );
+};
+
+function getCallbackURL() {
+  if (typeof window === "undefined") {
+    return "/";
+  }
+
+  const url = new URL(window.location.href);
+  const callbackURL = url.searchParams.get("callbackUrl");
+  return callbackURL || "/";
+}
+
+const ErrorLogin = () => {
+  const query = useSearchParams();
+  const error = query?.get("error") as SignInErrorTypes | undefined;
+  if (!error) {
+    return null;
+  }
+
+  return <p className="mb-4 text-center">{errors[error]}</p>;
 };

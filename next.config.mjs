@@ -9,9 +9,7 @@
 const config = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
+  experimental: {},
   output: "standalone",
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   async redirects() {

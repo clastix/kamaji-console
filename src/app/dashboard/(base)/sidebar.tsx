@@ -1,28 +1,22 @@
 "use client";
 
+import { useSession } from "@/auth/client";
+import { useSignOut } from "@/auth/client/hooks";
 import { ClastixLogoHorizontal } from "@/components/clastix/logos/logo";
 import { env } from "@/env/client.mjs";
 import { Dialog, Transition } from "@headlessui/react";
 import { CogIcon } from "@heroicons/react/20/solid";
 import {
-  ArrowPathIcon,
-  ArrowRightOnRectangleIcon,
-  ArrowUpTrayIcon,
+  ArrowRightEndOnRectangleIcon,
   CircleStackIcon,
-  ClipboardIcon,
-  ComputerDesktopIcon,
-  CpuChipIcon,
   PhoneIcon,
-  UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment, useCallback, type SVGProps } from "react";
+import { Fragment, useCallback } from "react";
 import { useSidebarStore } from "./sidebar.store";
-import { useSession } from "@/auth/client";
-import { useSignOut } from "@/auth/client/hooks";
 
 export function SideBar() {
   const { isOpen, setIsOpen } = useSidebarStore();
@@ -115,7 +109,7 @@ const Navigation = () => {
       const allP = (env.NEXT_PUBLIC_BASE_PATH || "") + path;
       return pathname?.startsWith(allP);
     },
-    [pathname]
+    [pathname],
   );
 
   return (
@@ -130,7 +124,7 @@ const Navigation = () => {
                 isCurrentPath(item.href)
                   ? "bg-primary-800 text-white"
                   : "text-primary-100 hover:bg-primary-600",
-                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+                "group flex items-center rounded-md px-2 py-2 text-sm font-medium",
               )}
             >
               <item.icon
@@ -150,7 +144,7 @@ const Navigation = () => {
                 isCurrentPath(item.href)
                   ? "bg-primary-800 text-white"
                   : "text-primary-100 hover:bg-primary-600",
-                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+                "group flex items-center rounded-md px-2 py-2 text-sm font-medium",
               )}
             >
               <item.icon
@@ -167,7 +161,7 @@ const Navigation = () => {
               className={clsx(
                 "flex items-center",
                 "text-primary-400 ",
-                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+                "group flex items-center rounded-md px-2 py-2 text-sm font-medium",
               )}
             >
               <item.icon
@@ -176,7 +170,7 @@ const Navigation = () => {
               />
               {item.name}
 
-              <span className="ml-auto inline-flex items-center gap-x-1.5 rounded-full bg-primary-300 leading-none px-[4px] py-[2px] text-[8px] font-light text-primary-700">
+              <span className="ml-auto inline-flex items-center gap-x-1.5 rounded-full bg-primary-300 px-[4px] py-[2px] text-[8px] font-light leading-none text-primary-700">
                 PRO
               </span>
             </div>
@@ -208,49 +202,22 @@ function useNavigation(): Nav[] {
       icon: CircleStackIcon,
     },
     {
-      type: "coming-soon",
-      name: "Infrastructure Drivers",
-      icon: CpuChipIcon,
-    },
-    {
-      type: "coming-soon",
-      name: "Applications Delivery",
-      icon: ArrowPathIcon,
-    },
-    {
-      type: "coming-soon",
-      name: "Authentication",
-      icon: UsersIcon,
-    },
-    {
-      type: "coming-soon",
-      name: "Auditing",
-      icon: ClipboardIcon,
-    },
-    {
-      type: "coming-soon",
-      name: "Monitoring",
-      icon: ComputerDesktopIcon,
-    },
-    {
-      type: "coming-soon",
-      name: "Backup and Restore",
-      icon: ArrowUpTrayIcon,
-    },
-    {
-      type: "coming-soon",
+      type: "external-link",
       name: "Support",
       icon: PhoneIcon,
+      href: "mailto:hello@clastix.io",
     },
   ];
 
   return navigation;
 }
 
-type Icon = React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
-  title?: string | undefined;
-  titleId?: string | undefined;
-} & React.RefAttributes<SVGSVGElement>>
+type Icon = React.ForwardRefExoticComponent<
+  Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
+    title?: string | undefined;
+    titleId?: string | undefined;
+  } & React.RefAttributes<SVGSVGElement>
+>;
 
 interface LinkNav {
   readonly type: "link";
@@ -292,10 +259,10 @@ const SidebarProfile = () => {
       <div>{session.user.email}</div>
       <div className="tooltip tooltip-left" data-tip="signout">
         <button
-          className="btn-ghost btn-sm btn-circle btn"
+          className="btn btn-circle btn-ghost btn-sm"
           onClick={() => signOut()}
         >
-          <ArrowRightOnRectangleIcon className="w-5" />
+          <ArrowRightEndOnRectangleIcon className="w-5" />
         </button>
       </div>
     </div>

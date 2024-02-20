@@ -56,7 +56,7 @@ export function ToolBarContainer() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <div className="w-full max-w-5xl flex-1">
+            <div className="z-10 w-full max-w-5xl flex-1">
               <div className="h-full bg-white">{toolbar}</div>
             </div>
           </Transition.Child>
