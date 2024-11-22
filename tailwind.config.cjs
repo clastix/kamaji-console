@@ -43,7 +43,7 @@ module.exports = {
     themes: [
       {
         clastix: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
           primary: colors.primary.base,
           accent: colors.secondary.base,
         },
