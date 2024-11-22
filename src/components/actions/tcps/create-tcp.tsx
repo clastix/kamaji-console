@@ -108,7 +108,7 @@ const getBaseYtaml = () => {
       service:
         serviceType: LoadBalancer
     kubernetes:
-      version: v1.25.2
+      version: v1.31.0
       kubelet:
         cgroupfs: systemd
     networkProfile:
