@@ -47,6 +47,7 @@ export * from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateS
 export * from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector';
 export * from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner';
 export * from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAntiAffinity';
+export * from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecImagePullSecretsInner';
 export * from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecTolerationsInner';
 export * from './ioCertManagerAcmeV1ChallengeSpecSolverSelector';
 export * from './ioCertManagerAcmeV1ChallengeStatus';
@@ -94,6 +95,7 @@ export * from './ioCertManagerV1ClusterIssuerSpecVaultAuthAppRole';
 export * from './ioCertManagerV1ClusterIssuerSpecVaultAuthAppRoleSecretRef';
 export * from './ioCertManagerV1ClusterIssuerSpecVaultAuthKubernetes';
 export * from './ioCertManagerV1ClusterIssuerSpecVaultAuthKubernetesSecretRef';
+export * from './ioCertManagerV1ClusterIssuerSpecVaultAuthKubernetesServiceAccountRef';
 export * from './ioCertManagerV1ClusterIssuerSpecVaultAuthTokenSecretRef';
 export * from './ioCertManagerV1ClusterIssuerSpecVaultCaBundleSecretRef';
 export * from './ioCertManagerV1ClusterIssuerSpecVenafi';
@@ -125,16 +127,127 @@ export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddons';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsCoreDNS';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivity';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgent';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgentTolerationsInner';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServer';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResources';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResourcesClaimsInner';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKubeProxy';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlane';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeployment';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerConfigMapRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFrom';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromConfigMapKeyRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromFieldRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromResourceFieldRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromSecretKeyRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecycle';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStart';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartExec';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGet';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGetHttpHeadersInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartSleep';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartTcpSocket';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePreStop';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbe';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeGrpc';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeTcpSocket';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerPortsInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerReadinessProbe';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResizePolicyInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResources';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContext';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextAppArmorProfile';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextCapabilities';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeLinuxOptions';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeccompProfile';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextWindowsOptions';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerStartupProbe';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeDevicesInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeMountsInner';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalMetadata';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumeMounts';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAwsElasticBlockStore';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureDisk';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureFile';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfs';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfsSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinder';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinderSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMap';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMapItemsInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsi';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsiNodePublishSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPI';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerFieldRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerResourceFieldRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEmptyDir';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeral';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplate';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpec';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSource';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSourceRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecResources';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelector';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFc';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolume';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolumeSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlocker';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGcePersistentDisk';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGitRepo';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGlusterfs';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerHostPath';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerImage';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsi';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsiSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerNfs';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPersistentVolumeClaim';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPhotonPersistentDisk';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPortworxVolume';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjected';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundle';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundleLabelSelector';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerConfigMap';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerDownwardAPI';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerSecret';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerServiceAccountToken';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerQuobyte';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbd';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbdSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIO';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIOSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerSecret';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageos';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageosSecretRef';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerVsphereVolume';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinity';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinity';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreference';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreferenceMatchExpressionsInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermsInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinity';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTerm';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermLabelSelector';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAntiAffinity';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentExtraArgs';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentRegistrySettings';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResources';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesApiServer';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesKine';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategy';
+export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategyRollingUpdate';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInner';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInnerLabelSelector';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneIngress';
@@ -176,14 +289,31 @@ export * from './ioClastixKamajiV1alpha1TenantControlPlaneStatusStorage';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneStatusStorageCertificate';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneStatusStorageConfig';
 export * from './ioClastixKamajiV1alpha1TenantControlPlaneStatusStorageSetup';
+export * from './ioK8sApiAdmissionregistrationV1AuditAnnotation';
+export * from './ioK8sApiAdmissionregistrationV1ExpressionWarning';
+export * from './ioK8sApiAdmissionregistrationV1MatchCondition';
+export * from './ioK8sApiAdmissionregistrationV1MatchResources';
 export * from './ioK8sApiAdmissionregistrationV1MutatingWebhook';
 export * from './ioK8sApiAdmissionregistrationV1MutatingWebhookConfiguration';
 export * from './ioK8sApiAdmissionregistrationV1MutatingWebhookConfigurationList';
+export * from './ioK8sApiAdmissionregistrationV1NamedRuleWithOperations';
+export * from './ioK8sApiAdmissionregistrationV1ParamKind';
+export * from './ioK8sApiAdmissionregistrationV1ParamRef';
 export * from './ioK8sApiAdmissionregistrationV1RuleWithOperations';
 export * from './ioK8sApiAdmissionregistrationV1ServiceReference';
+export * from './ioK8sApiAdmissionregistrationV1TypeChecking';
+export * from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicy';
+export * from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBinding';
+export * from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingList';
+export * from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingSpec';
+export * from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyList';
+export * from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicySpec';
+export * from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyStatus';
 export * from './ioK8sApiAdmissionregistrationV1ValidatingWebhook';
 export * from './ioK8sApiAdmissionregistrationV1ValidatingWebhookConfiguration';
 export * from './ioK8sApiAdmissionregistrationV1ValidatingWebhookConfigurationList';
+export * from './ioK8sApiAdmissionregistrationV1Validation';
+export * from './ioK8sApiAdmissionregistrationV1Variable';
 export * from './ioK8sApiAdmissionregistrationV1WebhookClientConfig';
 export * from './ioK8sApiAppsV1ControllerRevision';
 export * from './ioK8sApiAppsV1ControllerRevisionList';
@@ -210,11 +340,14 @@ export * from './ioK8sApiAppsV1RollingUpdateStatefulSetStrategy';
 export * from './ioK8sApiAppsV1StatefulSet';
 export * from './ioK8sApiAppsV1StatefulSetCondition';
 export * from './ioK8sApiAppsV1StatefulSetList';
+export * from './ioK8sApiAppsV1StatefulSetOrdinals';
 export * from './ioK8sApiAppsV1StatefulSetPersistentVolumeClaimRetentionPolicy';
 export * from './ioK8sApiAppsV1StatefulSetSpec';
 export * from './ioK8sApiAppsV1StatefulSetStatus';
 export * from './ioK8sApiAppsV1StatefulSetUpdateStrategy';
 export * from './ioK8sApiAuthenticationV1BoundObjectReference';
+export * from './ioK8sApiAuthenticationV1SelfSubjectReview';
+export * from './ioK8sApiAuthenticationV1SelfSubjectReviewStatus';
 export * from './ioK8sApiAuthenticationV1TokenRequest';
 export * from './ioK8sApiAuthenticationV1TokenRequestSpec';
 export * from './ioK8sApiAuthenticationV1TokenRequestStatus';
@@ -243,7 +376,6 @@ export * from './ioK8sApiAutoscalingV1HorizontalPodAutoscalerStatus';
 export * from './ioK8sApiAutoscalingV1Scale';
 export * from './ioK8sApiAutoscalingV1ScaleSpec';
 export * from './ioK8sApiAutoscalingV1ScaleStatus';
-export * from './ioK8sApiAutoscalingV1ScaleV2';
 export * from './ioK8sApiAutoscalingV2ContainerResourceMetricSource';
 export * from './ioK8sApiAutoscalingV2ContainerResourceMetricStatus';
 export * from './ioK8sApiAutoscalingV2CrossVersionObjectReference';
@@ -268,48 +400,6 @@ export * from './ioK8sApiAutoscalingV2PodsMetricSource';
 export * from './ioK8sApiAutoscalingV2PodsMetricStatus';
 export * from './ioK8sApiAutoscalingV2ResourceMetricSource';
 export * from './ioK8sApiAutoscalingV2ResourceMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta1ContainerResourceMetricSource';
-export * from './ioK8sApiAutoscalingV2beta1ContainerResourceMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta1CrossVersionObjectReference';
-export * from './ioK8sApiAutoscalingV2beta1ExternalMetricSource';
-export * from './ioK8sApiAutoscalingV2beta1ExternalMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscaler';
-export * from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerCondition';
-export * from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerList';
-export * from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerSpec';
-export * from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerStatus';
-export * from './ioK8sApiAutoscalingV2beta1MetricSpec';
-export * from './ioK8sApiAutoscalingV2beta1MetricStatus';
-export * from './ioK8sApiAutoscalingV2beta1ObjectMetricSource';
-export * from './ioK8sApiAutoscalingV2beta1ObjectMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta1PodsMetricSource';
-export * from './ioK8sApiAutoscalingV2beta1PodsMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta1ResourceMetricSource';
-export * from './ioK8sApiAutoscalingV2beta1ResourceMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta2ContainerResourceMetricSource';
-export * from './ioK8sApiAutoscalingV2beta2ContainerResourceMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta2CrossVersionObjectReference';
-export * from './ioK8sApiAutoscalingV2beta2ExternalMetricSource';
-export * from './ioK8sApiAutoscalingV2beta2ExternalMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta2HPAScalingPolicy';
-export * from './ioK8sApiAutoscalingV2beta2HPAScalingRules';
-export * from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscaler';
-export * from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior';
-export * from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerCondition';
-export * from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerList';
-export * from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec';
-export * from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerStatus';
-export * from './ioK8sApiAutoscalingV2beta2MetricIdentifier';
-export * from './ioK8sApiAutoscalingV2beta2MetricSpec';
-export * from './ioK8sApiAutoscalingV2beta2MetricStatus';
-export * from './ioK8sApiAutoscalingV2beta2MetricTarget';
-export * from './ioK8sApiAutoscalingV2beta2MetricValueStatus';
-export * from './ioK8sApiAutoscalingV2beta2ObjectMetricSource';
-export * from './ioK8sApiAutoscalingV2beta2ObjectMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta2PodsMetricSource';
-export * from './ioK8sApiAutoscalingV2beta2PodsMetricStatus';
-export * from './ioK8sApiAutoscalingV2beta2ResourceMetricSource';
-export * from './ioK8sApiAutoscalingV2beta2ResourceMetricStatus';
 export * from './ioK8sApiBatchV1CronJob';
 export * from './ioK8sApiBatchV1CronJobList';
 export * from './ioK8sApiBatchV1CronJobSpec';
@@ -320,12 +410,13 @@ export * from './ioK8sApiBatchV1JobList';
 export * from './ioK8sApiBatchV1JobSpec';
 export * from './ioK8sApiBatchV1JobStatus';
 export * from './ioK8sApiBatchV1JobTemplateSpec';
+export * from './ioK8sApiBatchV1PodFailurePolicy';
+export * from './ioK8sApiBatchV1PodFailurePolicyOnExitCodesRequirement';
+export * from './ioK8sApiBatchV1PodFailurePolicyOnPodConditionsPattern';
+export * from './ioK8sApiBatchV1PodFailurePolicyRule';
+export * from './ioK8sApiBatchV1SuccessPolicy';
+export * from './ioK8sApiBatchV1SuccessPolicyRule';
 export * from './ioK8sApiBatchV1UncountedTerminatedPods';
-export * from './ioK8sApiBatchV1beta1CronJob';
-export * from './ioK8sApiBatchV1beta1CronJobList';
-export * from './ioK8sApiBatchV1beta1CronJobSpec';
-export * from './ioK8sApiBatchV1beta1CronJobStatus';
-export * from './ioK8sApiBatchV1beta1JobTemplateSpec';
 export * from './ioK8sApiCertificatesV1CertificateSigningRequest';
 export * from './ioK8sApiCertificatesV1CertificateSigningRequestCondition';
 export * from './ioK8sApiCertificatesV1CertificateSigningRequestList';
@@ -336,6 +427,7 @@ export * from './ioK8sApiCoordinationV1LeaseList';
 export * from './ioK8sApiCoordinationV1LeaseSpec';
 export * from './ioK8sApiCoreV1AWSElasticBlockStoreVolumeSource';
 export * from './ioK8sApiCoreV1Affinity';
+export * from './ioK8sApiCoreV1AppArmorProfile';
 export * from './ioK8sApiCoreV1AttachedVolume';
 export * from './ioK8sApiCoreV1AzureDiskVolumeSource';
 export * from './ioK8sApiCoreV1AzureFilePersistentVolumeSource';
@@ -348,7 +440,9 @@ export * from './ioK8sApiCoreV1CephFSPersistentVolumeSource';
 export * from './ioK8sApiCoreV1CephFSVolumeSource';
 export * from './ioK8sApiCoreV1CinderPersistentVolumeSource';
 export * from './ioK8sApiCoreV1CinderVolumeSource';
+export * from './ioK8sApiCoreV1ClaimSource';
 export * from './ioK8sApiCoreV1ClientIPConfig';
+export * from './ioK8sApiCoreV1ClusterTrustBundleProjection';
 export * from './ioK8sApiCoreV1ComponentCondition';
 export * from './ioK8sApiCoreV1ComponentStatus';
 export * from './ioK8sApiCoreV1ComponentStatusList';
@@ -362,6 +456,7 @@ export * from './ioK8sApiCoreV1ConfigMapVolumeSource';
 export * from './ioK8sApiCoreV1Container';
 export * from './ioK8sApiCoreV1ContainerImage';
 export * from './ioK8sApiCoreV1ContainerPort';
+export * from './ioK8sApiCoreV1ContainerResizePolicy';
 export * from './ioK8sApiCoreV1ContainerState';
 export * from './ioK8sApiCoreV1ContainerStateRunning';
 export * from './ioK8sApiCoreV1ContainerStateTerminated';
@@ -399,6 +494,7 @@ export * from './ioK8sApiCoreV1GlusterfsVolumeSource';
 export * from './ioK8sApiCoreV1HTTPGetAction';
 export * from './ioK8sApiCoreV1HTTPHeader';
 export * from './ioK8sApiCoreV1HostAlias';
+export * from './ioK8sApiCoreV1HostIP';
 export * from './ioK8sApiCoreV1HostPathVolumeSource';
 export * from './ioK8sApiCoreV1ISCSIPersistentVolumeSource';
 export * from './ioK8sApiCoreV1ISCSIVolumeSource';
@@ -413,6 +509,7 @@ export * from './ioK8sApiCoreV1LoadBalancerIngress';
 export * from './ioK8sApiCoreV1LoadBalancerStatus';
 export * from './ioK8sApiCoreV1LocalObjectReference';
 export * from './ioK8sApiCoreV1LocalVolumeSource';
+export * from './ioK8sApiCoreV1ModifyVolumeStatus';
 export * from './ioK8sApiCoreV1NFSVolumeSource';
 export * from './ioK8sApiCoreV1Namespace';
 export * from './ioK8sApiCoreV1NamespaceCondition';
@@ -427,6 +524,8 @@ export * from './ioK8sApiCoreV1NodeConfigSource';
 export * from './ioK8sApiCoreV1NodeConfigStatus';
 export * from './ioK8sApiCoreV1NodeDaemonEndpoints';
 export * from './ioK8sApiCoreV1NodeList';
+export * from './ioK8sApiCoreV1NodeRuntimeHandler';
+export * from './ioK8sApiCoreV1NodeRuntimeHandlerFeatures';
 export * from './ioK8sApiCoreV1NodeSelector';
 export * from './ioK8sApiCoreV1NodeSelectorRequirement';
 export * from './ioK8sApiCoreV1NodeSelectorTerm';
@@ -458,6 +557,9 @@ export * from './ioK8sApiCoreV1PodIP';
 export * from './ioK8sApiCoreV1PodList';
 export * from './ioK8sApiCoreV1PodOS';
 export * from './ioK8sApiCoreV1PodReadinessGate';
+export * from './ioK8sApiCoreV1PodResourceClaim';
+export * from './ioK8sApiCoreV1PodResourceClaimStatus';
+export * from './ioK8sApiCoreV1PodSchedulingGate';
 export * from './ioK8sApiCoreV1PodSecurityContext';
 export * from './ioK8sApiCoreV1PodSpec';
 export * from './ioK8sApiCoreV1PodStatus';
@@ -477,6 +579,7 @@ export * from './ioK8sApiCoreV1ReplicationControllerCondition';
 export * from './ioK8sApiCoreV1ReplicationControllerList';
 export * from './ioK8sApiCoreV1ReplicationControllerSpec';
 export * from './ioK8sApiCoreV1ReplicationControllerStatus';
+export * from './ioK8sApiCoreV1ResourceClaim';
 export * from './ioK8sApiCoreV1ResourceFieldSelector';
 export * from './ioK8sApiCoreV1ResourceQuota';
 export * from './ioK8sApiCoreV1ResourceQuotaList';
@@ -506,6 +609,7 @@ export * from './ioK8sApiCoreV1ServicePort';
 export * from './ioK8sApiCoreV1ServiceSpec';
 export * from './ioK8sApiCoreV1ServiceStatus';
 export * from './ioK8sApiCoreV1SessionAffinityConfig';
+export * from './ioK8sApiCoreV1SleepAction';
 export * from './ioK8sApiCoreV1StorageOSPersistentVolumeSource';
 export * from './ioK8sApiCoreV1StorageOSVolumeSource';
 export * from './ioK8sApiCoreV1Sysctl';
@@ -516,11 +620,14 @@ export * from './ioK8sApiCoreV1TopologySelectorLabelRequirement';
 export * from './ioK8sApiCoreV1TopologySelectorTerm';
 export * from './ioK8sApiCoreV1TopologySpreadConstraint';
 export * from './ioK8sApiCoreV1TypedLocalObjectReference';
+export * from './ioK8sApiCoreV1TypedObjectReference';
 export * from './ioK8sApiCoreV1Volume';
 export * from './ioK8sApiCoreV1VolumeDevice';
 export * from './ioK8sApiCoreV1VolumeMount';
+export * from './ioK8sApiCoreV1VolumeMountStatus';
 export * from './ioK8sApiCoreV1VolumeNodeAffinity';
 export * from './ioK8sApiCoreV1VolumeProjection';
+export * from './ioK8sApiCoreV1VolumeResourceRequirements';
 export * from './ioK8sApiCoreV1VsphereVirtualDiskVolumeSource';
 export * from './ioK8sApiCoreV1WeightedPodAffinityTerm';
 export * from './ioK8sApiCoreV1WindowsSecurityContextOptions';
@@ -531,63 +638,55 @@ export * from './ioK8sApiDiscoveryV1EndpointPort';
 export * from './ioK8sApiDiscoveryV1EndpointSlice';
 export * from './ioK8sApiDiscoveryV1EndpointSliceList';
 export * from './ioK8sApiDiscoveryV1ForZone';
-export * from './ioK8sApiDiscoveryV1beta1Endpoint';
-export * from './ioK8sApiDiscoveryV1beta1EndpointConditions';
-export * from './ioK8sApiDiscoveryV1beta1EndpointHints';
-export * from './ioK8sApiDiscoveryV1beta1EndpointPort';
-export * from './ioK8sApiDiscoveryV1beta1EndpointSlice';
-export * from './ioK8sApiDiscoveryV1beta1EndpointSliceList';
-export * from './ioK8sApiDiscoveryV1beta1ForZone';
 export * from './ioK8sApiEventsV1Event';
 export * from './ioK8sApiEventsV1EventList';
 export * from './ioK8sApiEventsV1EventSeries';
-export * from './ioK8sApiEventsV1beta1Event';
-export * from './ioK8sApiEventsV1beta1EventList';
-export * from './ioK8sApiEventsV1beta1EventSeries';
-export * from './ioK8sApiFlowcontrolV1beta1FlowDistinguisherMethod';
-export * from './ioK8sApiFlowcontrolV1beta1FlowSchema';
-export * from './ioK8sApiFlowcontrolV1beta1FlowSchemaCondition';
-export * from './ioK8sApiFlowcontrolV1beta1FlowSchemaList';
-export * from './ioK8sApiFlowcontrolV1beta1FlowSchemaSpec';
-export * from './ioK8sApiFlowcontrolV1beta1FlowSchemaStatus';
-export * from './ioK8sApiFlowcontrolV1beta1GroupSubject';
-export * from './ioK8sApiFlowcontrolV1beta1LimitResponse';
-export * from './ioK8sApiFlowcontrolV1beta1LimitedPriorityLevelConfiguration';
-export * from './ioK8sApiFlowcontrolV1beta1NonResourcePolicyRule';
-export * from './ioK8sApiFlowcontrolV1beta1PolicyRulesWithSubjects';
-export * from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfiguration';
-export * from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationCondition';
-export * from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationList';
-export * from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationReference';
-export * from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationSpec';
-export * from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationStatus';
-export * from './ioK8sApiFlowcontrolV1beta1QueuingConfiguration';
-export * from './ioK8sApiFlowcontrolV1beta1ResourcePolicyRule';
-export * from './ioK8sApiFlowcontrolV1beta1ServiceAccountSubject';
-export * from './ioK8sApiFlowcontrolV1beta1Subject';
-export * from './ioK8sApiFlowcontrolV1beta1UserSubject';
-export * from './ioK8sApiFlowcontrolV1beta2FlowDistinguisherMethod';
-export * from './ioK8sApiFlowcontrolV1beta2FlowSchema';
-export * from './ioK8sApiFlowcontrolV1beta2FlowSchemaCondition';
-export * from './ioK8sApiFlowcontrolV1beta2FlowSchemaList';
-export * from './ioK8sApiFlowcontrolV1beta2FlowSchemaSpec';
-export * from './ioK8sApiFlowcontrolV1beta2FlowSchemaStatus';
-export * from './ioK8sApiFlowcontrolV1beta2GroupSubject';
-export * from './ioK8sApiFlowcontrolV1beta2LimitResponse';
-export * from './ioK8sApiFlowcontrolV1beta2LimitedPriorityLevelConfiguration';
-export * from './ioK8sApiFlowcontrolV1beta2NonResourcePolicyRule';
-export * from './ioK8sApiFlowcontrolV1beta2PolicyRulesWithSubjects';
-export * from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfiguration';
-export * from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationCondition';
-export * from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationList';
-export * from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationReference';
-export * from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationSpec';
-export * from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationStatus';
-export * from './ioK8sApiFlowcontrolV1beta2QueuingConfiguration';
-export * from './ioK8sApiFlowcontrolV1beta2ResourcePolicyRule';
-export * from './ioK8sApiFlowcontrolV1beta2ServiceAccountSubject';
-export * from './ioK8sApiFlowcontrolV1beta2Subject';
-export * from './ioK8sApiFlowcontrolV1beta2UserSubject';
+export * from './ioK8sApiFlowcontrolV1ExemptPriorityLevelConfiguration';
+export * from './ioK8sApiFlowcontrolV1FlowDistinguisherMethod';
+export * from './ioK8sApiFlowcontrolV1FlowSchema';
+export * from './ioK8sApiFlowcontrolV1FlowSchemaCondition';
+export * from './ioK8sApiFlowcontrolV1FlowSchemaList';
+export * from './ioK8sApiFlowcontrolV1FlowSchemaSpec';
+export * from './ioK8sApiFlowcontrolV1FlowSchemaStatus';
+export * from './ioK8sApiFlowcontrolV1GroupSubject';
+export * from './ioK8sApiFlowcontrolV1LimitResponse';
+export * from './ioK8sApiFlowcontrolV1LimitedPriorityLevelConfiguration';
+export * from './ioK8sApiFlowcontrolV1NonResourcePolicyRule';
+export * from './ioK8sApiFlowcontrolV1PolicyRulesWithSubjects';
+export * from './ioK8sApiFlowcontrolV1PriorityLevelConfiguration';
+export * from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationCondition';
+export * from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationList';
+export * from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationReference';
+export * from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationSpec';
+export * from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationStatus';
+export * from './ioK8sApiFlowcontrolV1QueuingConfiguration';
+export * from './ioK8sApiFlowcontrolV1ResourcePolicyRule';
+export * from './ioK8sApiFlowcontrolV1ServiceAccountSubject';
+export * from './ioK8sApiFlowcontrolV1Subject';
+export * from './ioK8sApiFlowcontrolV1UserSubject';
+export * from './ioK8sApiFlowcontrolV1beta3ExemptPriorityLevelConfiguration';
+export * from './ioK8sApiFlowcontrolV1beta3FlowDistinguisherMethod';
+export * from './ioK8sApiFlowcontrolV1beta3FlowSchema';
+export * from './ioK8sApiFlowcontrolV1beta3FlowSchemaCondition';
+export * from './ioK8sApiFlowcontrolV1beta3FlowSchemaList';
+export * from './ioK8sApiFlowcontrolV1beta3FlowSchemaSpec';
+export * from './ioK8sApiFlowcontrolV1beta3FlowSchemaStatus';
+export * from './ioK8sApiFlowcontrolV1beta3GroupSubject';
+export * from './ioK8sApiFlowcontrolV1beta3LimitResponse';
+export * from './ioK8sApiFlowcontrolV1beta3LimitedPriorityLevelConfiguration';
+export * from './ioK8sApiFlowcontrolV1beta3NonResourcePolicyRule';
+export * from './ioK8sApiFlowcontrolV1beta3PolicyRulesWithSubjects';
+export * from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfiguration';
+export * from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationCondition';
+export * from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationList';
+export * from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationReference';
+export * from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationSpec';
+export * from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationStatus';
+export * from './ioK8sApiFlowcontrolV1beta3QueuingConfiguration';
+export * from './ioK8sApiFlowcontrolV1beta3ResourcePolicyRule';
+export * from './ioK8sApiFlowcontrolV1beta3ServiceAccountSubject';
+export * from './ioK8sApiFlowcontrolV1beta3Subject';
+export * from './ioK8sApiFlowcontrolV1beta3UserSubject';
 export * from './ioK8sApiNetworkingV1HTTPIngressPath';
 export * from './ioK8sApiNetworkingV1HTTPIngressRuleValue';
 export * from './ioK8sApiNetworkingV1IPBlock';
@@ -598,6 +697,9 @@ export * from './ioK8sApiNetworkingV1IngressClassList';
 export * from './ioK8sApiNetworkingV1IngressClassParametersReference';
 export * from './ioK8sApiNetworkingV1IngressClassSpec';
 export * from './ioK8sApiNetworkingV1IngressList';
+export * from './ioK8sApiNetworkingV1IngressLoadBalancerIngress';
+export * from './ioK8sApiNetworkingV1IngressLoadBalancerStatus';
+export * from './ioK8sApiNetworkingV1IngressPortStatus';
 export * from './ioK8sApiNetworkingV1IngressRule';
 export * from './ioK8sApiNetworkingV1IngressServiceBackend';
 export * from './ioK8sApiNetworkingV1IngressSpec';
@@ -615,33 +717,11 @@ export * from './ioK8sApiNodeV1Overhead';
 export * from './ioK8sApiNodeV1RuntimeClass';
 export * from './ioK8sApiNodeV1RuntimeClassList';
 export * from './ioK8sApiNodeV1Scheduling';
-export * from './ioK8sApiNodeV1beta1Overhead';
-export * from './ioK8sApiNodeV1beta1RuntimeClass';
-export * from './ioK8sApiNodeV1beta1RuntimeClassList';
-export * from './ioK8sApiNodeV1beta1Scheduling';
 export * from './ioK8sApiPolicyV1Eviction';
 export * from './ioK8sApiPolicyV1PodDisruptionBudget';
 export * from './ioK8sApiPolicyV1PodDisruptionBudgetList';
 export * from './ioK8sApiPolicyV1PodDisruptionBudgetSpec';
 export * from './ioK8sApiPolicyV1PodDisruptionBudgetStatus';
-export * from './ioK8sApiPolicyV1beta1AllowedCSIDriver';
-export * from './ioK8sApiPolicyV1beta1AllowedFlexVolume';
-export * from './ioK8sApiPolicyV1beta1AllowedHostPath';
-export * from './ioK8sApiPolicyV1beta1FSGroupStrategyOptions';
-export * from './ioK8sApiPolicyV1beta1HostPortRange';
-export * from './ioK8sApiPolicyV1beta1IDRange';
-export * from './ioK8sApiPolicyV1beta1PodDisruptionBudget';
-export * from './ioK8sApiPolicyV1beta1PodDisruptionBudgetList';
-export * from './ioK8sApiPolicyV1beta1PodDisruptionBudgetSpec';
-export * from './ioK8sApiPolicyV1beta1PodDisruptionBudgetStatus';
-export * from './ioK8sApiPolicyV1beta1PodSecurityPolicy';
-export * from './ioK8sApiPolicyV1beta1PodSecurityPolicyList';
-export * from './ioK8sApiPolicyV1beta1PodSecurityPolicySpec';
-export * from './ioK8sApiPolicyV1beta1RunAsGroupStrategyOptions';
-export * from './ioK8sApiPolicyV1beta1RunAsUserStrategyOptions';
-export * from './ioK8sApiPolicyV1beta1RuntimeClassStrategyOptions';
-export * from './ioK8sApiPolicyV1beta1SELinuxStrategyOptions';
-export * from './ioK8sApiPolicyV1beta1SupplementalGroupsStrategyOptions';
 export * from './ioK8sApiRbacV1AggregationRule';
 export * from './ioK8sApiRbacV1ClusterRole';
 export * from './ioK8sApiRbacV1ClusterRoleBinding';
@@ -663,6 +743,8 @@ export * from './ioK8sApiStorageV1CSINode';
 export * from './ioK8sApiStorageV1CSINodeDriver';
 export * from './ioK8sApiStorageV1CSINodeList';
 export * from './ioK8sApiStorageV1CSINodeSpec';
+export * from './ioK8sApiStorageV1CSIStorageCapacity';
+export * from './ioK8sApiStorageV1CSIStorageCapacityList';
 export * from './ioK8sApiStorageV1StorageClass';
 export * from './ioK8sApiStorageV1StorageClassList';
 export * from './ioK8sApiStorageV1TokenRequest';
@@ -673,8 +755,6 @@ export * from './ioK8sApiStorageV1VolumeAttachmentSpec';
 export * from './ioK8sApiStorageV1VolumeAttachmentStatus';
 export * from './ioK8sApiStorageV1VolumeError';
 export * from './ioK8sApiStorageV1VolumeNodeResources';
-export * from './ioK8sApiStorageV1beta1CSIStorageCapacity';
-export * from './ioK8sApiStorageV1beta1CSIStorageCapacityList';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceConversion';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinition';
@@ -689,6 +769,7 @@ export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResource
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1ExternalDocumentation';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1JSONSchemaProps';
+export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1SelectableField';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1ServiceReference';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1ValidationRule';
 export * from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1WebhookClientConfig';
@@ -700,23 +781,18 @@ export * from './ioK8sApimachineryPkgApisMetaV1APIResourceList';
 export * from './ioK8sApimachineryPkgApisMetaV1APIVersions';
 export * from './ioK8sApimachineryPkgApisMetaV1Condition';
 export * from './ioK8sApimachineryPkgApisMetaV1DeleteOptions';
-export * from './ioK8sApimachineryPkgApisMetaV1DeleteOptionsV2';
 export * from './ioK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery';
 export * from './ioK8sApimachineryPkgApisMetaV1LabelSelector';
 export * from './ioK8sApimachineryPkgApisMetaV1LabelSelectorRequirement';
 export * from './ioK8sApimachineryPkgApisMetaV1ListMeta';
 export * from './ioK8sApimachineryPkgApisMetaV1ManagedFieldsEntry';
 export * from './ioK8sApimachineryPkgApisMetaV1ObjectMeta';
-export * from './ioK8sApimachineryPkgApisMetaV1ObjectMetaV2';
 export * from './ioK8sApimachineryPkgApisMetaV1OwnerReference';
-export * from './ioK8sApimachineryPkgApisMetaV1OwnerReferenceV2';
 export * from './ioK8sApimachineryPkgApisMetaV1Preconditions';
 export * from './ioK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR';
 export * from './ioK8sApimachineryPkgApisMetaV1Status';
 export * from './ioK8sApimachineryPkgApisMetaV1StatusCause';
 export * from './ioK8sApimachineryPkgApisMetaV1StatusDetails';
-export * from './ioK8sApimachineryPkgApisMetaV1StatusDetailsV2';
-export * from './ioK8sApimachineryPkgApisMetaV1StatusV2';
 export * from './ioK8sApimachineryPkgApisMetaV1WatchEvent';
 export * from './ioK8sApimachineryPkgVersionInfo';
 export * from './ioK8sKubeAggregatorPkgApisApiregistrationV1APIService';
@@ -725,6 +801,37 @@ export * from './ioK8sKubeAggregatorPkgApisApiregistrationV1APIServiceList';
 export * from './ioK8sKubeAggregatorPkgApisApiregistrationV1APIServiceSpec';
 export * from './ioK8sKubeAggregatorPkgApisApiregistrationV1APIServiceStatus';
 export * from './ioK8sKubeAggregatorPkgApisApiregistrationV1ServiceReference';
+export * from './ioMetallbV1beta1BFDProfile';
+export * from './ioMetallbV1beta1BFDProfileList';
+export * from './ioMetallbV1beta1BFDProfileSpec';
+export * from './ioMetallbV1beta1BGPAdvertisement';
+export * from './ioMetallbV1beta1BGPAdvertisementList';
+export * from './ioMetallbV1beta1BGPAdvertisementSpec';
+export * from './ioMetallbV1beta1BGPAdvertisementSpecIpAddressPoolSelectorsInner';
+export * from './ioMetallbV1beta1BGPPeer';
+export * from './ioMetallbV1beta1BGPPeerList';
+export * from './ioMetallbV1beta1BGPPeerSpec';
+export * from './ioMetallbV1beta1BGPPeerSpecNodeSelectorsInner';
+export * from './ioMetallbV1beta1BGPPeerSpecNodeSelectorsInnerMatchExpressionsInner';
+export * from './ioMetallbV1beta1Community';
+export * from './ioMetallbV1beta1CommunityList';
+export * from './ioMetallbV1beta1CommunitySpec';
+export * from './ioMetallbV1beta1CommunitySpecCommunitiesInner';
+export * from './ioMetallbV1beta1IPAddressPool';
+export * from './ioMetallbV1beta1IPAddressPoolList';
+export * from './ioMetallbV1beta1IPAddressPoolSpec';
+export * from './ioMetallbV1beta1IPAddressPoolSpecServiceAllocation';
+export * from './ioMetallbV1beta1L2Advertisement';
+export * from './ioMetallbV1beta1L2AdvertisementList';
+export * from './ioMetallbV1beta1L2AdvertisementSpec';
+export * from './ioMetallbV1beta1ServiceL2Status';
+export * from './ioMetallbV1beta1ServiceL2StatusList';
+export * from './ioMetallbV1beta1ServiceL2StatusStatus';
+export * from './ioMetallbV1beta1ServiceL2StatusStatusInterfacesInner';
+export * from './ioMetallbV1beta2BGPPeer';
+export * from './ioMetallbV1beta2BGPPeerList';
+export * from './ioMetallbV1beta2BGPPeerSpec';
+export * from './ioMetallbV1beta2BGPPeerSpecPasswordSecret';
 
 import * as fs from 'fs';
 
@@ -786,6 +893,7 @@ import { IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffin
 import { IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector } from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector';
 import { IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner } from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner';
 import { IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAntiAffinity } from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAntiAffinity';
+import { IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecImagePullSecretsInner } from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecImagePullSecretsInner';
 import { IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecTolerationsInner } from './ioCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecTolerationsInner';
 import { IoCertManagerAcmeV1ChallengeSpecSolverSelector } from './ioCertManagerAcmeV1ChallengeSpecSolverSelector';
 import { IoCertManagerAcmeV1ChallengeStatus } from './ioCertManagerAcmeV1ChallengeStatus';
@@ -833,6 +941,7 @@ import { IoCertManagerV1ClusterIssuerSpecVaultAuthAppRole } from './ioCertManage
 import { IoCertManagerV1ClusterIssuerSpecVaultAuthAppRoleSecretRef } from './ioCertManagerV1ClusterIssuerSpecVaultAuthAppRoleSecretRef';
 import { IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetes } from './ioCertManagerV1ClusterIssuerSpecVaultAuthKubernetes';
 import { IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetesSecretRef } from './ioCertManagerV1ClusterIssuerSpecVaultAuthKubernetesSecretRef';
+import { IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetesServiceAccountRef } from './ioCertManagerV1ClusterIssuerSpecVaultAuthKubernetesServiceAccountRef';
 import { IoCertManagerV1ClusterIssuerSpecVaultAuthTokenSecretRef } from './ioCertManagerV1ClusterIssuerSpecVaultAuthTokenSecretRef';
 import { IoCertManagerV1ClusterIssuerSpecVaultCaBundleSecretRef } from './ioCertManagerV1ClusterIssuerSpecVaultCaBundleSecretRef';
 import { IoCertManagerV1ClusterIssuerSpecVenafi } from './ioCertManagerV1ClusterIssuerSpecVenafi';
@@ -864,16 +973,127 @@ import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddons } from './ioClastix
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsCoreDNS } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsCoreDNS';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivity } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivity';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgent } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgent';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgentTolerationsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgentTolerationsInner';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServer } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServer';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResources } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResources';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResourcesClaimsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResourcesClaimsInner';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKubeProxy } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKubeProxy';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlane } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlane';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeployment } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeployment';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerConfigMapRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerConfigMapRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFrom } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFrom';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromConfigMapKeyRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromConfigMapKeyRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromFieldRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromFieldRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromResourceFieldRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromResourceFieldRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromSecretKeyRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromSecretKeyRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecycle } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecycle';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStart } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStart';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartExec } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartExec';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGet } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGet';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGetHttpHeadersInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGetHttpHeadersInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartSleep } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartSleep';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartTcpSocket } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartTcpSocket';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePreStop } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePreStop';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbe } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbe';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeGrpc } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeGrpc';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeTcpSocket } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeTcpSocket';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerPortsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerPortsInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerReadinessProbe } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerReadinessProbe';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResizePolicyInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResizePolicyInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResources } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResources';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContext } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContext';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextAppArmorProfile } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextAppArmorProfile';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextCapabilities } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextCapabilities';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeLinuxOptions } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeLinuxOptions';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeccompProfile } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeccompProfile';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextWindowsOptions } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextWindowsOptions';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerStartupProbe } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerStartupProbe';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeDevicesInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeDevicesInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeMountsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeMountsInner';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalMetadata } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalMetadata';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumeMounts } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumeMounts';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAwsElasticBlockStore } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAwsElasticBlockStore';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureDisk } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureDisk';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureFile } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureFile';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfs } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfs';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfsSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfsSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinder } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinder';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinderSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinderSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMap } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMap';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMapItemsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMapItemsInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsi } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsi';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsiNodePublishSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsiNodePublishSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPI } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPI';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerFieldRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerFieldRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerResourceFieldRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerResourceFieldRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEmptyDir } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEmptyDir';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeral } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeral';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplate } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplate';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpec } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpec';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSource } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSource';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSourceRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSourceRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecResources } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecResources';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelector } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelector';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFc } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFc';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolume } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolume';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolumeSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolumeSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlocker } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlocker';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGcePersistentDisk } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGcePersistentDisk';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGitRepo } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGitRepo';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGlusterfs } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGlusterfs';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerHostPath } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerHostPath';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerImage } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerImage';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsi } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsi';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsiSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsiSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerNfs } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerNfs';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPersistentVolumeClaim } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPersistentVolumeClaim';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPhotonPersistentDisk } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPhotonPersistentDisk';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPortworxVolume } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPortworxVolume';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjected } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjected';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundle } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundle';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundleLabelSelector } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundleLabelSelector';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerConfigMap } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerConfigMap';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerDownwardAPI } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerDownwardAPI';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerSecret } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerSecret';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerServiceAccountToken } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerServiceAccountToken';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerQuobyte } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerQuobyte';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbd } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbd';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbdSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbdSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIO } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIO';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIOSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIOSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerSecret } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerSecret';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageos } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageos';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageosSecretRef } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageosSecretRef';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerVsphereVolume } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerVsphereVolume';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinity } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinity';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinity } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinity';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreference } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreference';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreferenceMatchExpressionsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreferenceMatchExpressionsInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermsInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinity } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinity';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTerm } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTerm';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermLabelSelector } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermLabelSelector';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAntiAffinity } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAntiAffinity';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentExtraArgs } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentExtraArgs';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentRegistrySettings } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentRegistrySettings';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResources } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResources';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesApiServer } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesApiServer';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesKine } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesKine';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategy } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategy';
+import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategyRollingUpdate } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategyRollingUpdate';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInner } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInner';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInnerLabelSelector } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInnerLabelSelector';
 import { IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneIngress } from './ioClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneIngress';
@@ -915,14 +1135,31 @@ import { IoClastixKamajiV1alpha1TenantControlPlaneStatusStorage } from './ioClas
 import { IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageCertificate } from './ioClastixKamajiV1alpha1TenantControlPlaneStatusStorageCertificate';
 import { IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageConfig } from './ioClastixKamajiV1alpha1TenantControlPlaneStatusStorageConfig';
 import { IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageSetup } from './ioClastixKamajiV1alpha1TenantControlPlaneStatusStorageSetup';
+import { IoK8sApiAdmissionregistrationV1AuditAnnotation } from './ioK8sApiAdmissionregistrationV1AuditAnnotation';
+import { IoK8sApiAdmissionregistrationV1ExpressionWarning } from './ioK8sApiAdmissionregistrationV1ExpressionWarning';
+import { IoK8sApiAdmissionregistrationV1MatchCondition } from './ioK8sApiAdmissionregistrationV1MatchCondition';
+import { IoK8sApiAdmissionregistrationV1MatchResources } from './ioK8sApiAdmissionregistrationV1MatchResources';
 import { IoK8sApiAdmissionregistrationV1MutatingWebhook } from './ioK8sApiAdmissionregistrationV1MutatingWebhook';
 import { IoK8sApiAdmissionregistrationV1MutatingWebhookConfiguration } from './ioK8sApiAdmissionregistrationV1MutatingWebhookConfiguration';
 import { IoK8sApiAdmissionregistrationV1MutatingWebhookConfigurationList } from './ioK8sApiAdmissionregistrationV1MutatingWebhookConfigurationList';
+import { IoK8sApiAdmissionregistrationV1NamedRuleWithOperations } from './ioK8sApiAdmissionregistrationV1NamedRuleWithOperations';
+import { IoK8sApiAdmissionregistrationV1ParamKind } from './ioK8sApiAdmissionregistrationV1ParamKind';
+import { IoK8sApiAdmissionregistrationV1ParamRef } from './ioK8sApiAdmissionregistrationV1ParamRef';
 import { IoK8sApiAdmissionregistrationV1RuleWithOperations } from './ioK8sApiAdmissionregistrationV1RuleWithOperations';
 import { IoK8sApiAdmissionregistrationV1ServiceReference } from './ioK8sApiAdmissionregistrationV1ServiceReference';
+import { IoK8sApiAdmissionregistrationV1TypeChecking } from './ioK8sApiAdmissionregistrationV1TypeChecking';
+import { IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicy } from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicy';
+import { IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBinding } from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBinding';
+import { IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingList } from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingList';
+import { IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingSpec } from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingSpec';
+import { IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyList } from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyList';
+import { IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicySpec } from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicySpec';
+import { IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyStatus } from './ioK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyStatus';
 import { IoK8sApiAdmissionregistrationV1ValidatingWebhook } from './ioK8sApiAdmissionregistrationV1ValidatingWebhook';
 import { IoK8sApiAdmissionregistrationV1ValidatingWebhookConfiguration } from './ioK8sApiAdmissionregistrationV1ValidatingWebhookConfiguration';
 import { IoK8sApiAdmissionregistrationV1ValidatingWebhookConfigurationList } from './ioK8sApiAdmissionregistrationV1ValidatingWebhookConfigurationList';
+import { IoK8sApiAdmissionregistrationV1Validation } from './ioK8sApiAdmissionregistrationV1Validation';
+import { IoK8sApiAdmissionregistrationV1Variable } from './ioK8sApiAdmissionregistrationV1Variable';
 import { IoK8sApiAdmissionregistrationV1WebhookClientConfig } from './ioK8sApiAdmissionregistrationV1WebhookClientConfig';
 import { IoK8sApiAppsV1ControllerRevision } from './ioK8sApiAppsV1ControllerRevision';
 import { IoK8sApiAppsV1ControllerRevisionList } from './ioK8sApiAppsV1ControllerRevisionList';
@@ -949,11 +1186,14 @@ import { IoK8sApiAppsV1RollingUpdateStatefulSetStrategy } from './ioK8sApiAppsV1
 import { IoK8sApiAppsV1StatefulSet } from './ioK8sApiAppsV1StatefulSet';
 import { IoK8sApiAppsV1StatefulSetCondition } from './ioK8sApiAppsV1StatefulSetCondition';
 import { IoK8sApiAppsV1StatefulSetList } from './ioK8sApiAppsV1StatefulSetList';
+import { IoK8sApiAppsV1StatefulSetOrdinals } from './ioK8sApiAppsV1StatefulSetOrdinals';
 import { IoK8sApiAppsV1StatefulSetPersistentVolumeClaimRetentionPolicy } from './ioK8sApiAppsV1StatefulSetPersistentVolumeClaimRetentionPolicy';
 import { IoK8sApiAppsV1StatefulSetSpec } from './ioK8sApiAppsV1StatefulSetSpec';
 import { IoK8sApiAppsV1StatefulSetStatus } from './ioK8sApiAppsV1StatefulSetStatus';
 import { IoK8sApiAppsV1StatefulSetUpdateStrategy } from './ioK8sApiAppsV1StatefulSetUpdateStrategy';
 import { IoK8sApiAuthenticationV1BoundObjectReference } from './ioK8sApiAuthenticationV1BoundObjectReference';
+import { IoK8sApiAuthenticationV1SelfSubjectReview } from './ioK8sApiAuthenticationV1SelfSubjectReview';
+import { IoK8sApiAuthenticationV1SelfSubjectReviewStatus } from './ioK8sApiAuthenticationV1SelfSubjectReviewStatus';
 import { IoK8sApiAuthenticationV1TokenRequest } from './ioK8sApiAuthenticationV1TokenRequest';
 import { IoK8sApiAuthenticationV1TokenRequestSpec } from './ioK8sApiAuthenticationV1TokenRequestSpec';
 import { IoK8sApiAuthenticationV1TokenRequestStatus } from './ioK8sApiAuthenticationV1TokenRequestStatus';
@@ -982,7 +1222,6 @@ import { IoK8sApiAutoscalingV1HorizontalPodAutoscalerStatus } from './ioK8sApiAu
 import { IoK8sApiAutoscalingV1Scale } from './ioK8sApiAutoscalingV1Scale';
 import { IoK8sApiAutoscalingV1ScaleSpec } from './ioK8sApiAutoscalingV1ScaleSpec';
 import { IoK8sApiAutoscalingV1ScaleStatus } from './ioK8sApiAutoscalingV1ScaleStatus';
-import { IoK8sApiAutoscalingV1ScaleV2 } from './ioK8sApiAutoscalingV1ScaleV2';
 import { IoK8sApiAutoscalingV2ContainerResourceMetricSource } from './ioK8sApiAutoscalingV2ContainerResourceMetricSource';
 import { IoK8sApiAutoscalingV2ContainerResourceMetricStatus } from './ioK8sApiAutoscalingV2ContainerResourceMetricStatus';
 import { IoK8sApiAutoscalingV2CrossVersionObjectReference } from './ioK8sApiAutoscalingV2CrossVersionObjectReference';
@@ -1007,48 +1246,6 @@ import { IoK8sApiAutoscalingV2PodsMetricSource } from './ioK8sApiAutoscalingV2Po
 import { IoK8sApiAutoscalingV2PodsMetricStatus } from './ioK8sApiAutoscalingV2PodsMetricStatus';
 import { IoK8sApiAutoscalingV2ResourceMetricSource } from './ioK8sApiAutoscalingV2ResourceMetricSource';
 import { IoK8sApiAutoscalingV2ResourceMetricStatus } from './ioK8sApiAutoscalingV2ResourceMetricStatus';
-import { IoK8sApiAutoscalingV2beta1ContainerResourceMetricSource } from './ioK8sApiAutoscalingV2beta1ContainerResourceMetricSource';
-import { IoK8sApiAutoscalingV2beta1ContainerResourceMetricStatus } from './ioK8sApiAutoscalingV2beta1ContainerResourceMetricStatus';
-import { IoK8sApiAutoscalingV2beta1CrossVersionObjectReference } from './ioK8sApiAutoscalingV2beta1CrossVersionObjectReference';
-import { IoK8sApiAutoscalingV2beta1ExternalMetricSource } from './ioK8sApiAutoscalingV2beta1ExternalMetricSource';
-import { IoK8sApiAutoscalingV2beta1ExternalMetricStatus } from './ioK8sApiAutoscalingV2beta1ExternalMetricStatus';
-import { IoK8sApiAutoscalingV2beta1HorizontalPodAutoscaler } from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscaler';
-import { IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerCondition } from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerCondition';
-import { IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerList } from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerList';
-import { IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerSpec } from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerSpec';
-import { IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerStatus } from './ioK8sApiAutoscalingV2beta1HorizontalPodAutoscalerStatus';
-import { IoK8sApiAutoscalingV2beta1MetricSpec } from './ioK8sApiAutoscalingV2beta1MetricSpec';
-import { IoK8sApiAutoscalingV2beta1MetricStatus } from './ioK8sApiAutoscalingV2beta1MetricStatus';
-import { IoK8sApiAutoscalingV2beta1ObjectMetricSource } from './ioK8sApiAutoscalingV2beta1ObjectMetricSource';
-import { IoK8sApiAutoscalingV2beta1ObjectMetricStatus } from './ioK8sApiAutoscalingV2beta1ObjectMetricStatus';
-import { IoK8sApiAutoscalingV2beta1PodsMetricSource } from './ioK8sApiAutoscalingV2beta1PodsMetricSource';
-import { IoK8sApiAutoscalingV2beta1PodsMetricStatus } from './ioK8sApiAutoscalingV2beta1PodsMetricStatus';
-import { IoK8sApiAutoscalingV2beta1ResourceMetricSource } from './ioK8sApiAutoscalingV2beta1ResourceMetricSource';
-import { IoK8sApiAutoscalingV2beta1ResourceMetricStatus } from './ioK8sApiAutoscalingV2beta1ResourceMetricStatus';
-import { IoK8sApiAutoscalingV2beta2ContainerResourceMetricSource } from './ioK8sApiAutoscalingV2beta2ContainerResourceMetricSource';
-import { IoK8sApiAutoscalingV2beta2ContainerResourceMetricStatus } from './ioK8sApiAutoscalingV2beta2ContainerResourceMetricStatus';
-import { IoK8sApiAutoscalingV2beta2CrossVersionObjectReference } from './ioK8sApiAutoscalingV2beta2CrossVersionObjectReference';
-import { IoK8sApiAutoscalingV2beta2ExternalMetricSource } from './ioK8sApiAutoscalingV2beta2ExternalMetricSource';
-import { IoK8sApiAutoscalingV2beta2ExternalMetricStatus } from './ioK8sApiAutoscalingV2beta2ExternalMetricStatus';
-import { IoK8sApiAutoscalingV2beta2HPAScalingPolicy } from './ioK8sApiAutoscalingV2beta2HPAScalingPolicy';
-import { IoK8sApiAutoscalingV2beta2HPAScalingRules } from './ioK8sApiAutoscalingV2beta2HPAScalingRules';
-import { IoK8sApiAutoscalingV2beta2HorizontalPodAutoscaler } from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscaler';
-import { IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior } from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior';
-import { IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerCondition } from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerCondition';
-import { IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerList } from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerList';
-import { IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec } from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec';
-import { IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerStatus } from './ioK8sApiAutoscalingV2beta2HorizontalPodAutoscalerStatus';
-import { IoK8sApiAutoscalingV2beta2MetricIdentifier } from './ioK8sApiAutoscalingV2beta2MetricIdentifier';
-import { IoK8sApiAutoscalingV2beta2MetricSpec } from './ioK8sApiAutoscalingV2beta2MetricSpec';
-import { IoK8sApiAutoscalingV2beta2MetricStatus } from './ioK8sApiAutoscalingV2beta2MetricStatus';
-import { IoK8sApiAutoscalingV2beta2MetricTarget } from './ioK8sApiAutoscalingV2beta2MetricTarget';
-import { IoK8sApiAutoscalingV2beta2MetricValueStatus } from './ioK8sApiAutoscalingV2beta2MetricValueStatus';
-import { IoK8sApiAutoscalingV2beta2ObjectMetricSource } from './ioK8sApiAutoscalingV2beta2ObjectMetricSource';
-import { IoK8sApiAutoscalingV2beta2ObjectMetricStatus } from './ioK8sApiAutoscalingV2beta2ObjectMetricStatus';
-import { IoK8sApiAutoscalingV2beta2PodsMetricSource } from './ioK8sApiAutoscalingV2beta2PodsMetricSource';
-import { IoK8sApiAutoscalingV2beta2PodsMetricStatus } from './ioK8sApiAutoscalingV2beta2PodsMetricStatus';
-import { IoK8sApiAutoscalingV2beta2ResourceMetricSource } from './ioK8sApiAutoscalingV2beta2ResourceMetricSource';
-import { IoK8sApiAutoscalingV2beta2ResourceMetricStatus } from './ioK8sApiAutoscalingV2beta2ResourceMetricStatus';
 import { IoK8sApiBatchV1CronJob } from './ioK8sApiBatchV1CronJob';
 import { IoK8sApiBatchV1CronJobList } from './ioK8sApiBatchV1CronJobList';
 import { IoK8sApiBatchV1CronJobSpec } from './ioK8sApiBatchV1CronJobSpec';
@@ -1059,12 +1256,13 @@ import { IoK8sApiBatchV1JobList } from './ioK8sApiBatchV1JobList';
 import { IoK8sApiBatchV1JobSpec } from './ioK8sApiBatchV1JobSpec';
 import { IoK8sApiBatchV1JobStatus } from './ioK8sApiBatchV1JobStatus';
 import { IoK8sApiBatchV1JobTemplateSpec } from './ioK8sApiBatchV1JobTemplateSpec';
+import { IoK8sApiBatchV1PodFailurePolicy } from './ioK8sApiBatchV1PodFailurePolicy';
+import { IoK8sApiBatchV1PodFailurePolicyOnExitCodesRequirement } from './ioK8sApiBatchV1PodFailurePolicyOnExitCodesRequirement';
+import { IoK8sApiBatchV1PodFailurePolicyOnPodConditionsPattern } from './ioK8sApiBatchV1PodFailurePolicyOnPodConditionsPattern';
+import { IoK8sApiBatchV1PodFailurePolicyRule } from './ioK8sApiBatchV1PodFailurePolicyRule';
+import { IoK8sApiBatchV1SuccessPolicy } from './ioK8sApiBatchV1SuccessPolicy';
+import { IoK8sApiBatchV1SuccessPolicyRule } from './ioK8sApiBatchV1SuccessPolicyRule';
 import { IoK8sApiBatchV1UncountedTerminatedPods } from './ioK8sApiBatchV1UncountedTerminatedPods';
-import { IoK8sApiBatchV1beta1CronJob } from './ioK8sApiBatchV1beta1CronJob';
-import { IoK8sApiBatchV1beta1CronJobList } from './ioK8sApiBatchV1beta1CronJobList';
-import { IoK8sApiBatchV1beta1CronJobSpec } from './ioK8sApiBatchV1beta1CronJobSpec';
-import { IoK8sApiBatchV1beta1CronJobStatus } from './ioK8sApiBatchV1beta1CronJobStatus';
-import { IoK8sApiBatchV1beta1JobTemplateSpec } from './ioK8sApiBatchV1beta1JobTemplateSpec';
 import { IoK8sApiCertificatesV1CertificateSigningRequest } from './ioK8sApiCertificatesV1CertificateSigningRequest';
 import { IoK8sApiCertificatesV1CertificateSigningRequestCondition } from './ioK8sApiCertificatesV1CertificateSigningRequestCondition';
 import { IoK8sApiCertificatesV1CertificateSigningRequestList } from './ioK8sApiCertificatesV1CertificateSigningRequestList';
@@ -1075,6 +1273,7 @@ import { IoK8sApiCoordinationV1LeaseList } from './ioK8sApiCoordinationV1LeaseLi
 import { IoK8sApiCoordinationV1LeaseSpec } from './ioK8sApiCoordinationV1LeaseSpec';
 import { IoK8sApiCoreV1AWSElasticBlockStoreVolumeSource } from './ioK8sApiCoreV1AWSElasticBlockStoreVolumeSource';
 import { IoK8sApiCoreV1Affinity } from './ioK8sApiCoreV1Affinity';
+import { IoK8sApiCoreV1AppArmorProfile } from './ioK8sApiCoreV1AppArmorProfile';
 import { IoK8sApiCoreV1AttachedVolume } from './ioK8sApiCoreV1AttachedVolume';
 import { IoK8sApiCoreV1AzureDiskVolumeSource } from './ioK8sApiCoreV1AzureDiskVolumeSource';
 import { IoK8sApiCoreV1AzureFilePersistentVolumeSource } from './ioK8sApiCoreV1AzureFilePersistentVolumeSource';
@@ -1087,7 +1286,9 @@ import { IoK8sApiCoreV1CephFSPersistentVolumeSource } from './ioK8sApiCoreV1Ceph
 import { IoK8sApiCoreV1CephFSVolumeSource } from './ioK8sApiCoreV1CephFSVolumeSource';
 import { IoK8sApiCoreV1CinderPersistentVolumeSource } from './ioK8sApiCoreV1CinderPersistentVolumeSource';
 import { IoK8sApiCoreV1CinderVolumeSource } from './ioK8sApiCoreV1CinderVolumeSource';
+import { IoK8sApiCoreV1ClaimSource } from './ioK8sApiCoreV1ClaimSource';
 import { IoK8sApiCoreV1ClientIPConfig } from './ioK8sApiCoreV1ClientIPConfig';
+import { IoK8sApiCoreV1ClusterTrustBundleProjection } from './ioK8sApiCoreV1ClusterTrustBundleProjection';
 import { IoK8sApiCoreV1ComponentCondition } from './ioK8sApiCoreV1ComponentCondition';
 import { IoK8sApiCoreV1ComponentStatus } from './ioK8sApiCoreV1ComponentStatus';
 import { IoK8sApiCoreV1ComponentStatusList } from './ioK8sApiCoreV1ComponentStatusList';
@@ -1101,6 +1302,7 @@ import { IoK8sApiCoreV1ConfigMapVolumeSource } from './ioK8sApiCoreV1ConfigMapVo
 import { IoK8sApiCoreV1Container } from './ioK8sApiCoreV1Container';
 import { IoK8sApiCoreV1ContainerImage } from './ioK8sApiCoreV1ContainerImage';
 import { IoK8sApiCoreV1ContainerPort } from './ioK8sApiCoreV1ContainerPort';
+import { IoK8sApiCoreV1ContainerResizePolicy } from './ioK8sApiCoreV1ContainerResizePolicy';
 import { IoK8sApiCoreV1ContainerState } from './ioK8sApiCoreV1ContainerState';
 import { IoK8sApiCoreV1ContainerStateRunning } from './ioK8sApiCoreV1ContainerStateRunning';
 import { IoK8sApiCoreV1ContainerStateTerminated } from './ioK8sApiCoreV1ContainerStateTerminated';
@@ -1138,6 +1340,7 @@ import { IoK8sApiCoreV1GlusterfsVolumeSource } from './ioK8sApiCoreV1GlusterfsVo
 import { IoK8sApiCoreV1HTTPGetAction } from './ioK8sApiCoreV1HTTPGetAction';
 import { IoK8sApiCoreV1HTTPHeader } from './ioK8sApiCoreV1HTTPHeader';
 import { IoK8sApiCoreV1HostAlias } from './ioK8sApiCoreV1HostAlias';
+import { IoK8sApiCoreV1HostIP } from './ioK8sApiCoreV1HostIP';
 import { IoK8sApiCoreV1HostPathVolumeSource } from './ioK8sApiCoreV1HostPathVolumeSource';
 import { IoK8sApiCoreV1ISCSIPersistentVolumeSource } from './ioK8sApiCoreV1ISCSIPersistentVolumeSource';
 import { IoK8sApiCoreV1ISCSIVolumeSource } from './ioK8sApiCoreV1ISCSIVolumeSource';
@@ -1152,6 +1355,7 @@ import { IoK8sApiCoreV1LoadBalancerIngress } from './ioK8sApiCoreV1LoadBalancerI
 import { IoK8sApiCoreV1LoadBalancerStatus } from './ioK8sApiCoreV1LoadBalancerStatus';
 import { IoK8sApiCoreV1LocalObjectReference } from './ioK8sApiCoreV1LocalObjectReference';
 import { IoK8sApiCoreV1LocalVolumeSource } from './ioK8sApiCoreV1LocalVolumeSource';
+import { IoK8sApiCoreV1ModifyVolumeStatus } from './ioK8sApiCoreV1ModifyVolumeStatus';
 import { IoK8sApiCoreV1NFSVolumeSource } from './ioK8sApiCoreV1NFSVolumeSource';
 import { IoK8sApiCoreV1Namespace } from './ioK8sApiCoreV1Namespace';
 import { IoK8sApiCoreV1NamespaceCondition } from './ioK8sApiCoreV1NamespaceCondition';
@@ -1166,6 +1370,8 @@ import { IoK8sApiCoreV1NodeConfigSource } from './ioK8sApiCoreV1NodeConfigSource
 import { IoK8sApiCoreV1NodeConfigStatus } from './ioK8sApiCoreV1NodeConfigStatus';
 import { IoK8sApiCoreV1NodeDaemonEndpoints } from './ioK8sApiCoreV1NodeDaemonEndpoints';
 import { IoK8sApiCoreV1NodeList } from './ioK8sApiCoreV1NodeList';
+import { IoK8sApiCoreV1NodeRuntimeHandler } from './ioK8sApiCoreV1NodeRuntimeHandler';
+import { IoK8sApiCoreV1NodeRuntimeHandlerFeatures } from './ioK8sApiCoreV1NodeRuntimeHandlerFeatures';
 import { IoK8sApiCoreV1NodeSelector } from './ioK8sApiCoreV1NodeSelector';
 import { IoK8sApiCoreV1NodeSelectorRequirement } from './ioK8sApiCoreV1NodeSelectorRequirement';
 import { IoK8sApiCoreV1NodeSelectorTerm } from './ioK8sApiCoreV1NodeSelectorTerm';
@@ -1197,6 +1403,9 @@ import { IoK8sApiCoreV1PodIP } from './ioK8sApiCoreV1PodIP';
 import { IoK8sApiCoreV1PodList } from './ioK8sApiCoreV1PodList';
 import { IoK8sApiCoreV1PodOS } from './ioK8sApiCoreV1PodOS';
 import { IoK8sApiCoreV1PodReadinessGate } from './ioK8sApiCoreV1PodReadinessGate';
+import { IoK8sApiCoreV1PodResourceClaim } from './ioK8sApiCoreV1PodResourceClaim';
+import { IoK8sApiCoreV1PodResourceClaimStatus } from './ioK8sApiCoreV1PodResourceClaimStatus';
+import { IoK8sApiCoreV1PodSchedulingGate } from './ioK8sApiCoreV1PodSchedulingGate';
 import { IoK8sApiCoreV1PodSecurityContext } from './ioK8sApiCoreV1PodSecurityContext';
 import { IoK8sApiCoreV1PodSpec } from './ioK8sApiCoreV1PodSpec';
 import { IoK8sApiCoreV1PodStatus } from './ioK8sApiCoreV1PodStatus';
@@ -1216,6 +1425,7 @@ import { IoK8sApiCoreV1ReplicationControllerCondition } from './ioK8sApiCoreV1Re
 import { IoK8sApiCoreV1ReplicationControllerList } from './ioK8sApiCoreV1ReplicationControllerList';
 import { IoK8sApiCoreV1ReplicationControllerSpec } from './ioK8sApiCoreV1ReplicationControllerSpec';
 import { IoK8sApiCoreV1ReplicationControllerStatus } from './ioK8sApiCoreV1ReplicationControllerStatus';
+import { IoK8sApiCoreV1ResourceClaim } from './ioK8sApiCoreV1ResourceClaim';
 import { IoK8sApiCoreV1ResourceFieldSelector } from './ioK8sApiCoreV1ResourceFieldSelector';
 import { IoK8sApiCoreV1ResourceQuota } from './ioK8sApiCoreV1ResourceQuota';
 import { IoK8sApiCoreV1ResourceQuotaList } from './ioK8sApiCoreV1ResourceQuotaList';
@@ -1245,6 +1455,7 @@ import { IoK8sApiCoreV1ServicePort } from './ioK8sApiCoreV1ServicePort';
 import { IoK8sApiCoreV1ServiceSpec } from './ioK8sApiCoreV1ServiceSpec';
 import { IoK8sApiCoreV1ServiceStatus } from './ioK8sApiCoreV1ServiceStatus';
 import { IoK8sApiCoreV1SessionAffinityConfig } from './ioK8sApiCoreV1SessionAffinityConfig';
+import { IoK8sApiCoreV1SleepAction } from './ioK8sApiCoreV1SleepAction';
 import { IoK8sApiCoreV1StorageOSPersistentVolumeSource } from './ioK8sApiCoreV1StorageOSPersistentVolumeSource';
 import { IoK8sApiCoreV1StorageOSVolumeSource } from './ioK8sApiCoreV1StorageOSVolumeSource';
 import { IoK8sApiCoreV1Sysctl } from './ioK8sApiCoreV1Sysctl';
@@ -1255,11 +1466,14 @@ import { IoK8sApiCoreV1TopologySelectorLabelRequirement } from './ioK8sApiCoreV1
 import { IoK8sApiCoreV1TopologySelectorTerm } from './ioK8sApiCoreV1TopologySelectorTerm';
 import { IoK8sApiCoreV1TopologySpreadConstraint } from './ioK8sApiCoreV1TopologySpreadConstraint';
 import { IoK8sApiCoreV1TypedLocalObjectReference } from './ioK8sApiCoreV1TypedLocalObjectReference';
+import { IoK8sApiCoreV1TypedObjectReference } from './ioK8sApiCoreV1TypedObjectReference';
 import { IoK8sApiCoreV1Volume } from './ioK8sApiCoreV1Volume';
 import { IoK8sApiCoreV1VolumeDevice } from './ioK8sApiCoreV1VolumeDevice';
 import { IoK8sApiCoreV1VolumeMount } from './ioK8sApiCoreV1VolumeMount';
+import { IoK8sApiCoreV1VolumeMountStatus } from './ioK8sApiCoreV1VolumeMountStatus';
 import { IoK8sApiCoreV1VolumeNodeAffinity } from './ioK8sApiCoreV1VolumeNodeAffinity';
 import { IoK8sApiCoreV1VolumeProjection } from './ioK8sApiCoreV1VolumeProjection';
+import { IoK8sApiCoreV1VolumeResourceRequirements } from './ioK8sApiCoreV1VolumeResourceRequirements';
 import { IoK8sApiCoreV1VsphereVirtualDiskVolumeSource } from './ioK8sApiCoreV1VsphereVirtualDiskVolumeSource';
 import { IoK8sApiCoreV1WeightedPodAffinityTerm } from './ioK8sApiCoreV1WeightedPodAffinityTerm';
 import { IoK8sApiCoreV1WindowsSecurityContextOptions } from './ioK8sApiCoreV1WindowsSecurityContextOptions';
@@ -1270,63 +1484,55 @@ import { IoK8sApiDiscoveryV1EndpointPort } from './ioK8sApiDiscoveryV1EndpointPo
 import { IoK8sApiDiscoveryV1EndpointSlice } from './ioK8sApiDiscoveryV1EndpointSlice';
 import { IoK8sApiDiscoveryV1EndpointSliceList } from './ioK8sApiDiscoveryV1EndpointSliceList';
 import { IoK8sApiDiscoveryV1ForZone } from './ioK8sApiDiscoveryV1ForZone';
-import { IoK8sApiDiscoveryV1beta1Endpoint } from './ioK8sApiDiscoveryV1beta1Endpoint';
-import { IoK8sApiDiscoveryV1beta1EndpointConditions } from './ioK8sApiDiscoveryV1beta1EndpointConditions';
-import { IoK8sApiDiscoveryV1beta1EndpointHints } from './ioK8sApiDiscoveryV1beta1EndpointHints';
-import { IoK8sApiDiscoveryV1beta1EndpointPort } from './ioK8sApiDiscoveryV1beta1EndpointPort';
-import { IoK8sApiDiscoveryV1beta1EndpointSlice } from './ioK8sApiDiscoveryV1beta1EndpointSlice';
-import { IoK8sApiDiscoveryV1beta1EndpointSliceList } from './ioK8sApiDiscoveryV1beta1EndpointSliceList';
-import { IoK8sApiDiscoveryV1beta1ForZone } from './ioK8sApiDiscoveryV1beta1ForZone';
 import { IoK8sApiEventsV1Event } from './ioK8sApiEventsV1Event';
 import { IoK8sApiEventsV1EventList } from './ioK8sApiEventsV1EventList';
 import { IoK8sApiEventsV1EventSeries } from './ioK8sApiEventsV1EventSeries';
-import { IoK8sApiEventsV1beta1Event } from './ioK8sApiEventsV1beta1Event';
-import { IoK8sApiEventsV1beta1EventList } from './ioK8sApiEventsV1beta1EventList';
-import { IoK8sApiEventsV1beta1EventSeries } from './ioK8sApiEventsV1beta1EventSeries';
-import { IoK8sApiFlowcontrolV1beta1FlowDistinguisherMethod } from './ioK8sApiFlowcontrolV1beta1FlowDistinguisherMethod';
-import { IoK8sApiFlowcontrolV1beta1FlowSchema } from './ioK8sApiFlowcontrolV1beta1FlowSchema';
-import { IoK8sApiFlowcontrolV1beta1FlowSchemaCondition } from './ioK8sApiFlowcontrolV1beta1FlowSchemaCondition';
-import { IoK8sApiFlowcontrolV1beta1FlowSchemaList } from './ioK8sApiFlowcontrolV1beta1FlowSchemaList';
-import { IoK8sApiFlowcontrolV1beta1FlowSchemaSpec } from './ioK8sApiFlowcontrolV1beta1FlowSchemaSpec';
-import { IoK8sApiFlowcontrolV1beta1FlowSchemaStatus } from './ioK8sApiFlowcontrolV1beta1FlowSchemaStatus';
-import { IoK8sApiFlowcontrolV1beta1GroupSubject } from './ioK8sApiFlowcontrolV1beta1GroupSubject';
-import { IoK8sApiFlowcontrolV1beta1LimitResponse } from './ioK8sApiFlowcontrolV1beta1LimitResponse';
-import { IoK8sApiFlowcontrolV1beta1LimitedPriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1beta1LimitedPriorityLevelConfiguration';
-import { IoK8sApiFlowcontrolV1beta1NonResourcePolicyRule } from './ioK8sApiFlowcontrolV1beta1NonResourcePolicyRule';
-import { IoK8sApiFlowcontrolV1beta1PolicyRulesWithSubjects } from './ioK8sApiFlowcontrolV1beta1PolicyRulesWithSubjects';
-import { IoK8sApiFlowcontrolV1beta1PriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfiguration';
-import { IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationCondition } from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationCondition';
-import { IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationList } from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationList';
-import { IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationReference } from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationReference';
-import { IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationSpec } from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationSpec';
-import { IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationStatus } from './ioK8sApiFlowcontrolV1beta1PriorityLevelConfigurationStatus';
-import { IoK8sApiFlowcontrolV1beta1QueuingConfiguration } from './ioK8sApiFlowcontrolV1beta1QueuingConfiguration';
-import { IoK8sApiFlowcontrolV1beta1ResourcePolicyRule } from './ioK8sApiFlowcontrolV1beta1ResourcePolicyRule';
-import { IoK8sApiFlowcontrolV1beta1ServiceAccountSubject } from './ioK8sApiFlowcontrolV1beta1ServiceAccountSubject';
-import { IoK8sApiFlowcontrolV1beta1Subject } from './ioK8sApiFlowcontrolV1beta1Subject';
-import { IoK8sApiFlowcontrolV1beta1UserSubject } from './ioK8sApiFlowcontrolV1beta1UserSubject';
-import { IoK8sApiFlowcontrolV1beta2FlowDistinguisherMethod } from './ioK8sApiFlowcontrolV1beta2FlowDistinguisherMethod';
-import { IoK8sApiFlowcontrolV1beta2FlowSchema } from './ioK8sApiFlowcontrolV1beta2FlowSchema';
-import { IoK8sApiFlowcontrolV1beta2FlowSchemaCondition } from './ioK8sApiFlowcontrolV1beta2FlowSchemaCondition';
-import { IoK8sApiFlowcontrolV1beta2FlowSchemaList } from './ioK8sApiFlowcontrolV1beta2FlowSchemaList';
-import { IoK8sApiFlowcontrolV1beta2FlowSchemaSpec } from './ioK8sApiFlowcontrolV1beta2FlowSchemaSpec';
-import { IoK8sApiFlowcontrolV1beta2FlowSchemaStatus } from './ioK8sApiFlowcontrolV1beta2FlowSchemaStatus';
-import { IoK8sApiFlowcontrolV1beta2GroupSubject } from './ioK8sApiFlowcontrolV1beta2GroupSubject';
-import { IoK8sApiFlowcontrolV1beta2LimitResponse } from './ioK8sApiFlowcontrolV1beta2LimitResponse';
-import { IoK8sApiFlowcontrolV1beta2LimitedPriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1beta2LimitedPriorityLevelConfiguration';
-import { IoK8sApiFlowcontrolV1beta2NonResourcePolicyRule } from './ioK8sApiFlowcontrolV1beta2NonResourcePolicyRule';
-import { IoK8sApiFlowcontrolV1beta2PolicyRulesWithSubjects } from './ioK8sApiFlowcontrolV1beta2PolicyRulesWithSubjects';
-import { IoK8sApiFlowcontrolV1beta2PriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfiguration';
-import { IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationCondition } from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationCondition';
-import { IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationList } from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationList';
-import { IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationReference } from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationReference';
-import { IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationSpec } from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationSpec';
-import { IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationStatus } from './ioK8sApiFlowcontrolV1beta2PriorityLevelConfigurationStatus';
-import { IoK8sApiFlowcontrolV1beta2QueuingConfiguration } from './ioK8sApiFlowcontrolV1beta2QueuingConfiguration';
-import { IoK8sApiFlowcontrolV1beta2ResourcePolicyRule } from './ioK8sApiFlowcontrolV1beta2ResourcePolicyRule';
-import { IoK8sApiFlowcontrolV1beta2ServiceAccountSubject } from './ioK8sApiFlowcontrolV1beta2ServiceAccountSubject';
-import { IoK8sApiFlowcontrolV1beta2Subject } from './ioK8sApiFlowcontrolV1beta2Subject';
-import { IoK8sApiFlowcontrolV1beta2UserSubject } from './ioK8sApiFlowcontrolV1beta2UserSubject';
+import { IoK8sApiFlowcontrolV1ExemptPriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1ExemptPriorityLevelConfiguration';
+import { IoK8sApiFlowcontrolV1FlowDistinguisherMethod } from './ioK8sApiFlowcontrolV1FlowDistinguisherMethod';
+import { IoK8sApiFlowcontrolV1FlowSchema } from './ioK8sApiFlowcontrolV1FlowSchema';
+import { IoK8sApiFlowcontrolV1FlowSchemaCondition } from './ioK8sApiFlowcontrolV1FlowSchemaCondition';
+import { IoK8sApiFlowcontrolV1FlowSchemaList } from './ioK8sApiFlowcontrolV1FlowSchemaList';
+import { IoK8sApiFlowcontrolV1FlowSchemaSpec } from './ioK8sApiFlowcontrolV1FlowSchemaSpec';
+import { IoK8sApiFlowcontrolV1FlowSchemaStatus } from './ioK8sApiFlowcontrolV1FlowSchemaStatus';
+import { IoK8sApiFlowcontrolV1GroupSubject } from './ioK8sApiFlowcontrolV1GroupSubject';
+import { IoK8sApiFlowcontrolV1LimitResponse } from './ioK8sApiFlowcontrolV1LimitResponse';
+import { IoK8sApiFlowcontrolV1LimitedPriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1LimitedPriorityLevelConfiguration';
+import { IoK8sApiFlowcontrolV1NonResourcePolicyRule } from './ioK8sApiFlowcontrolV1NonResourcePolicyRule';
+import { IoK8sApiFlowcontrolV1PolicyRulesWithSubjects } from './ioK8sApiFlowcontrolV1PolicyRulesWithSubjects';
+import { IoK8sApiFlowcontrolV1PriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1PriorityLevelConfiguration';
+import { IoK8sApiFlowcontrolV1PriorityLevelConfigurationCondition } from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationCondition';
+import { IoK8sApiFlowcontrolV1PriorityLevelConfigurationList } from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationList';
+import { IoK8sApiFlowcontrolV1PriorityLevelConfigurationReference } from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationReference';
+import { IoK8sApiFlowcontrolV1PriorityLevelConfigurationSpec } from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationSpec';
+import { IoK8sApiFlowcontrolV1PriorityLevelConfigurationStatus } from './ioK8sApiFlowcontrolV1PriorityLevelConfigurationStatus';
+import { IoK8sApiFlowcontrolV1QueuingConfiguration } from './ioK8sApiFlowcontrolV1QueuingConfiguration';
+import { IoK8sApiFlowcontrolV1ResourcePolicyRule } from './ioK8sApiFlowcontrolV1ResourcePolicyRule';
+import { IoK8sApiFlowcontrolV1ServiceAccountSubject } from './ioK8sApiFlowcontrolV1ServiceAccountSubject';
+import { IoK8sApiFlowcontrolV1Subject } from './ioK8sApiFlowcontrolV1Subject';
+import { IoK8sApiFlowcontrolV1UserSubject } from './ioK8sApiFlowcontrolV1UserSubject';
+import { IoK8sApiFlowcontrolV1beta3ExemptPriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1beta3ExemptPriorityLevelConfiguration';
+import { IoK8sApiFlowcontrolV1beta3FlowDistinguisherMethod } from './ioK8sApiFlowcontrolV1beta3FlowDistinguisherMethod';
+import { IoK8sApiFlowcontrolV1beta3FlowSchema } from './ioK8sApiFlowcontrolV1beta3FlowSchema';
+import { IoK8sApiFlowcontrolV1beta3FlowSchemaCondition } from './ioK8sApiFlowcontrolV1beta3FlowSchemaCondition';
+import { IoK8sApiFlowcontrolV1beta3FlowSchemaList } from './ioK8sApiFlowcontrolV1beta3FlowSchemaList';
+import { IoK8sApiFlowcontrolV1beta3FlowSchemaSpec } from './ioK8sApiFlowcontrolV1beta3FlowSchemaSpec';
+import { IoK8sApiFlowcontrolV1beta3FlowSchemaStatus } from './ioK8sApiFlowcontrolV1beta3FlowSchemaStatus';
+import { IoK8sApiFlowcontrolV1beta3GroupSubject } from './ioK8sApiFlowcontrolV1beta3GroupSubject';
+import { IoK8sApiFlowcontrolV1beta3LimitResponse } from './ioK8sApiFlowcontrolV1beta3LimitResponse';
+import { IoK8sApiFlowcontrolV1beta3LimitedPriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1beta3LimitedPriorityLevelConfiguration';
+import { IoK8sApiFlowcontrolV1beta3NonResourcePolicyRule } from './ioK8sApiFlowcontrolV1beta3NonResourcePolicyRule';
+import { IoK8sApiFlowcontrolV1beta3PolicyRulesWithSubjects } from './ioK8sApiFlowcontrolV1beta3PolicyRulesWithSubjects';
+import { IoK8sApiFlowcontrolV1beta3PriorityLevelConfiguration } from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfiguration';
+import { IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationCondition } from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationCondition';
+import { IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationList } from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationList';
+import { IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationReference } from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationReference';
+import { IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationSpec } from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationSpec';
+import { IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationStatus } from './ioK8sApiFlowcontrolV1beta3PriorityLevelConfigurationStatus';
+import { IoK8sApiFlowcontrolV1beta3QueuingConfiguration } from './ioK8sApiFlowcontrolV1beta3QueuingConfiguration';
+import { IoK8sApiFlowcontrolV1beta3ResourcePolicyRule } from './ioK8sApiFlowcontrolV1beta3ResourcePolicyRule';
+import { IoK8sApiFlowcontrolV1beta3ServiceAccountSubject } from './ioK8sApiFlowcontrolV1beta3ServiceAccountSubject';
+import { IoK8sApiFlowcontrolV1beta3Subject } from './ioK8sApiFlowcontrolV1beta3Subject';
+import { IoK8sApiFlowcontrolV1beta3UserSubject } from './ioK8sApiFlowcontrolV1beta3UserSubject';
 import { IoK8sApiNetworkingV1HTTPIngressPath } from './ioK8sApiNetworkingV1HTTPIngressPath';
 import { IoK8sApiNetworkingV1HTTPIngressRuleValue } from './ioK8sApiNetworkingV1HTTPIngressRuleValue';
 import { IoK8sApiNetworkingV1IPBlock } from './ioK8sApiNetworkingV1IPBlock';
@@ -1337,6 +1543,9 @@ import { IoK8sApiNetworkingV1IngressClassList } from './ioK8sApiNetworkingV1Ingr
 import { IoK8sApiNetworkingV1IngressClassParametersReference } from './ioK8sApiNetworkingV1IngressClassParametersReference';
 import { IoK8sApiNetworkingV1IngressClassSpec } from './ioK8sApiNetworkingV1IngressClassSpec';
 import { IoK8sApiNetworkingV1IngressList } from './ioK8sApiNetworkingV1IngressList';
+import { IoK8sApiNetworkingV1IngressLoadBalancerIngress } from './ioK8sApiNetworkingV1IngressLoadBalancerIngress';
+import { IoK8sApiNetworkingV1IngressLoadBalancerStatus } from './ioK8sApiNetworkingV1IngressLoadBalancerStatus';
+import { IoK8sApiNetworkingV1IngressPortStatus } from './ioK8sApiNetworkingV1IngressPortStatus';
 import { IoK8sApiNetworkingV1IngressRule } from './ioK8sApiNetworkingV1IngressRule';
 import { IoK8sApiNetworkingV1IngressServiceBackend } from './ioK8sApiNetworkingV1IngressServiceBackend';
 import { IoK8sApiNetworkingV1IngressSpec } from './ioK8sApiNetworkingV1IngressSpec';
@@ -1354,33 +1563,11 @@ import { IoK8sApiNodeV1Overhead } from './ioK8sApiNodeV1Overhead';
 import { IoK8sApiNodeV1RuntimeClass } from './ioK8sApiNodeV1RuntimeClass';
 import { IoK8sApiNodeV1RuntimeClassList } from './ioK8sApiNodeV1RuntimeClassList';
 import { IoK8sApiNodeV1Scheduling } from './ioK8sApiNodeV1Scheduling';
-import { IoK8sApiNodeV1beta1Overhead } from './ioK8sApiNodeV1beta1Overhead';
-import { IoK8sApiNodeV1beta1RuntimeClass } from './ioK8sApiNodeV1beta1RuntimeClass';
-import { IoK8sApiNodeV1beta1RuntimeClassList } from './ioK8sApiNodeV1beta1RuntimeClassList';
-import { IoK8sApiNodeV1beta1Scheduling } from './ioK8sApiNodeV1beta1Scheduling';
 import { IoK8sApiPolicyV1Eviction } from './ioK8sApiPolicyV1Eviction';
 import { IoK8sApiPolicyV1PodDisruptionBudget } from './ioK8sApiPolicyV1PodDisruptionBudget';
 import { IoK8sApiPolicyV1PodDisruptionBudgetList } from './ioK8sApiPolicyV1PodDisruptionBudgetList';
 import { IoK8sApiPolicyV1PodDisruptionBudgetSpec } from './ioK8sApiPolicyV1PodDisruptionBudgetSpec';
 import { IoK8sApiPolicyV1PodDisruptionBudgetStatus } from './ioK8sApiPolicyV1PodDisruptionBudgetStatus';
-import { IoK8sApiPolicyV1beta1AllowedCSIDriver } from './ioK8sApiPolicyV1beta1AllowedCSIDriver';
-import { IoK8sApiPolicyV1beta1AllowedFlexVolume } from './ioK8sApiPolicyV1beta1AllowedFlexVolume';
-import { IoK8sApiPolicyV1beta1AllowedHostPath } from './ioK8sApiPolicyV1beta1AllowedHostPath';
-import { IoK8sApiPolicyV1beta1FSGroupStrategyOptions } from './ioK8sApiPolicyV1beta1FSGroupStrategyOptions';
-import { IoK8sApiPolicyV1beta1HostPortRange } from './ioK8sApiPolicyV1beta1HostPortRange';
-import { IoK8sApiPolicyV1beta1IDRange } from './ioK8sApiPolicyV1beta1IDRange';
-import { IoK8sApiPolicyV1beta1PodDisruptionBudget } from './ioK8sApiPolicyV1beta1PodDisruptionBudget';
-import { IoK8sApiPolicyV1beta1PodDisruptionBudgetList } from './ioK8sApiPolicyV1beta1PodDisruptionBudgetList';
-import { IoK8sApiPolicyV1beta1PodDisruptionBudgetSpec } from './ioK8sApiPolicyV1beta1PodDisruptionBudgetSpec';
-import { IoK8sApiPolicyV1beta1PodDisruptionBudgetStatus } from './ioK8sApiPolicyV1beta1PodDisruptionBudgetStatus';
-import { IoK8sApiPolicyV1beta1PodSecurityPolicy } from './ioK8sApiPolicyV1beta1PodSecurityPolicy';
-import { IoK8sApiPolicyV1beta1PodSecurityPolicyList } from './ioK8sApiPolicyV1beta1PodSecurityPolicyList';
-import { IoK8sApiPolicyV1beta1PodSecurityPolicySpec } from './ioK8sApiPolicyV1beta1PodSecurityPolicySpec';
-import { IoK8sApiPolicyV1beta1RunAsGroupStrategyOptions } from './ioK8sApiPolicyV1beta1RunAsGroupStrategyOptions';
-import { IoK8sApiPolicyV1beta1RunAsUserStrategyOptions } from './ioK8sApiPolicyV1beta1RunAsUserStrategyOptions';
-import { IoK8sApiPolicyV1beta1RuntimeClassStrategyOptions } from './ioK8sApiPolicyV1beta1RuntimeClassStrategyOptions';
-import { IoK8sApiPolicyV1beta1SELinuxStrategyOptions } from './ioK8sApiPolicyV1beta1SELinuxStrategyOptions';
-import { IoK8sApiPolicyV1beta1SupplementalGroupsStrategyOptions } from './ioK8sApiPolicyV1beta1SupplementalGroupsStrategyOptions';
 import { IoK8sApiRbacV1AggregationRule } from './ioK8sApiRbacV1AggregationRule';
 import { IoK8sApiRbacV1ClusterRole } from './ioK8sApiRbacV1ClusterRole';
 import { IoK8sApiRbacV1ClusterRoleBinding } from './ioK8sApiRbacV1ClusterRoleBinding';
@@ -1402,6 +1589,8 @@ import { IoK8sApiStorageV1CSINode } from './ioK8sApiStorageV1CSINode';
 import { IoK8sApiStorageV1CSINodeDriver } from './ioK8sApiStorageV1CSINodeDriver';
 import { IoK8sApiStorageV1CSINodeList } from './ioK8sApiStorageV1CSINodeList';
 import { IoK8sApiStorageV1CSINodeSpec } from './ioK8sApiStorageV1CSINodeSpec';
+import { IoK8sApiStorageV1CSIStorageCapacity } from './ioK8sApiStorageV1CSIStorageCapacity';
+import { IoK8sApiStorageV1CSIStorageCapacityList } from './ioK8sApiStorageV1CSIStorageCapacityList';
 import { IoK8sApiStorageV1StorageClass } from './ioK8sApiStorageV1StorageClass';
 import { IoK8sApiStorageV1StorageClassList } from './ioK8sApiStorageV1StorageClassList';
 import { IoK8sApiStorageV1TokenRequest } from './ioK8sApiStorageV1TokenRequest';
@@ -1412,8 +1601,6 @@ import { IoK8sApiStorageV1VolumeAttachmentSpec } from './ioK8sApiStorageV1Volume
 import { IoK8sApiStorageV1VolumeAttachmentStatus } from './ioK8sApiStorageV1VolumeAttachmentStatus';
 import { IoK8sApiStorageV1VolumeError } from './ioK8sApiStorageV1VolumeError';
 import { IoK8sApiStorageV1VolumeNodeResources } from './ioK8sApiStorageV1VolumeNodeResources';
-import { IoK8sApiStorageV1beta1CSIStorageCapacity } from './ioK8sApiStorageV1beta1CSIStorageCapacity';
-import { IoK8sApiStorageV1beta1CSIStorageCapacityList } from './ioK8sApiStorageV1beta1CSIStorageCapacityList';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceConversion } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceConversion';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinition } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinition';
@@ -1428,6 +1615,7 @@ import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceSubresou
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1ExternalDocumentation } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1ExternalDocumentation';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1JSONSchemaProps } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1JSONSchemaProps';
+import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1SelectableField } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1SelectableField';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1ServiceReference } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1ServiceReference';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1ValidationRule } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1ValidationRule';
 import { IoK8sApiextensionsApiserverPkgApisApiextensionsV1WebhookClientConfig } from './ioK8sApiextensionsApiserverPkgApisApiextensionsV1WebhookClientConfig';
@@ -1439,23 +1627,18 @@ import { IoK8sApimachineryPkgApisMetaV1APIResourceList } from './ioK8sApimachine
 import { IoK8sApimachineryPkgApisMetaV1APIVersions } from './ioK8sApimachineryPkgApisMetaV1APIVersions';
 import { IoK8sApimachineryPkgApisMetaV1Condition } from './ioK8sApimachineryPkgApisMetaV1Condition';
 import { IoK8sApimachineryPkgApisMetaV1DeleteOptions } from './ioK8sApimachineryPkgApisMetaV1DeleteOptions';
-import { IoK8sApimachineryPkgApisMetaV1DeleteOptionsV2 } from './ioK8sApimachineryPkgApisMetaV1DeleteOptionsV2';
 import { IoK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery } from './ioK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery';
 import { IoK8sApimachineryPkgApisMetaV1LabelSelector } from './ioK8sApimachineryPkgApisMetaV1LabelSelector';
 import { IoK8sApimachineryPkgApisMetaV1LabelSelectorRequirement } from './ioK8sApimachineryPkgApisMetaV1LabelSelectorRequirement';
 import { IoK8sApimachineryPkgApisMetaV1ListMeta } from './ioK8sApimachineryPkgApisMetaV1ListMeta';
 import { IoK8sApimachineryPkgApisMetaV1ManagedFieldsEntry } from './ioK8sApimachineryPkgApisMetaV1ManagedFieldsEntry';
 import { IoK8sApimachineryPkgApisMetaV1ObjectMeta } from './ioK8sApimachineryPkgApisMetaV1ObjectMeta';
-import { IoK8sApimachineryPkgApisMetaV1ObjectMetaV2 } from './ioK8sApimachineryPkgApisMetaV1ObjectMetaV2';
 import { IoK8sApimachineryPkgApisMetaV1OwnerReference } from './ioK8sApimachineryPkgApisMetaV1OwnerReference';
-import { IoK8sApimachineryPkgApisMetaV1OwnerReferenceV2 } from './ioK8sApimachineryPkgApisMetaV1OwnerReferenceV2';
 import { IoK8sApimachineryPkgApisMetaV1Preconditions } from './ioK8sApimachineryPkgApisMetaV1Preconditions';
 import { IoK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR } from './ioK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR';
 import { IoK8sApimachineryPkgApisMetaV1Status } from './ioK8sApimachineryPkgApisMetaV1Status';
 import { IoK8sApimachineryPkgApisMetaV1StatusCause } from './ioK8sApimachineryPkgApisMetaV1StatusCause';
 import { IoK8sApimachineryPkgApisMetaV1StatusDetails } from './ioK8sApimachineryPkgApisMetaV1StatusDetails';
-import { IoK8sApimachineryPkgApisMetaV1StatusDetailsV2 } from './ioK8sApimachineryPkgApisMetaV1StatusDetailsV2';
-import { IoK8sApimachineryPkgApisMetaV1StatusV2 } from './ioK8sApimachineryPkgApisMetaV1StatusV2';
 import { IoK8sApimachineryPkgApisMetaV1WatchEvent } from './ioK8sApimachineryPkgApisMetaV1WatchEvent';
 import { IoK8sApimachineryPkgVersionInfo } from './ioK8sApimachineryPkgVersionInfo';
 import { IoK8sKubeAggregatorPkgApisApiregistrationV1APIService } from './ioK8sKubeAggregatorPkgApisApiregistrationV1APIService';
@@ -1464,6 +1647,37 @@ import { IoK8sKubeAggregatorPkgApisApiregistrationV1APIServiceList } from './ioK
 import { IoK8sKubeAggregatorPkgApisApiregistrationV1APIServiceSpec } from './ioK8sKubeAggregatorPkgApisApiregistrationV1APIServiceSpec';
 import { IoK8sKubeAggregatorPkgApisApiregistrationV1APIServiceStatus } from './ioK8sKubeAggregatorPkgApisApiregistrationV1APIServiceStatus';
 import { IoK8sKubeAggregatorPkgApisApiregistrationV1ServiceReference } from './ioK8sKubeAggregatorPkgApisApiregistrationV1ServiceReference';
+import { IoMetallbV1beta1BFDProfile } from './ioMetallbV1beta1BFDProfile';
+import { IoMetallbV1beta1BFDProfileList } from './ioMetallbV1beta1BFDProfileList';
+import { IoMetallbV1beta1BFDProfileSpec } from './ioMetallbV1beta1BFDProfileSpec';
+import { IoMetallbV1beta1BGPAdvertisement } from './ioMetallbV1beta1BGPAdvertisement';
+import { IoMetallbV1beta1BGPAdvertisementList } from './ioMetallbV1beta1BGPAdvertisementList';
+import { IoMetallbV1beta1BGPAdvertisementSpec } from './ioMetallbV1beta1BGPAdvertisementSpec';
+import { IoMetallbV1beta1BGPAdvertisementSpecIpAddressPoolSelectorsInner } from './ioMetallbV1beta1BGPAdvertisementSpecIpAddressPoolSelectorsInner';
+import { IoMetallbV1beta1BGPPeer } from './ioMetallbV1beta1BGPPeer';
+import { IoMetallbV1beta1BGPPeerList } from './ioMetallbV1beta1BGPPeerList';
+import { IoMetallbV1beta1BGPPeerSpec } from './ioMetallbV1beta1BGPPeerSpec';
+import { IoMetallbV1beta1BGPPeerSpecNodeSelectorsInner } from './ioMetallbV1beta1BGPPeerSpecNodeSelectorsInner';
+import { IoMetallbV1beta1BGPPeerSpecNodeSelectorsInnerMatchExpressionsInner } from './ioMetallbV1beta1BGPPeerSpecNodeSelectorsInnerMatchExpressionsInner';
+import { IoMetallbV1beta1Community } from './ioMetallbV1beta1Community';
+import { IoMetallbV1beta1CommunityList } from './ioMetallbV1beta1CommunityList';
+import { IoMetallbV1beta1CommunitySpec } from './ioMetallbV1beta1CommunitySpec';
+import { IoMetallbV1beta1CommunitySpecCommunitiesInner } from './ioMetallbV1beta1CommunitySpecCommunitiesInner';
+import { IoMetallbV1beta1IPAddressPool } from './ioMetallbV1beta1IPAddressPool';
+import { IoMetallbV1beta1IPAddressPoolList } from './ioMetallbV1beta1IPAddressPoolList';
+import { IoMetallbV1beta1IPAddressPoolSpec } from './ioMetallbV1beta1IPAddressPoolSpec';
+import { IoMetallbV1beta1IPAddressPoolSpecServiceAllocation } from './ioMetallbV1beta1IPAddressPoolSpecServiceAllocation';
+import { IoMetallbV1beta1L2Advertisement } from './ioMetallbV1beta1L2Advertisement';
+import { IoMetallbV1beta1L2AdvertisementList } from './ioMetallbV1beta1L2AdvertisementList';
+import { IoMetallbV1beta1L2AdvertisementSpec } from './ioMetallbV1beta1L2AdvertisementSpec';
+import { IoMetallbV1beta1ServiceL2Status } from './ioMetallbV1beta1ServiceL2Status';
+import { IoMetallbV1beta1ServiceL2StatusList } from './ioMetallbV1beta1ServiceL2StatusList';
+import { IoMetallbV1beta1ServiceL2StatusStatus } from './ioMetallbV1beta1ServiceL2StatusStatus';
+import { IoMetallbV1beta1ServiceL2StatusStatusInterfacesInner } from './ioMetallbV1beta1ServiceL2StatusStatusInterfacesInner';
+import { IoMetallbV1beta2BGPPeer } from './ioMetallbV1beta2BGPPeer';
+import { IoMetallbV1beta2BGPPeerList } from './ioMetallbV1beta2BGPPeerList';
+import { IoMetallbV1beta2BGPPeerSpec } from './ioMetallbV1beta2BGPPeerSpec';
+import { IoMetallbV1beta2BGPPeerSpecPasswordSecret } from './ioMetallbV1beta2BGPPeerSpecPasswordSecret';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -1498,8 +1712,92 @@ let enumsMap: {[index: string]: any} = {
         "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneService.ServiceTypeEnum": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneService.ServiceTypeEnum,
         "IoClastixKamajiV1alpha1TenantControlPlaneSpecKubernetes.AdmissionControllersEnum": IoClastixKamajiV1alpha1TenantControlPlaneSpecKubernetes.AdmissionControllersEnum,
         "IoClastixKamajiV1alpha1TenantControlPlaneSpecKubernetesKubelet.CgroupfsEnum": IoClastixKamajiV1alpha1TenantControlPlaneSpecKubernetesKubelet.CgroupfsEnum,
+        "IoClastixKamajiV1alpha1TenantControlPlaneSpecKubernetesKubelet.PreferredAddressTypesEnum": IoClastixKamajiV1alpha1TenantControlPlaneSpecKubernetesKubelet.PreferredAddressTypesEnum,
         "IoClastixKamajiV1alpha1TenantControlPlaneStatusAddonsKonnectivityServiceConditionsInner.StatusEnum": IoClastixKamajiV1alpha1TenantControlPlaneStatusAddonsKonnectivityServiceConditionsInner.StatusEnum,
         "IoClastixKamajiV1alpha1TenantControlPlaneStatusKubernetesResourcesVersion.StatusEnum": IoClastixKamajiV1alpha1TenantControlPlaneStatusKubernetesResourcesVersion.StatusEnum,
+        "IoK8sApiAdmissionregistrationV1MatchResources.MatchPolicyEnum": IoK8sApiAdmissionregistrationV1MatchResources.MatchPolicyEnum,
+        "IoK8sApiAdmissionregistrationV1MutatingWebhook.FailurePolicyEnum": IoK8sApiAdmissionregistrationV1MutatingWebhook.FailurePolicyEnum,
+        "IoK8sApiAdmissionregistrationV1MutatingWebhook.MatchPolicyEnum": IoK8sApiAdmissionregistrationV1MutatingWebhook.MatchPolicyEnum,
+        "IoK8sApiAdmissionregistrationV1MutatingWebhook.ReinvocationPolicyEnum": IoK8sApiAdmissionregistrationV1MutatingWebhook.ReinvocationPolicyEnum,
+        "IoK8sApiAdmissionregistrationV1MutatingWebhook.SideEffectsEnum": IoK8sApiAdmissionregistrationV1MutatingWebhook.SideEffectsEnum,
+        "IoK8sApiAdmissionregistrationV1NamedRuleWithOperations.OperationsEnum": IoK8sApiAdmissionregistrationV1NamedRuleWithOperations.OperationsEnum,
+        "IoK8sApiAdmissionregistrationV1RuleWithOperations.OperationsEnum": IoK8sApiAdmissionregistrationV1RuleWithOperations.OperationsEnum,
+        "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingSpec.ValidationActionsEnum": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingSpec.ValidationActionsEnum,
+        "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicySpec.FailurePolicyEnum": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicySpec.FailurePolicyEnum,
+        "IoK8sApiAdmissionregistrationV1ValidatingWebhook.FailurePolicyEnum": IoK8sApiAdmissionregistrationV1ValidatingWebhook.FailurePolicyEnum,
+        "IoK8sApiAdmissionregistrationV1ValidatingWebhook.MatchPolicyEnum": IoK8sApiAdmissionregistrationV1ValidatingWebhook.MatchPolicyEnum,
+        "IoK8sApiAdmissionregistrationV1ValidatingWebhook.SideEffectsEnum": IoK8sApiAdmissionregistrationV1ValidatingWebhook.SideEffectsEnum,
+        "IoK8sApiAppsV1DaemonSetUpdateStrategy.TypeEnum": IoK8sApiAppsV1DaemonSetUpdateStrategy.TypeEnum,
+        "IoK8sApiAppsV1DeploymentStrategy.TypeEnum": IoK8sApiAppsV1DeploymentStrategy.TypeEnum,
+        "IoK8sApiAppsV1StatefulSetSpec.PodManagementPolicyEnum": IoK8sApiAppsV1StatefulSetSpec.PodManagementPolicyEnum,
+        "IoK8sApiAppsV1StatefulSetUpdateStrategy.TypeEnum": IoK8sApiAppsV1StatefulSetUpdateStrategy.TypeEnum,
+        "IoK8sApiBatchV1CronJobSpec.ConcurrencyPolicyEnum": IoK8sApiBatchV1CronJobSpec.ConcurrencyPolicyEnum,
+        "IoK8sApiBatchV1JobSpec.CompletionModeEnum": IoK8sApiBatchV1JobSpec.CompletionModeEnum,
+        "IoK8sApiBatchV1JobSpec.PodReplacementPolicyEnum": IoK8sApiBatchV1JobSpec.PodReplacementPolicyEnum,
+        "IoK8sApiBatchV1PodFailurePolicyOnExitCodesRequirement.OperatorEnum": IoK8sApiBatchV1PodFailurePolicyOnExitCodesRequirement.OperatorEnum,
+        "IoK8sApiBatchV1PodFailurePolicyRule.ActionEnum": IoK8sApiBatchV1PodFailurePolicyRule.ActionEnum,
+        "IoK8sApiCertificatesV1CertificateSigningRequestSpec.UsagesEnum": IoK8sApiCertificatesV1CertificateSigningRequestSpec.UsagesEnum,
+        "IoK8sApiCoreV1AppArmorProfile.TypeEnum": IoK8sApiCoreV1AppArmorProfile.TypeEnum,
+        "IoK8sApiCoreV1AzureDiskVolumeSource.CachingModeEnum": IoK8sApiCoreV1AzureDiskVolumeSource.CachingModeEnum,
+        "IoK8sApiCoreV1AzureDiskVolumeSource.KindEnum": IoK8sApiCoreV1AzureDiskVolumeSource.KindEnum,
+        "IoK8sApiCoreV1Container.ImagePullPolicyEnum": IoK8sApiCoreV1Container.ImagePullPolicyEnum,
+        "IoK8sApiCoreV1Container.TerminationMessagePolicyEnum": IoK8sApiCoreV1Container.TerminationMessagePolicyEnum,
+        "IoK8sApiCoreV1ContainerPort.ProtocolEnum": IoK8sApiCoreV1ContainerPort.ProtocolEnum,
+        "IoK8sApiCoreV1EndpointPort.ProtocolEnum": IoK8sApiCoreV1EndpointPort.ProtocolEnum,
+        "IoK8sApiCoreV1EphemeralContainer.ImagePullPolicyEnum": IoK8sApiCoreV1EphemeralContainer.ImagePullPolicyEnum,
+        "IoK8sApiCoreV1EphemeralContainer.TerminationMessagePolicyEnum": IoK8sApiCoreV1EphemeralContainer.TerminationMessagePolicyEnum,
+        "IoK8sApiCoreV1HTTPGetAction.SchemeEnum": IoK8sApiCoreV1HTTPGetAction.SchemeEnum,
+        "IoK8sApiCoreV1HostPathVolumeSource.TypeEnum": IoK8sApiCoreV1HostPathVolumeSource.TypeEnum,
+        "IoK8sApiCoreV1ModifyVolumeStatus.StatusEnum": IoK8sApiCoreV1ModifyVolumeStatus.StatusEnum,
+        "IoK8sApiCoreV1NamespaceStatus.PhaseEnum": IoK8sApiCoreV1NamespaceStatus.PhaseEnum,
+        "IoK8sApiCoreV1NodeSelectorRequirement.OperatorEnum": IoK8sApiCoreV1NodeSelectorRequirement.OperatorEnum,
+        "IoK8sApiCoreV1NodeStatus.PhaseEnum": IoK8sApiCoreV1NodeStatus.PhaseEnum,
+        "IoK8sApiCoreV1PersistentVolumeClaimSpec.AccessModesEnum": IoK8sApiCoreV1PersistentVolumeClaimSpec.AccessModesEnum,
+        "IoK8sApiCoreV1PersistentVolumeClaimSpec.VolumeModeEnum": IoK8sApiCoreV1PersistentVolumeClaimSpec.VolumeModeEnum,
+        "IoK8sApiCoreV1PersistentVolumeClaimStatus.AccessModesEnum": IoK8sApiCoreV1PersistentVolumeClaimStatus.AccessModesEnum,
+        "IoK8sApiCoreV1PersistentVolumeClaimStatus.AllocatedResourceStatusesEnum": IoK8sApiCoreV1PersistentVolumeClaimStatus.AllocatedResourceStatusesEnum,
+        "IoK8sApiCoreV1PersistentVolumeClaimStatus.PhaseEnum": IoK8sApiCoreV1PersistentVolumeClaimStatus.PhaseEnum,
+        "IoK8sApiCoreV1PersistentVolumeSpec.AccessModesEnum": IoK8sApiCoreV1PersistentVolumeSpec.AccessModesEnum,
+        "IoK8sApiCoreV1PersistentVolumeSpec.PersistentVolumeReclaimPolicyEnum": IoK8sApiCoreV1PersistentVolumeSpec.PersistentVolumeReclaimPolicyEnum,
+        "IoK8sApiCoreV1PersistentVolumeSpec.VolumeModeEnum": IoK8sApiCoreV1PersistentVolumeSpec.VolumeModeEnum,
+        "IoK8sApiCoreV1PersistentVolumeStatus.PhaseEnum": IoK8sApiCoreV1PersistentVolumeStatus.PhaseEnum,
+        "IoK8sApiCoreV1PodSecurityContext.FsGroupChangePolicyEnum": IoK8sApiCoreV1PodSecurityContext.FsGroupChangePolicyEnum,
+        "IoK8sApiCoreV1PodSpec.DnsPolicyEnum": IoK8sApiCoreV1PodSpec.DnsPolicyEnum,
+        "IoK8sApiCoreV1PodSpec.PreemptionPolicyEnum": IoK8sApiCoreV1PodSpec.PreemptionPolicyEnum,
+        "IoK8sApiCoreV1PodSpec.RestartPolicyEnum": IoK8sApiCoreV1PodSpec.RestartPolicyEnum,
+        "IoK8sApiCoreV1PodStatus.PhaseEnum": IoK8sApiCoreV1PodStatus.PhaseEnum,
+        "IoK8sApiCoreV1PodStatus.QosClassEnum": IoK8sApiCoreV1PodStatus.QosClassEnum,
+        "IoK8sApiCoreV1PortStatus.ProtocolEnum": IoK8sApiCoreV1PortStatus.ProtocolEnum,
+        "IoK8sApiCoreV1ResourceQuotaSpec.ScopesEnum": IoK8sApiCoreV1ResourceQuotaSpec.ScopesEnum,
+        "IoK8sApiCoreV1ScopedResourceSelectorRequirement.OperatorEnum": IoK8sApiCoreV1ScopedResourceSelectorRequirement.OperatorEnum,
+        "IoK8sApiCoreV1ScopedResourceSelectorRequirement.ScopeNameEnum": IoK8sApiCoreV1ScopedResourceSelectorRequirement.ScopeNameEnum,
+        "IoK8sApiCoreV1SeccompProfile.TypeEnum": IoK8sApiCoreV1SeccompProfile.TypeEnum,
+        "IoK8sApiCoreV1SecurityContext.ProcMountEnum": IoK8sApiCoreV1SecurityContext.ProcMountEnum,
+        "IoK8sApiCoreV1ServicePort.ProtocolEnum": IoK8sApiCoreV1ServicePort.ProtocolEnum,
+        "IoK8sApiCoreV1ServiceSpec.ExternalTrafficPolicyEnum": IoK8sApiCoreV1ServiceSpec.ExternalTrafficPolicyEnum,
+        "IoK8sApiCoreV1ServiceSpec.InternalTrafficPolicyEnum": IoK8sApiCoreV1ServiceSpec.InternalTrafficPolicyEnum,
+        "IoK8sApiCoreV1ServiceSpec.IpFamiliesEnum": IoK8sApiCoreV1ServiceSpec.IpFamiliesEnum,
+        "IoK8sApiCoreV1ServiceSpec.IpFamilyPolicyEnum": IoK8sApiCoreV1ServiceSpec.IpFamilyPolicyEnum,
+        "IoK8sApiCoreV1ServiceSpec.SessionAffinityEnum": IoK8sApiCoreV1ServiceSpec.SessionAffinityEnum,
+        "IoK8sApiCoreV1ServiceSpec.TypeEnum": IoK8sApiCoreV1ServiceSpec.TypeEnum,
+        "IoK8sApiCoreV1Taint.EffectEnum": IoK8sApiCoreV1Taint.EffectEnum,
+        "IoK8sApiCoreV1Toleration.EffectEnum": IoK8sApiCoreV1Toleration.EffectEnum,
+        "IoK8sApiCoreV1Toleration.OperatorEnum": IoK8sApiCoreV1Toleration.OperatorEnum,
+        "IoK8sApiCoreV1TopologySpreadConstraint.NodeAffinityPolicyEnum": IoK8sApiCoreV1TopologySpreadConstraint.NodeAffinityPolicyEnum,
+        "IoK8sApiCoreV1TopologySpreadConstraint.NodeTaintsPolicyEnum": IoK8sApiCoreV1TopologySpreadConstraint.NodeTaintsPolicyEnum,
+        "IoK8sApiCoreV1TopologySpreadConstraint.WhenUnsatisfiableEnum": IoK8sApiCoreV1TopologySpreadConstraint.WhenUnsatisfiableEnum,
+        "IoK8sApiCoreV1VolumeMount.MountPropagationEnum": IoK8sApiCoreV1VolumeMount.MountPropagationEnum,
+        "IoK8sApiDiscoveryV1EndpointPort.ProtocolEnum": IoK8sApiDiscoveryV1EndpointPort.ProtocolEnum,
+        "IoK8sApiDiscoveryV1EndpointSlice.AddressTypeEnum": IoK8sApiDiscoveryV1EndpointSlice.AddressTypeEnum,
+        "IoK8sApiNetworkingV1HTTPIngressPath.PathTypeEnum": IoK8sApiNetworkingV1HTTPIngressPath.PathTypeEnum,
+        "IoK8sApiNetworkingV1IngressPortStatus.ProtocolEnum": IoK8sApiNetworkingV1IngressPortStatus.ProtocolEnum,
+        "IoK8sApiNetworkingV1NetworkPolicyPort.ProtocolEnum": IoK8sApiNetworkingV1NetworkPolicyPort.ProtocolEnum,
+        "IoK8sApiNetworkingV1NetworkPolicySpec.PolicyTypesEnum": IoK8sApiNetworkingV1NetworkPolicySpec.PolicyTypesEnum,
+        "IoK8sApiPolicyV1PodDisruptionBudgetSpec.UnhealthyPodEvictionPolicyEnum": IoK8sApiPolicyV1PodDisruptionBudgetSpec.UnhealthyPodEvictionPolicyEnum,
+        "IoK8sApiSchedulingV1PriorityClass.PreemptionPolicyEnum": IoK8sApiSchedulingV1PriorityClass.PreemptionPolicyEnum,
+        "IoK8sApiStorageV1StorageClass.ReclaimPolicyEnum": IoK8sApiStorageV1StorageClass.ReclaimPolicyEnum,
+        "IoK8sApiStorageV1StorageClass.VolumeBindingModeEnum": IoK8sApiStorageV1StorageClass.VolumeBindingModeEnum,
+        "IoK8sApiextensionsApiserverPkgApisApiextensionsV1ValidationRule.ReasonEnum": IoK8sApiextensionsApiserverPkgApisApiextensionsV1ValidationRule.ReasonEnum,
 }
 
 let typeMap: {[index: string]: any} = {
@@ -1550,6 +1848,7 @@ let typeMap: {[index: string]: any} = {
     "IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector": IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector,
     "IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner": IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner,
     "IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAntiAffinity": IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecAffinityPodAntiAffinity,
+    "IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecImagePullSecretsInner": IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecImagePullSecretsInner,
     "IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecTolerationsInner": IoCertManagerAcmeV1ChallengeSpecSolverHttp01IngressPodTemplateSpecTolerationsInner,
     "IoCertManagerAcmeV1ChallengeSpecSolverSelector": IoCertManagerAcmeV1ChallengeSpecSolverSelector,
     "IoCertManagerAcmeV1ChallengeStatus": IoCertManagerAcmeV1ChallengeStatus,
@@ -1597,6 +1896,7 @@ let typeMap: {[index: string]: any} = {
     "IoCertManagerV1ClusterIssuerSpecVaultAuthAppRoleSecretRef": IoCertManagerV1ClusterIssuerSpecVaultAuthAppRoleSecretRef,
     "IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetes": IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetes,
     "IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetesSecretRef": IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetesSecretRef,
+    "IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetesServiceAccountRef": IoCertManagerV1ClusterIssuerSpecVaultAuthKubernetesServiceAccountRef,
     "IoCertManagerV1ClusterIssuerSpecVaultAuthTokenSecretRef": IoCertManagerV1ClusterIssuerSpecVaultAuthTokenSecretRef,
     "IoCertManagerV1ClusterIssuerSpecVaultCaBundleSecretRef": IoCertManagerV1ClusterIssuerSpecVaultCaBundleSecretRef,
     "IoCertManagerV1ClusterIssuerSpecVenafi": IoCertManagerV1ClusterIssuerSpecVenafi,
@@ -1628,16 +1928,127 @@ let typeMap: {[index: string]: any} = {
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsCoreDNS": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsCoreDNS,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivity": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivity,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgent": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgent,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgentTolerationsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityAgentTolerationsInner,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServer": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServer,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResources": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResources,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResourcesClaimsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKonnectivityServerResourcesClaimsInner,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKubeProxy": IoClastixKamajiV1alpha1TenantControlPlaneSpecAddonsKubeProxy,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlane": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlane,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeployment": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeployment,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerConfigMapRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerConfigMapRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvFromInnerSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFrom": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFrom,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromConfigMapKeyRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromConfigMapKeyRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromFieldRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromFieldRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromResourceFieldRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromResourceFieldRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromSecretKeyRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerEnvInnerValueFromSecretKeyRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecycle": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecycle,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStart": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStart,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartExec": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartExec,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGet": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGet,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGetHttpHeadersInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartHttpGetHttpHeadersInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartSleep": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartSleep,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartTcpSocket": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePostStartTcpSocket,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePreStop": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLifecyclePreStop,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbe": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbe,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeGrpc": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeGrpc,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeTcpSocket": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerLivenessProbeTcpSocket,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerPortsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerPortsInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerReadinessProbe": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerReadinessProbe,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResizePolicyInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResizePolicyInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResources": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerResources,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContext": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContext,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextAppArmorProfile": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextAppArmorProfile,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextCapabilities": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextCapabilities,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeLinuxOptions": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeLinuxOptions,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeccompProfile": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextSeccompProfile,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextWindowsOptions": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerSecurityContextWindowsOptions,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerStartupProbe": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerStartupProbe,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeDevicesInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeDevicesInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeMountsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalContainersInnerVolumeMountsInner,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalMetadata": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalMetadata,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumeMounts": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumeMounts,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAwsElasticBlockStore": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAwsElasticBlockStore,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureDisk": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureDisk,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureFile": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerAzureFile,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfs": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfs,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfsSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCephfsSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinder": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinder,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinderSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCinderSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMap": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMap,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMapItemsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerConfigMapItemsInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsi": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsi,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsiNodePublishSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerCsiNodePublishSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPI": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPI,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerFieldRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerFieldRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerResourceFieldRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerDownwardAPIItemsInnerResourceFieldRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEmptyDir": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEmptyDir,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeral": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeral,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplate": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplate,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpec": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpec,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSource": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSource,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSourceRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecDataSourceRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecResources": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecResources,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelector": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelector,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerEphemeralVolumeClaimTemplateSpecSelectorMatchExpressionsInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFc": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFc,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolume": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolume,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolumeSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlexVolumeSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlocker": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerFlocker,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGcePersistentDisk": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGcePersistentDisk,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGitRepo": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGitRepo,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGlusterfs": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerGlusterfs,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerHostPath": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerHostPath,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerImage": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerImage,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsi": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsi,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsiSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerIscsiSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerNfs": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerNfs,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPersistentVolumeClaim": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPersistentVolumeClaim,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPhotonPersistentDisk": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPhotonPersistentDisk,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPortworxVolume": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerPortworxVolume,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjected": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjected,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundle": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundle,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundleLabelSelector": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerClusterTrustBundleLabelSelector,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerConfigMap": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerConfigMap,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerDownwardAPI": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerDownwardAPI,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerSecret": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerSecret,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerServiceAccountToken": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerProjectedSourcesInnerServiceAccountToken,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerQuobyte": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerQuobyte,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbd": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbd,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbdSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerRbdSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIO": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIO,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIOSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerScaleIOSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerSecret": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerSecret,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageos": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageos,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageosSecretRef": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerStorageosSecretRef,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerVsphereVolume": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAdditionalVolumesInnerVsphereVolume,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinity": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinity,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinity": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinity,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreference": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreference,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreferenceMatchExpressionsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPreferenceMatchExpressionsInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecution,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityNodeAffinityRequiredDuringSchedulingIgnoredDuringExecutionNodeSelectorTermsInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinity": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinity,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTerm": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTerm,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermLabelSelector": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermLabelSelector,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityPreferredDuringSchedulingIgnoredDuringExecutionInnerPodAffinityTermNamespaceSelector,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAffinityRequiredDuringSchedulingIgnoredDuringExecutionInner,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAntiAffinity": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentAffinityPodAntiAffinity,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentExtraArgs": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentExtraArgs,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentRegistrySettings": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentRegistrySettings,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResources": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResources,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesApiServer": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesApiServer,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesKine": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentResourcesKine,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategy": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategy,
+    "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategyRollingUpdate": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentStrategyRollingUpdate,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInner": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInner,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInnerLabelSelector": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneDeploymentTopologySpreadConstraintsInnerLabelSelector,
     "IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneIngress": IoClastixKamajiV1alpha1TenantControlPlaneSpecControlPlaneIngress,
@@ -1679,14 +2090,31 @@ let typeMap: {[index: string]: any} = {
     "IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageCertificate": IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageCertificate,
     "IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageConfig": IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageConfig,
     "IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageSetup": IoClastixKamajiV1alpha1TenantControlPlaneStatusStorageSetup,
+    "IoK8sApiAdmissionregistrationV1AuditAnnotation": IoK8sApiAdmissionregistrationV1AuditAnnotation,
+    "IoK8sApiAdmissionregistrationV1ExpressionWarning": IoK8sApiAdmissionregistrationV1ExpressionWarning,
+    "IoK8sApiAdmissionregistrationV1MatchCondition": IoK8sApiAdmissionregistrationV1MatchCondition,
+    "IoK8sApiAdmissionregistrationV1MatchResources": IoK8sApiAdmissionregistrationV1MatchResources,
     "IoK8sApiAdmissionregistrationV1MutatingWebhook": IoK8sApiAdmissionregistrationV1MutatingWebhook,
     "IoK8sApiAdmissionregistrationV1MutatingWebhookConfiguration": IoK8sApiAdmissionregistrationV1MutatingWebhookConfiguration,
     "IoK8sApiAdmissionregistrationV1MutatingWebhookConfigurationList": IoK8sApiAdmissionregistrationV1MutatingWebhookConfigurationList,
+    "IoK8sApiAdmissionregistrationV1NamedRuleWithOperations": IoK8sApiAdmissionregistrationV1NamedRuleWithOperations,
+    "IoK8sApiAdmissionregistrationV1ParamKind": IoK8sApiAdmissionregistrationV1ParamKind,
+    "IoK8sApiAdmissionregistrationV1ParamRef": IoK8sApiAdmissionregistrationV1ParamRef,
     "IoK8sApiAdmissionregistrationV1RuleWithOperations": IoK8sApiAdmissionregistrationV1RuleWithOperations,
     "IoK8sApiAdmissionregistrationV1ServiceReference": IoK8sApiAdmissionregistrationV1ServiceReference,
+    "IoK8sApiAdmissionregistrationV1TypeChecking": IoK8sApiAdmissionregistrationV1TypeChecking,
+    "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicy": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicy,
+    "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBinding": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBinding,
+    "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingList": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingList,
+    "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingSpec": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyBindingSpec,
+    "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyList": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyList,
+    "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicySpec": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicySpec,
+    "IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyStatus": IoK8sApiAdmissionregistrationV1ValidatingAdmissionPolicyStatus,
     "IoK8sApiAdmissionregistrationV1ValidatingWebhook": IoK8sApiAdmissionregistrationV1ValidatingWebhook,
     "IoK8sApiAdmissionregistrationV1ValidatingWebhookConfiguration": IoK8sApiAdmissionregistrationV1ValidatingWebhookConfiguration,
     "IoK8sApiAdmissionregistrationV1ValidatingWebhookConfigurationList": IoK8sApiAdmissionregistrationV1ValidatingWebhookConfigurationList,
+    "IoK8sApiAdmissionregistrationV1Validation": IoK8sApiAdmissionregistrationV1Validation,
+    "IoK8sApiAdmissionregistrationV1Variable": IoK8sApiAdmissionregistrationV1Variable,
     "IoK8sApiAdmissionregistrationV1WebhookClientConfig": IoK8sApiAdmissionregistrationV1WebhookClientConfig,
     "IoK8sApiAppsV1ControllerRevision": IoK8sApiAppsV1ControllerRevision,
     "IoK8sApiAppsV1ControllerRevisionList": IoK8sApiAppsV1ControllerRevisionList,
@@ -1713,11 +2141,14 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiAppsV1StatefulSet": IoK8sApiAppsV1StatefulSet,
     "IoK8sApiAppsV1StatefulSetCondition": IoK8sApiAppsV1StatefulSetCondition,
     "IoK8sApiAppsV1StatefulSetList": IoK8sApiAppsV1StatefulSetList,
+    "IoK8sApiAppsV1StatefulSetOrdinals": IoK8sApiAppsV1StatefulSetOrdinals,
     "IoK8sApiAppsV1StatefulSetPersistentVolumeClaimRetentionPolicy": IoK8sApiAppsV1StatefulSetPersistentVolumeClaimRetentionPolicy,
     "IoK8sApiAppsV1StatefulSetSpec": IoK8sApiAppsV1StatefulSetSpec,
     "IoK8sApiAppsV1StatefulSetStatus": IoK8sApiAppsV1StatefulSetStatus,
     "IoK8sApiAppsV1StatefulSetUpdateStrategy": IoK8sApiAppsV1StatefulSetUpdateStrategy,
     "IoK8sApiAuthenticationV1BoundObjectReference": IoK8sApiAuthenticationV1BoundObjectReference,
+    "IoK8sApiAuthenticationV1SelfSubjectReview": IoK8sApiAuthenticationV1SelfSubjectReview,
+    "IoK8sApiAuthenticationV1SelfSubjectReviewStatus": IoK8sApiAuthenticationV1SelfSubjectReviewStatus,
     "IoK8sApiAuthenticationV1TokenRequest": IoK8sApiAuthenticationV1TokenRequest,
     "IoK8sApiAuthenticationV1TokenRequestSpec": IoK8sApiAuthenticationV1TokenRequestSpec,
     "IoK8sApiAuthenticationV1TokenRequestStatus": IoK8sApiAuthenticationV1TokenRequestStatus,
@@ -1746,7 +2177,6 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiAutoscalingV1Scale": IoK8sApiAutoscalingV1Scale,
     "IoK8sApiAutoscalingV1ScaleSpec": IoK8sApiAutoscalingV1ScaleSpec,
     "IoK8sApiAutoscalingV1ScaleStatus": IoK8sApiAutoscalingV1ScaleStatus,
-    "IoK8sApiAutoscalingV1ScaleV2": IoK8sApiAutoscalingV1ScaleV2,
     "IoK8sApiAutoscalingV2ContainerResourceMetricSource": IoK8sApiAutoscalingV2ContainerResourceMetricSource,
     "IoK8sApiAutoscalingV2ContainerResourceMetricStatus": IoK8sApiAutoscalingV2ContainerResourceMetricStatus,
     "IoK8sApiAutoscalingV2CrossVersionObjectReference": IoK8sApiAutoscalingV2CrossVersionObjectReference,
@@ -1771,48 +2201,6 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiAutoscalingV2PodsMetricStatus": IoK8sApiAutoscalingV2PodsMetricStatus,
     "IoK8sApiAutoscalingV2ResourceMetricSource": IoK8sApiAutoscalingV2ResourceMetricSource,
     "IoK8sApiAutoscalingV2ResourceMetricStatus": IoK8sApiAutoscalingV2ResourceMetricStatus,
-    "IoK8sApiAutoscalingV2beta1ContainerResourceMetricSource": IoK8sApiAutoscalingV2beta1ContainerResourceMetricSource,
-    "IoK8sApiAutoscalingV2beta1ContainerResourceMetricStatus": IoK8sApiAutoscalingV2beta1ContainerResourceMetricStatus,
-    "IoK8sApiAutoscalingV2beta1CrossVersionObjectReference": IoK8sApiAutoscalingV2beta1CrossVersionObjectReference,
-    "IoK8sApiAutoscalingV2beta1ExternalMetricSource": IoK8sApiAutoscalingV2beta1ExternalMetricSource,
-    "IoK8sApiAutoscalingV2beta1ExternalMetricStatus": IoK8sApiAutoscalingV2beta1ExternalMetricStatus,
-    "IoK8sApiAutoscalingV2beta1HorizontalPodAutoscaler": IoK8sApiAutoscalingV2beta1HorizontalPodAutoscaler,
-    "IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerCondition": IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerCondition,
-    "IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerList": IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerList,
-    "IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerSpec": IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerSpec,
-    "IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerStatus": IoK8sApiAutoscalingV2beta1HorizontalPodAutoscalerStatus,
-    "IoK8sApiAutoscalingV2beta1MetricSpec": IoK8sApiAutoscalingV2beta1MetricSpec,
-    "IoK8sApiAutoscalingV2beta1MetricStatus": IoK8sApiAutoscalingV2beta1MetricStatus,
-    "IoK8sApiAutoscalingV2beta1ObjectMetricSource": IoK8sApiAutoscalingV2beta1ObjectMetricSource,
-    "IoK8sApiAutoscalingV2beta1ObjectMetricStatus": IoK8sApiAutoscalingV2beta1ObjectMetricStatus,
-    "IoK8sApiAutoscalingV2beta1PodsMetricSource": IoK8sApiAutoscalingV2beta1PodsMetricSource,
-    "IoK8sApiAutoscalingV2beta1PodsMetricStatus": IoK8sApiAutoscalingV2beta1PodsMetricStatus,
-    "IoK8sApiAutoscalingV2beta1ResourceMetricSource": IoK8sApiAutoscalingV2beta1ResourceMetricSource,
-    "IoK8sApiAutoscalingV2beta1ResourceMetricStatus": IoK8sApiAutoscalingV2beta1ResourceMetricStatus,
-    "IoK8sApiAutoscalingV2beta2ContainerResourceMetricSource": IoK8sApiAutoscalingV2beta2ContainerResourceMetricSource,
-    "IoK8sApiAutoscalingV2beta2ContainerResourceMetricStatus": IoK8sApiAutoscalingV2beta2ContainerResourceMetricStatus,
-    "IoK8sApiAutoscalingV2beta2CrossVersionObjectReference": IoK8sApiAutoscalingV2beta2CrossVersionObjectReference,
-    "IoK8sApiAutoscalingV2beta2ExternalMetricSource": IoK8sApiAutoscalingV2beta2ExternalMetricSource,
-    "IoK8sApiAutoscalingV2beta2ExternalMetricStatus": IoK8sApiAutoscalingV2beta2ExternalMetricStatus,
-    "IoK8sApiAutoscalingV2beta2HPAScalingPolicy": IoK8sApiAutoscalingV2beta2HPAScalingPolicy,
-    "IoK8sApiAutoscalingV2beta2HPAScalingRules": IoK8sApiAutoscalingV2beta2HPAScalingRules,
-    "IoK8sApiAutoscalingV2beta2HorizontalPodAutoscaler": IoK8sApiAutoscalingV2beta2HorizontalPodAutoscaler,
-    "IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior": IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerBehavior,
-    "IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerCondition": IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerCondition,
-    "IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerList": IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerList,
-    "IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec": IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerSpec,
-    "IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerStatus": IoK8sApiAutoscalingV2beta2HorizontalPodAutoscalerStatus,
-    "IoK8sApiAutoscalingV2beta2MetricIdentifier": IoK8sApiAutoscalingV2beta2MetricIdentifier,
-    "IoK8sApiAutoscalingV2beta2MetricSpec": IoK8sApiAutoscalingV2beta2MetricSpec,
-    "IoK8sApiAutoscalingV2beta2MetricStatus": IoK8sApiAutoscalingV2beta2MetricStatus,
-    "IoK8sApiAutoscalingV2beta2MetricTarget": IoK8sApiAutoscalingV2beta2MetricTarget,
-    "IoK8sApiAutoscalingV2beta2MetricValueStatus": IoK8sApiAutoscalingV2beta2MetricValueStatus,
-    "IoK8sApiAutoscalingV2beta2ObjectMetricSource": IoK8sApiAutoscalingV2beta2ObjectMetricSource,
-    "IoK8sApiAutoscalingV2beta2ObjectMetricStatus": IoK8sApiAutoscalingV2beta2ObjectMetricStatus,
-    "IoK8sApiAutoscalingV2beta2PodsMetricSource": IoK8sApiAutoscalingV2beta2PodsMetricSource,
-    "IoK8sApiAutoscalingV2beta2PodsMetricStatus": IoK8sApiAutoscalingV2beta2PodsMetricStatus,
-    "IoK8sApiAutoscalingV2beta2ResourceMetricSource": IoK8sApiAutoscalingV2beta2ResourceMetricSource,
-    "IoK8sApiAutoscalingV2beta2ResourceMetricStatus": IoK8sApiAutoscalingV2beta2ResourceMetricStatus,
     "IoK8sApiBatchV1CronJob": IoK8sApiBatchV1CronJob,
     "IoK8sApiBatchV1CronJobList": IoK8sApiBatchV1CronJobList,
     "IoK8sApiBatchV1CronJobSpec": IoK8sApiBatchV1CronJobSpec,
@@ -1823,12 +2211,13 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiBatchV1JobSpec": IoK8sApiBatchV1JobSpec,
     "IoK8sApiBatchV1JobStatus": IoK8sApiBatchV1JobStatus,
     "IoK8sApiBatchV1JobTemplateSpec": IoK8sApiBatchV1JobTemplateSpec,
+    "IoK8sApiBatchV1PodFailurePolicy": IoK8sApiBatchV1PodFailurePolicy,
+    "IoK8sApiBatchV1PodFailurePolicyOnExitCodesRequirement": IoK8sApiBatchV1PodFailurePolicyOnExitCodesRequirement,
+    "IoK8sApiBatchV1PodFailurePolicyOnPodConditionsPattern": IoK8sApiBatchV1PodFailurePolicyOnPodConditionsPattern,
+    "IoK8sApiBatchV1PodFailurePolicyRule": IoK8sApiBatchV1PodFailurePolicyRule,
+    "IoK8sApiBatchV1SuccessPolicy": IoK8sApiBatchV1SuccessPolicy,
+    "IoK8sApiBatchV1SuccessPolicyRule": IoK8sApiBatchV1SuccessPolicyRule,
     "IoK8sApiBatchV1UncountedTerminatedPods": IoK8sApiBatchV1UncountedTerminatedPods,
-    "IoK8sApiBatchV1beta1CronJob": IoK8sApiBatchV1beta1CronJob,
-    "IoK8sApiBatchV1beta1CronJobList": IoK8sApiBatchV1beta1CronJobList,
-    "IoK8sApiBatchV1beta1CronJobSpec": IoK8sApiBatchV1beta1CronJobSpec,
-    "IoK8sApiBatchV1beta1CronJobStatus": IoK8sApiBatchV1beta1CronJobStatus,
-    "IoK8sApiBatchV1beta1JobTemplateSpec": IoK8sApiBatchV1beta1JobTemplateSpec,
     "IoK8sApiCertificatesV1CertificateSigningRequest": IoK8sApiCertificatesV1CertificateSigningRequest,
     "IoK8sApiCertificatesV1CertificateSigningRequestCondition": IoK8sApiCertificatesV1CertificateSigningRequestCondition,
     "IoK8sApiCertificatesV1CertificateSigningRequestList": IoK8sApiCertificatesV1CertificateSigningRequestList,
@@ -1839,6 +2228,7 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoordinationV1LeaseSpec": IoK8sApiCoordinationV1LeaseSpec,
     "IoK8sApiCoreV1AWSElasticBlockStoreVolumeSource": IoK8sApiCoreV1AWSElasticBlockStoreVolumeSource,
     "IoK8sApiCoreV1Affinity": IoK8sApiCoreV1Affinity,
+    "IoK8sApiCoreV1AppArmorProfile": IoK8sApiCoreV1AppArmorProfile,
     "IoK8sApiCoreV1AttachedVolume": IoK8sApiCoreV1AttachedVolume,
     "IoK8sApiCoreV1AzureDiskVolumeSource": IoK8sApiCoreV1AzureDiskVolumeSource,
     "IoK8sApiCoreV1AzureFilePersistentVolumeSource": IoK8sApiCoreV1AzureFilePersistentVolumeSource,
@@ -1851,7 +2241,9 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1CephFSVolumeSource": IoK8sApiCoreV1CephFSVolumeSource,
     "IoK8sApiCoreV1CinderPersistentVolumeSource": IoK8sApiCoreV1CinderPersistentVolumeSource,
     "IoK8sApiCoreV1CinderVolumeSource": IoK8sApiCoreV1CinderVolumeSource,
+    "IoK8sApiCoreV1ClaimSource": IoK8sApiCoreV1ClaimSource,
     "IoK8sApiCoreV1ClientIPConfig": IoK8sApiCoreV1ClientIPConfig,
+    "IoK8sApiCoreV1ClusterTrustBundleProjection": IoK8sApiCoreV1ClusterTrustBundleProjection,
     "IoK8sApiCoreV1ComponentCondition": IoK8sApiCoreV1ComponentCondition,
     "IoK8sApiCoreV1ComponentStatus": IoK8sApiCoreV1ComponentStatus,
     "IoK8sApiCoreV1ComponentStatusList": IoK8sApiCoreV1ComponentStatusList,
@@ -1865,6 +2257,7 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1Container": IoK8sApiCoreV1Container,
     "IoK8sApiCoreV1ContainerImage": IoK8sApiCoreV1ContainerImage,
     "IoK8sApiCoreV1ContainerPort": IoK8sApiCoreV1ContainerPort,
+    "IoK8sApiCoreV1ContainerResizePolicy": IoK8sApiCoreV1ContainerResizePolicy,
     "IoK8sApiCoreV1ContainerState": IoK8sApiCoreV1ContainerState,
     "IoK8sApiCoreV1ContainerStateRunning": IoK8sApiCoreV1ContainerStateRunning,
     "IoK8sApiCoreV1ContainerStateTerminated": IoK8sApiCoreV1ContainerStateTerminated,
@@ -1902,6 +2295,7 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1HTTPGetAction": IoK8sApiCoreV1HTTPGetAction,
     "IoK8sApiCoreV1HTTPHeader": IoK8sApiCoreV1HTTPHeader,
     "IoK8sApiCoreV1HostAlias": IoK8sApiCoreV1HostAlias,
+    "IoK8sApiCoreV1HostIP": IoK8sApiCoreV1HostIP,
     "IoK8sApiCoreV1HostPathVolumeSource": IoK8sApiCoreV1HostPathVolumeSource,
     "IoK8sApiCoreV1ISCSIPersistentVolumeSource": IoK8sApiCoreV1ISCSIPersistentVolumeSource,
     "IoK8sApiCoreV1ISCSIVolumeSource": IoK8sApiCoreV1ISCSIVolumeSource,
@@ -1916,6 +2310,7 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1LoadBalancerStatus": IoK8sApiCoreV1LoadBalancerStatus,
     "IoK8sApiCoreV1LocalObjectReference": IoK8sApiCoreV1LocalObjectReference,
     "IoK8sApiCoreV1LocalVolumeSource": IoK8sApiCoreV1LocalVolumeSource,
+    "IoK8sApiCoreV1ModifyVolumeStatus": IoK8sApiCoreV1ModifyVolumeStatus,
     "IoK8sApiCoreV1NFSVolumeSource": IoK8sApiCoreV1NFSVolumeSource,
     "IoK8sApiCoreV1Namespace": IoK8sApiCoreV1Namespace,
     "IoK8sApiCoreV1NamespaceCondition": IoK8sApiCoreV1NamespaceCondition,
@@ -1930,6 +2325,8 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1NodeConfigStatus": IoK8sApiCoreV1NodeConfigStatus,
     "IoK8sApiCoreV1NodeDaemonEndpoints": IoK8sApiCoreV1NodeDaemonEndpoints,
     "IoK8sApiCoreV1NodeList": IoK8sApiCoreV1NodeList,
+    "IoK8sApiCoreV1NodeRuntimeHandler": IoK8sApiCoreV1NodeRuntimeHandler,
+    "IoK8sApiCoreV1NodeRuntimeHandlerFeatures": IoK8sApiCoreV1NodeRuntimeHandlerFeatures,
     "IoK8sApiCoreV1NodeSelector": IoK8sApiCoreV1NodeSelector,
     "IoK8sApiCoreV1NodeSelectorRequirement": IoK8sApiCoreV1NodeSelectorRequirement,
     "IoK8sApiCoreV1NodeSelectorTerm": IoK8sApiCoreV1NodeSelectorTerm,
@@ -1961,6 +2358,9 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1PodList": IoK8sApiCoreV1PodList,
     "IoK8sApiCoreV1PodOS": IoK8sApiCoreV1PodOS,
     "IoK8sApiCoreV1PodReadinessGate": IoK8sApiCoreV1PodReadinessGate,
+    "IoK8sApiCoreV1PodResourceClaim": IoK8sApiCoreV1PodResourceClaim,
+    "IoK8sApiCoreV1PodResourceClaimStatus": IoK8sApiCoreV1PodResourceClaimStatus,
+    "IoK8sApiCoreV1PodSchedulingGate": IoK8sApiCoreV1PodSchedulingGate,
     "IoK8sApiCoreV1PodSecurityContext": IoK8sApiCoreV1PodSecurityContext,
     "IoK8sApiCoreV1PodSpec": IoK8sApiCoreV1PodSpec,
     "IoK8sApiCoreV1PodStatus": IoK8sApiCoreV1PodStatus,
@@ -1980,6 +2380,7 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1ReplicationControllerList": IoK8sApiCoreV1ReplicationControllerList,
     "IoK8sApiCoreV1ReplicationControllerSpec": IoK8sApiCoreV1ReplicationControllerSpec,
     "IoK8sApiCoreV1ReplicationControllerStatus": IoK8sApiCoreV1ReplicationControllerStatus,
+    "IoK8sApiCoreV1ResourceClaim": IoK8sApiCoreV1ResourceClaim,
     "IoK8sApiCoreV1ResourceFieldSelector": IoK8sApiCoreV1ResourceFieldSelector,
     "IoK8sApiCoreV1ResourceQuota": IoK8sApiCoreV1ResourceQuota,
     "IoK8sApiCoreV1ResourceQuotaList": IoK8sApiCoreV1ResourceQuotaList,
@@ -2009,6 +2410,7 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1ServiceSpec": IoK8sApiCoreV1ServiceSpec,
     "IoK8sApiCoreV1ServiceStatus": IoK8sApiCoreV1ServiceStatus,
     "IoK8sApiCoreV1SessionAffinityConfig": IoK8sApiCoreV1SessionAffinityConfig,
+    "IoK8sApiCoreV1SleepAction": IoK8sApiCoreV1SleepAction,
     "IoK8sApiCoreV1StorageOSPersistentVolumeSource": IoK8sApiCoreV1StorageOSPersistentVolumeSource,
     "IoK8sApiCoreV1StorageOSVolumeSource": IoK8sApiCoreV1StorageOSVolumeSource,
     "IoK8sApiCoreV1Sysctl": IoK8sApiCoreV1Sysctl,
@@ -2019,11 +2421,14 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiCoreV1TopologySelectorTerm": IoK8sApiCoreV1TopologySelectorTerm,
     "IoK8sApiCoreV1TopologySpreadConstraint": IoK8sApiCoreV1TopologySpreadConstraint,
     "IoK8sApiCoreV1TypedLocalObjectReference": IoK8sApiCoreV1TypedLocalObjectReference,
+    "IoK8sApiCoreV1TypedObjectReference": IoK8sApiCoreV1TypedObjectReference,
     "IoK8sApiCoreV1Volume": IoK8sApiCoreV1Volume,
     "IoK8sApiCoreV1VolumeDevice": IoK8sApiCoreV1VolumeDevice,
     "IoK8sApiCoreV1VolumeMount": IoK8sApiCoreV1VolumeMount,
+    "IoK8sApiCoreV1VolumeMountStatus": IoK8sApiCoreV1VolumeMountStatus,
     "IoK8sApiCoreV1VolumeNodeAffinity": IoK8sApiCoreV1VolumeNodeAffinity,
     "IoK8sApiCoreV1VolumeProjection": IoK8sApiCoreV1VolumeProjection,
+    "IoK8sApiCoreV1VolumeResourceRequirements": IoK8sApiCoreV1VolumeResourceRequirements,
     "IoK8sApiCoreV1VsphereVirtualDiskVolumeSource": IoK8sApiCoreV1VsphereVirtualDiskVolumeSource,
     "IoK8sApiCoreV1WeightedPodAffinityTerm": IoK8sApiCoreV1WeightedPodAffinityTerm,
     "IoK8sApiCoreV1WindowsSecurityContextOptions": IoK8sApiCoreV1WindowsSecurityContextOptions,
@@ -2034,63 +2439,55 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiDiscoveryV1EndpointSlice": IoK8sApiDiscoveryV1EndpointSlice,
     "IoK8sApiDiscoveryV1EndpointSliceList": IoK8sApiDiscoveryV1EndpointSliceList,
     "IoK8sApiDiscoveryV1ForZone": IoK8sApiDiscoveryV1ForZone,
-    "IoK8sApiDiscoveryV1beta1Endpoint": IoK8sApiDiscoveryV1beta1Endpoint,
-    "IoK8sApiDiscoveryV1beta1EndpointConditions": IoK8sApiDiscoveryV1beta1EndpointConditions,
-    "IoK8sApiDiscoveryV1beta1EndpointHints": IoK8sApiDiscoveryV1beta1EndpointHints,
-    "IoK8sApiDiscoveryV1beta1EndpointPort": IoK8sApiDiscoveryV1beta1EndpointPort,
-    "IoK8sApiDiscoveryV1beta1EndpointSlice": IoK8sApiDiscoveryV1beta1EndpointSlice,
-    "IoK8sApiDiscoveryV1beta1EndpointSliceList": IoK8sApiDiscoveryV1beta1EndpointSliceList,
-    "IoK8sApiDiscoveryV1beta1ForZone": IoK8sApiDiscoveryV1beta1ForZone,
     "IoK8sApiEventsV1Event": IoK8sApiEventsV1Event,
     "IoK8sApiEventsV1EventList": IoK8sApiEventsV1EventList,
     "IoK8sApiEventsV1EventSeries": IoK8sApiEventsV1EventSeries,
-    "IoK8sApiEventsV1beta1Event": IoK8sApiEventsV1beta1Event,
-    "IoK8sApiEventsV1beta1EventList": IoK8sApiEventsV1beta1EventList,
-    "IoK8sApiEventsV1beta1EventSeries": IoK8sApiEventsV1beta1EventSeries,
-    "IoK8sApiFlowcontrolV1beta1FlowDistinguisherMethod": IoK8sApiFlowcontrolV1beta1FlowDistinguisherMethod,
-    "IoK8sApiFlowcontrolV1beta1FlowSchema": IoK8sApiFlowcontrolV1beta1FlowSchema,
-    "IoK8sApiFlowcontrolV1beta1FlowSchemaCondition": IoK8sApiFlowcontrolV1beta1FlowSchemaCondition,
-    "IoK8sApiFlowcontrolV1beta1FlowSchemaList": IoK8sApiFlowcontrolV1beta1FlowSchemaList,
-    "IoK8sApiFlowcontrolV1beta1FlowSchemaSpec": IoK8sApiFlowcontrolV1beta1FlowSchemaSpec,
-    "IoK8sApiFlowcontrolV1beta1FlowSchemaStatus": IoK8sApiFlowcontrolV1beta1FlowSchemaStatus,
-    "IoK8sApiFlowcontrolV1beta1GroupSubject": IoK8sApiFlowcontrolV1beta1GroupSubject,
-    "IoK8sApiFlowcontrolV1beta1LimitResponse": IoK8sApiFlowcontrolV1beta1LimitResponse,
-    "IoK8sApiFlowcontrolV1beta1LimitedPriorityLevelConfiguration": IoK8sApiFlowcontrolV1beta1LimitedPriorityLevelConfiguration,
-    "IoK8sApiFlowcontrolV1beta1NonResourcePolicyRule": IoK8sApiFlowcontrolV1beta1NonResourcePolicyRule,
-    "IoK8sApiFlowcontrolV1beta1PolicyRulesWithSubjects": IoK8sApiFlowcontrolV1beta1PolicyRulesWithSubjects,
-    "IoK8sApiFlowcontrolV1beta1PriorityLevelConfiguration": IoK8sApiFlowcontrolV1beta1PriorityLevelConfiguration,
-    "IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationCondition": IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationCondition,
-    "IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationList": IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationList,
-    "IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationReference": IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationReference,
-    "IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationSpec": IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationSpec,
-    "IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationStatus": IoK8sApiFlowcontrolV1beta1PriorityLevelConfigurationStatus,
-    "IoK8sApiFlowcontrolV1beta1QueuingConfiguration": IoK8sApiFlowcontrolV1beta1QueuingConfiguration,
-    "IoK8sApiFlowcontrolV1beta1ResourcePolicyRule": IoK8sApiFlowcontrolV1beta1ResourcePolicyRule,
-    "IoK8sApiFlowcontrolV1beta1ServiceAccountSubject": IoK8sApiFlowcontrolV1beta1ServiceAccountSubject,
-    "IoK8sApiFlowcontrolV1beta1Subject": IoK8sApiFlowcontrolV1beta1Subject,
-    "IoK8sApiFlowcontrolV1beta1UserSubject": IoK8sApiFlowcontrolV1beta1UserSubject,
-    "IoK8sApiFlowcontrolV1beta2FlowDistinguisherMethod": IoK8sApiFlowcontrolV1beta2FlowDistinguisherMethod,
-    "IoK8sApiFlowcontrolV1beta2FlowSchema": IoK8sApiFlowcontrolV1beta2FlowSchema,
-    "IoK8sApiFlowcontrolV1beta2FlowSchemaCondition": IoK8sApiFlowcontrolV1beta2FlowSchemaCondition,
-    "IoK8sApiFlowcontrolV1beta2FlowSchemaList": IoK8sApiFlowcontrolV1beta2FlowSchemaList,
-    "IoK8sApiFlowcontrolV1beta2FlowSchemaSpec": IoK8sApiFlowcontrolV1beta2FlowSchemaSpec,
-    "IoK8sApiFlowcontrolV1beta2FlowSchemaStatus": IoK8sApiFlowcontrolV1beta2FlowSchemaStatus,
-    "IoK8sApiFlowcontrolV1beta2GroupSubject": IoK8sApiFlowcontrolV1beta2GroupSubject,
-    "IoK8sApiFlowcontrolV1beta2LimitResponse": IoK8sApiFlowcontrolV1beta2LimitResponse,
-    "IoK8sApiFlowcontrolV1beta2LimitedPriorityLevelConfiguration": IoK8sApiFlowcontrolV1beta2LimitedPriorityLevelConfiguration,
-    "IoK8sApiFlowcontrolV1beta2NonResourcePolicyRule": IoK8sApiFlowcontrolV1beta2NonResourcePolicyRule,
-    "IoK8sApiFlowcontrolV1beta2PolicyRulesWithSubjects": IoK8sApiFlowcontrolV1beta2PolicyRulesWithSubjects,
-    "IoK8sApiFlowcontrolV1beta2PriorityLevelConfiguration": IoK8sApiFlowcontrolV1beta2PriorityLevelConfiguration,
-    "IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationCondition": IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationCondition,
-    "IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationList": IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationList,
-    "IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationReference": IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationReference,
-    "IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationSpec": IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationSpec,
-    "IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationStatus": IoK8sApiFlowcontrolV1beta2PriorityLevelConfigurationStatus,
-    "IoK8sApiFlowcontrolV1beta2QueuingConfiguration": IoK8sApiFlowcontrolV1beta2QueuingConfiguration,
-    "IoK8sApiFlowcontrolV1beta2ResourcePolicyRule": IoK8sApiFlowcontrolV1beta2ResourcePolicyRule,
-    "IoK8sApiFlowcontrolV1beta2ServiceAccountSubject": IoK8sApiFlowcontrolV1beta2ServiceAccountSubject,
-    "IoK8sApiFlowcontrolV1beta2Subject": IoK8sApiFlowcontrolV1beta2Subject,
-    "IoK8sApiFlowcontrolV1beta2UserSubject": IoK8sApiFlowcontrolV1beta2UserSubject,
+    "IoK8sApiFlowcontrolV1ExemptPriorityLevelConfiguration": IoK8sApiFlowcontrolV1ExemptPriorityLevelConfiguration,
+    "IoK8sApiFlowcontrolV1FlowDistinguisherMethod": IoK8sApiFlowcontrolV1FlowDistinguisherMethod,
+    "IoK8sApiFlowcontrolV1FlowSchema": IoK8sApiFlowcontrolV1FlowSchema,
+    "IoK8sApiFlowcontrolV1FlowSchemaCondition": IoK8sApiFlowcontrolV1FlowSchemaCondition,
+    "IoK8sApiFlowcontrolV1FlowSchemaList": IoK8sApiFlowcontrolV1FlowSchemaList,
+    "IoK8sApiFlowcontrolV1FlowSchemaSpec": IoK8sApiFlowcontrolV1FlowSchemaSpec,
+    "IoK8sApiFlowcontrolV1FlowSchemaStatus": IoK8sApiFlowcontrolV1FlowSchemaStatus,
+    "IoK8sApiFlowcontrolV1GroupSubject": IoK8sApiFlowcontrolV1GroupSubject,
+    "IoK8sApiFlowcontrolV1LimitResponse": IoK8sApiFlowcontrolV1LimitResponse,
+    "IoK8sApiFlowcontrolV1LimitedPriorityLevelConfiguration": IoK8sApiFlowcontrolV1LimitedPriorityLevelConfiguration,
+    "IoK8sApiFlowcontrolV1NonResourcePolicyRule": IoK8sApiFlowcontrolV1NonResourcePolicyRule,
+    "IoK8sApiFlowcontrolV1PolicyRulesWithSubjects": IoK8sApiFlowcontrolV1PolicyRulesWithSubjects,
+    "IoK8sApiFlowcontrolV1PriorityLevelConfiguration": IoK8sApiFlowcontrolV1PriorityLevelConfiguration,
+    "IoK8sApiFlowcontrolV1PriorityLevelConfigurationCondition": IoK8sApiFlowcontrolV1PriorityLevelConfigurationCondition,
+    "IoK8sApiFlowcontrolV1PriorityLevelConfigurationList": IoK8sApiFlowcontrolV1PriorityLevelConfigurationList,
+    "IoK8sApiFlowcontrolV1PriorityLevelConfigurationReference": IoK8sApiFlowcontrolV1PriorityLevelConfigurationReference,
+    "IoK8sApiFlowcontrolV1PriorityLevelConfigurationSpec": IoK8sApiFlowcontrolV1PriorityLevelConfigurationSpec,
+    "IoK8sApiFlowcontrolV1PriorityLevelConfigurationStatus": IoK8sApiFlowcontrolV1PriorityLevelConfigurationStatus,
+    "IoK8sApiFlowcontrolV1QueuingConfiguration": IoK8sApiFlowcontrolV1QueuingConfiguration,
+    "IoK8sApiFlowcontrolV1ResourcePolicyRule": IoK8sApiFlowcontrolV1ResourcePolicyRule,
+    "IoK8sApiFlowcontrolV1ServiceAccountSubject": IoK8sApiFlowcontrolV1ServiceAccountSubject,
+    "IoK8sApiFlowcontrolV1Subject": IoK8sApiFlowcontrolV1Subject,
+    "IoK8sApiFlowcontrolV1UserSubject": IoK8sApiFlowcontrolV1UserSubject,
+    "IoK8sApiFlowcontrolV1beta3ExemptPriorityLevelConfiguration": IoK8sApiFlowcontrolV1beta3ExemptPriorityLevelConfiguration,
+    "IoK8sApiFlowcontrolV1beta3FlowDistinguisherMethod": IoK8sApiFlowcontrolV1beta3FlowDistinguisherMethod,
+    "IoK8sApiFlowcontrolV1beta3FlowSchema": IoK8sApiFlowcontrolV1beta3FlowSchema,
+    "IoK8sApiFlowcontrolV1beta3FlowSchemaCondition": IoK8sApiFlowcontrolV1beta3FlowSchemaCondition,
+    "IoK8sApiFlowcontrolV1beta3FlowSchemaList": IoK8sApiFlowcontrolV1beta3FlowSchemaList,
+    "IoK8sApiFlowcontrolV1beta3FlowSchemaSpec": IoK8sApiFlowcontrolV1beta3FlowSchemaSpec,
+    "IoK8sApiFlowcontrolV1beta3FlowSchemaStatus": IoK8sApiFlowcontrolV1beta3FlowSchemaStatus,
+    "IoK8sApiFlowcontrolV1beta3GroupSubject": IoK8sApiFlowcontrolV1beta3GroupSubject,
+    "IoK8sApiFlowcontrolV1beta3LimitResponse": IoK8sApiFlowcontrolV1beta3LimitResponse,
+    "IoK8sApiFlowcontrolV1beta3LimitedPriorityLevelConfiguration": IoK8sApiFlowcontrolV1beta3LimitedPriorityLevelConfiguration,
+    "IoK8sApiFlowcontrolV1beta3NonResourcePolicyRule": IoK8sApiFlowcontrolV1beta3NonResourcePolicyRule,
+    "IoK8sApiFlowcontrolV1beta3PolicyRulesWithSubjects": IoK8sApiFlowcontrolV1beta3PolicyRulesWithSubjects,
+    "IoK8sApiFlowcontrolV1beta3PriorityLevelConfiguration": IoK8sApiFlowcontrolV1beta3PriorityLevelConfiguration,
+    "IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationCondition": IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationCondition,
+    "IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationList": IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationList,
+    "IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationReference": IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationReference,
+    "IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationSpec": IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationSpec,
+    "IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationStatus": IoK8sApiFlowcontrolV1beta3PriorityLevelConfigurationStatus,
+    "IoK8sApiFlowcontrolV1beta3QueuingConfiguration": IoK8sApiFlowcontrolV1beta3QueuingConfiguration,
+    "IoK8sApiFlowcontrolV1beta3ResourcePolicyRule": IoK8sApiFlowcontrolV1beta3ResourcePolicyRule,
+    "IoK8sApiFlowcontrolV1beta3ServiceAccountSubject": IoK8sApiFlowcontrolV1beta3ServiceAccountSubject,
+    "IoK8sApiFlowcontrolV1beta3Subject": IoK8sApiFlowcontrolV1beta3Subject,
+    "IoK8sApiFlowcontrolV1beta3UserSubject": IoK8sApiFlowcontrolV1beta3UserSubject,
     "IoK8sApiNetworkingV1HTTPIngressPath": IoK8sApiNetworkingV1HTTPIngressPath,
     "IoK8sApiNetworkingV1HTTPIngressRuleValue": IoK8sApiNetworkingV1HTTPIngressRuleValue,
     "IoK8sApiNetworkingV1IPBlock": IoK8sApiNetworkingV1IPBlock,
@@ -2101,6 +2498,9 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiNetworkingV1IngressClassParametersReference": IoK8sApiNetworkingV1IngressClassParametersReference,
     "IoK8sApiNetworkingV1IngressClassSpec": IoK8sApiNetworkingV1IngressClassSpec,
     "IoK8sApiNetworkingV1IngressList": IoK8sApiNetworkingV1IngressList,
+    "IoK8sApiNetworkingV1IngressLoadBalancerIngress": IoK8sApiNetworkingV1IngressLoadBalancerIngress,
+    "IoK8sApiNetworkingV1IngressLoadBalancerStatus": IoK8sApiNetworkingV1IngressLoadBalancerStatus,
+    "IoK8sApiNetworkingV1IngressPortStatus": IoK8sApiNetworkingV1IngressPortStatus,
     "IoK8sApiNetworkingV1IngressRule": IoK8sApiNetworkingV1IngressRule,
     "IoK8sApiNetworkingV1IngressServiceBackend": IoK8sApiNetworkingV1IngressServiceBackend,
     "IoK8sApiNetworkingV1IngressSpec": IoK8sApiNetworkingV1IngressSpec,
@@ -2118,33 +2518,11 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiNodeV1RuntimeClass": IoK8sApiNodeV1RuntimeClass,
     "IoK8sApiNodeV1RuntimeClassList": IoK8sApiNodeV1RuntimeClassList,
     "IoK8sApiNodeV1Scheduling": IoK8sApiNodeV1Scheduling,
-    "IoK8sApiNodeV1beta1Overhead": IoK8sApiNodeV1beta1Overhead,
-    "IoK8sApiNodeV1beta1RuntimeClass": IoK8sApiNodeV1beta1RuntimeClass,
-    "IoK8sApiNodeV1beta1RuntimeClassList": IoK8sApiNodeV1beta1RuntimeClassList,
-    "IoK8sApiNodeV1beta1Scheduling": IoK8sApiNodeV1beta1Scheduling,
     "IoK8sApiPolicyV1Eviction": IoK8sApiPolicyV1Eviction,
     "IoK8sApiPolicyV1PodDisruptionBudget": IoK8sApiPolicyV1PodDisruptionBudget,
     "IoK8sApiPolicyV1PodDisruptionBudgetList": IoK8sApiPolicyV1PodDisruptionBudgetList,
     "IoK8sApiPolicyV1PodDisruptionBudgetSpec": IoK8sApiPolicyV1PodDisruptionBudgetSpec,
     "IoK8sApiPolicyV1PodDisruptionBudgetStatus": IoK8sApiPolicyV1PodDisruptionBudgetStatus,
-    "IoK8sApiPolicyV1beta1AllowedCSIDriver": IoK8sApiPolicyV1beta1AllowedCSIDriver,
-    "IoK8sApiPolicyV1beta1AllowedFlexVolume": IoK8sApiPolicyV1beta1AllowedFlexVolume,
-    "IoK8sApiPolicyV1beta1AllowedHostPath": IoK8sApiPolicyV1beta1AllowedHostPath,
-    "IoK8sApiPolicyV1beta1FSGroupStrategyOptions": IoK8sApiPolicyV1beta1FSGroupStrategyOptions,
-    "IoK8sApiPolicyV1beta1HostPortRange": IoK8sApiPolicyV1beta1HostPortRange,
-    "IoK8sApiPolicyV1beta1IDRange": IoK8sApiPolicyV1beta1IDRange,
-    "IoK8sApiPolicyV1beta1PodDisruptionBudget": IoK8sApiPolicyV1beta1PodDisruptionBudget,
-    "IoK8sApiPolicyV1beta1PodDisruptionBudgetList": IoK8sApiPolicyV1beta1PodDisruptionBudgetList,
-    "IoK8sApiPolicyV1beta1PodDisruptionBudgetSpec": IoK8sApiPolicyV1beta1PodDisruptionBudgetSpec,
-    "IoK8sApiPolicyV1beta1PodDisruptionBudgetStatus": IoK8sApiPolicyV1beta1PodDisruptionBudgetStatus,
-    "IoK8sApiPolicyV1beta1PodSecurityPolicy": IoK8sApiPolicyV1beta1PodSecurityPolicy,
-    "IoK8sApiPolicyV1beta1PodSecurityPolicyList": IoK8sApiPolicyV1beta1PodSecurityPolicyList,
-    "IoK8sApiPolicyV1beta1PodSecurityPolicySpec": IoK8sApiPolicyV1beta1PodSecurityPolicySpec,
-    "IoK8sApiPolicyV1beta1RunAsGroupStrategyOptions": IoK8sApiPolicyV1beta1RunAsGroupStrategyOptions,
-    "IoK8sApiPolicyV1beta1RunAsUserStrategyOptions": IoK8sApiPolicyV1beta1RunAsUserStrategyOptions,
-    "IoK8sApiPolicyV1beta1RuntimeClassStrategyOptions": IoK8sApiPolicyV1beta1RuntimeClassStrategyOptions,
-    "IoK8sApiPolicyV1beta1SELinuxStrategyOptions": IoK8sApiPolicyV1beta1SELinuxStrategyOptions,
-    "IoK8sApiPolicyV1beta1SupplementalGroupsStrategyOptions": IoK8sApiPolicyV1beta1SupplementalGroupsStrategyOptions,
     "IoK8sApiRbacV1AggregationRule": IoK8sApiRbacV1AggregationRule,
     "IoK8sApiRbacV1ClusterRole": IoK8sApiRbacV1ClusterRole,
     "IoK8sApiRbacV1ClusterRoleBinding": IoK8sApiRbacV1ClusterRoleBinding,
@@ -2166,6 +2544,8 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiStorageV1CSINodeDriver": IoK8sApiStorageV1CSINodeDriver,
     "IoK8sApiStorageV1CSINodeList": IoK8sApiStorageV1CSINodeList,
     "IoK8sApiStorageV1CSINodeSpec": IoK8sApiStorageV1CSINodeSpec,
+    "IoK8sApiStorageV1CSIStorageCapacity": IoK8sApiStorageV1CSIStorageCapacity,
+    "IoK8sApiStorageV1CSIStorageCapacityList": IoK8sApiStorageV1CSIStorageCapacityList,
     "IoK8sApiStorageV1StorageClass": IoK8sApiStorageV1StorageClass,
     "IoK8sApiStorageV1StorageClassList": IoK8sApiStorageV1StorageClassList,
     "IoK8sApiStorageV1TokenRequest": IoK8sApiStorageV1TokenRequest,
@@ -2176,8 +2556,6 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiStorageV1VolumeAttachmentStatus": IoK8sApiStorageV1VolumeAttachmentStatus,
     "IoK8sApiStorageV1VolumeError": IoK8sApiStorageV1VolumeError,
     "IoK8sApiStorageV1VolumeNodeResources": IoK8sApiStorageV1VolumeNodeResources,
-    "IoK8sApiStorageV1beta1CSIStorageCapacity": IoK8sApiStorageV1beta1CSIStorageCapacity,
-    "IoK8sApiStorageV1beta1CSIStorageCapacityList": IoK8sApiStorageV1beta1CSIStorageCapacityList,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition": IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceColumnDefinition,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceConversion": IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceConversion,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinition": IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceDefinition,
@@ -2192,6 +2570,7 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation": IoK8sApiextensionsApiserverPkgApisApiextensionsV1CustomResourceValidation,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1ExternalDocumentation": IoK8sApiextensionsApiserverPkgApisApiextensionsV1ExternalDocumentation,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1JSONSchemaProps": IoK8sApiextensionsApiserverPkgApisApiextensionsV1JSONSchemaProps,
+    "IoK8sApiextensionsApiserverPkgApisApiextensionsV1SelectableField": IoK8sApiextensionsApiserverPkgApisApiextensionsV1SelectableField,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1ServiceReference": IoK8sApiextensionsApiserverPkgApisApiextensionsV1ServiceReference,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1ValidationRule": IoK8sApiextensionsApiserverPkgApisApiextensionsV1ValidationRule,
     "IoK8sApiextensionsApiserverPkgApisApiextensionsV1WebhookClientConfig": IoK8sApiextensionsApiserverPkgApisApiextensionsV1WebhookClientConfig,
@@ -2203,23 +2582,18 @@ let typeMap: {[index: string]: any} = {
     "IoK8sApimachineryPkgApisMetaV1APIVersions": IoK8sApimachineryPkgApisMetaV1APIVersions,
     "IoK8sApimachineryPkgApisMetaV1Condition": IoK8sApimachineryPkgApisMetaV1Condition,
     "IoK8sApimachineryPkgApisMetaV1DeleteOptions": IoK8sApimachineryPkgApisMetaV1DeleteOptions,
-    "IoK8sApimachineryPkgApisMetaV1DeleteOptionsV2": IoK8sApimachineryPkgApisMetaV1DeleteOptionsV2,
     "IoK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery": IoK8sApimachineryPkgApisMetaV1GroupVersionForDiscovery,
     "IoK8sApimachineryPkgApisMetaV1LabelSelector": IoK8sApimachineryPkgApisMetaV1LabelSelector,
     "IoK8sApimachineryPkgApisMetaV1LabelSelectorRequirement": IoK8sApimachineryPkgApisMetaV1LabelSelectorRequirement,
     "IoK8sApimachineryPkgApisMetaV1ListMeta": IoK8sApimachineryPkgApisMetaV1ListMeta,
     "IoK8sApimachineryPkgApisMetaV1ManagedFieldsEntry": IoK8sApimachineryPkgApisMetaV1ManagedFieldsEntry,
     "IoK8sApimachineryPkgApisMetaV1ObjectMeta": IoK8sApimachineryPkgApisMetaV1ObjectMeta,
-    "IoK8sApimachineryPkgApisMetaV1ObjectMetaV2": IoK8sApimachineryPkgApisMetaV1ObjectMetaV2,
     "IoK8sApimachineryPkgApisMetaV1OwnerReference": IoK8sApimachineryPkgApisMetaV1OwnerReference,
-    "IoK8sApimachineryPkgApisMetaV1OwnerReferenceV2": IoK8sApimachineryPkgApisMetaV1OwnerReferenceV2,
     "IoK8sApimachineryPkgApisMetaV1Preconditions": IoK8sApimachineryPkgApisMetaV1Preconditions,
     "IoK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR": IoK8sApimachineryPkgApisMetaV1ServerAddressByClientCIDR,
     "IoK8sApimachineryPkgApisMetaV1Status": IoK8sApimachineryPkgApisMetaV1Status,
     "IoK8sApimachineryPkgApisMetaV1StatusCause": IoK8sApimachineryPkgApisMetaV1StatusCause,
     "IoK8sApimachineryPkgApisMetaV1StatusDetails": IoK8sApimachineryPkgApisMetaV1StatusDetails,
-    "IoK8sApimachineryPkgApisMetaV1StatusDetailsV2": IoK8sApimachineryPkgApisMetaV1StatusDetailsV2,
-    "IoK8sApimachineryPkgApisMetaV1StatusV2": IoK8sApimachineryPkgApisMetaV1StatusV2,
     "IoK8sApimachineryPkgApisMetaV1WatchEvent": IoK8sApimachineryPkgApisMetaV1WatchEvent,
     "IoK8sApimachineryPkgVersionInfo": IoK8sApimachineryPkgVersionInfo,
     "IoK8sKubeAggregatorPkgApisApiregistrationV1APIService": IoK8sKubeAggregatorPkgApisApiregistrationV1APIService,
@@ -2228,6 +2602,37 @@ let typeMap: {[index: string]: any} = {
     "IoK8sKubeAggregatorPkgApisApiregistrationV1APIServiceSpec": IoK8sKubeAggregatorPkgApisApiregistrationV1APIServiceSpec,
     "IoK8sKubeAggregatorPkgApisApiregistrationV1APIServiceStatus": IoK8sKubeAggregatorPkgApisApiregistrationV1APIServiceStatus,
     "IoK8sKubeAggregatorPkgApisApiregistrationV1ServiceReference": IoK8sKubeAggregatorPkgApisApiregistrationV1ServiceReference,
+    "IoMetallbV1beta1BFDProfile": IoMetallbV1beta1BFDProfile,
+    "IoMetallbV1beta1BFDProfileList": IoMetallbV1beta1BFDProfileList,
+    "IoMetallbV1beta1BFDProfileSpec": IoMetallbV1beta1BFDProfileSpec,
+    "IoMetallbV1beta1BGPAdvertisement": IoMetallbV1beta1BGPAdvertisement,
+    "IoMetallbV1beta1BGPAdvertisementList": IoMetallbV1beta1BGPAdvertisementList,
+    "IoMetallbV1beta1BGPAdvertisementSpec": IoMetallbV1beta1BGPAdvertisementSpec,
+    "IoMetallbV1beta1BGPAdvertisementSpecIpAddressPoolSelectorsInner": IoMetallbV1beta1BGPAdvertisementSpecIpAddressPoolSelectorsInner,
+    "IoMetallbV1beta1BGPPeer": IoMetallbV1beta1BGPPeer,
+    "IoMetallbV1beta1BGPPeerList": IoMetallbV1beta1BGPPeerList,
+    "IoMetallbV1beta1BGPPeerSpec": IoMetallbV1beta1BGPPeerSpec,
+    "IoMetallbV1beta1BGPPeerSpecNodeSelectorsInner": IoMetallbV1beta1BGPPeerSpecNodeSelectorsInner,
+    "IoMetallbV1beta1BGPPeerSpecNodeSelectorsInnerMatchExpressionsInner": IoMetallbV1beta1BGPPeerSpecNodeSelectorsInnerMatchExpressionsInner,
+    "IoMetallbV1beta1Community": IoMetallbV1beta1Community,
+    "IoMetallbV1beta1CommunityList": IoMetallbV1beta1CommunityList,
+    "IoMetallbV1beta1CommunitySpec": IoMetallbV1beta1CommunitySpec,
+    "IoMetallbV1beta1CommunitySpecCommunitiesInner": IoMetallbV1beta1CommunitySpecCommunitiesInner,
+    "IoMetallbV1beta1IPAddressPool": IoMetallbV1beta1IPAddressPool,
+    "IoMetallbV1beta1IPAddressPoolList": IoMetallbV1beta1IPAddressPoolList,
+    "IoMetallbV1beta1IPAddressPoolSpec": IoMetallbV1beta1IPAddressPoolSpec,
+    "IoMetallbV1beta1IPAddressPoolSpecServiceAllocation": IoMetallbV1beta1IPAddressPoolSpecServiceAllocation,
+    "IoMetallbV1beta1L2Advertisement": IoMetallbV1beta1L2Advertisement,
+    "IoMetallbV1beta1L2AdvertisementList": IoMetallbV1beta1L2AdvertisementList,
+    "IoMetallbV1beta1L2AdvertisementSpec": IoMetallbV1beta1L2AdvertisementSpec,
+    "IoMetallbV1beta1ServiceL2Status": IoMetallbV1beta1ServiceL2Status,
+    "IoMetallbV1beta1ServiceL2StatusList": IoMetallbV1beta1ServiceL2StatusList,
+    "IoMetallbV1beta1ServiceL2StatusStatus": IoMetallbV1beta1ServiceL2StatusStatus,
+    "IoMetallbV1beta1ServiceL2StatusStatusInterfacesInner": IoMetallbV1beta1ServiceL2StatusStatusInterfacesInner,
+    "IoMetallbV1beta2BGPPeer": IoMetallbV1beta2BGPPeer,
+    "IoMetallbV1beta2BGPPeerList": IoMetallbV1beta2BGPPeerList,
+    "IoMetallbV1beta2BGPPeerSpec": IoMetallbV1beta2BGPPeerSpec,
+    "IoMetallbV1beta2BGPPeerSpecPasswordSecret": IoMetallbV1beta2BGPPeerSpecPasswordSecret,
 }
 
 export class ObjectSerializer {
