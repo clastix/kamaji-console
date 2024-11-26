@@ -93,6 +93,8 @@ export const k8sRouter = createTRPCRouter({
             undefined,
             undefined,
             undefined,
+            undefined,
+            undefined,
             { headers: { "Content-Type": "application/json-patch+json" } }
           );
         return res;
