@@ -71,7 +71,7 @@
     "eslint-config-next": "13.4.6",
     "eslint-plugin-storybook": "^0.6.12",
     "jsdom": "^22.1.0",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.49",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "prisma": "^4.15.0",
