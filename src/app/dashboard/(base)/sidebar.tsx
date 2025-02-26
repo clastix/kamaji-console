@@ -19,10 +19,13 @@ import {
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment, useCallback, type SVGProps } from "react";
+import { Fragment, useCallback } from "react";
 import { useSidebarStore } from "./sidebar.store";
 import { useSession } from "@/auth/client";
 import { useSignOut } from "@/auth/client/hooks";
+import {reactApi} from "@/utils/api";
+import {getSveltosURLRedirection} from "@/components/utils/get-redirect-urls";
+import {RedirectUrlSveltosKey} from "@/constants/constants";
 
 export function SideBar() {
   const { isOpen, setIsOpen } = useSidebarStore();
@@ -118,6 +121,8 @@ const Navigation = () => {
     [pathname]
   );
 
+  const q = reactApi.k8s.getSveltosToken.useQuery();
+
   return (
     <nav className="flex-1 space-y-1 px-2 pb-4">
       {navigation.map((item, id) => {
@@ -141,11 +146,14 @@ const Navigation = () => {
             </Link>
           );
         } else if (item.type === "external-link") {
+
+          const href = item?.id === RedirectUrlSveltosKey ? getSveltosURLRedirection(q?.data) : item.href
+
           return (
             <a
               target="_blank"
               key={id}
-              href={item.href}
+              href={href}
               className={clsx(
                 isCurrentPath(item.href)
                   ? "bg-primary-800 text-white"
@@ -208,14 +216,16 @@ function useNavigation(): Nav[] {
       icon: CircleStackIcon,
     },
     {
-      type: "coming-soon",
-      name: "Infrastructure Drivers",
-      icon: CpuChipIcon,
+      type: "external-link",
+      name: "Applications Delivery",
+      href: '',
+      icon: ArrowPathIcon,
+      id: 'Sveltos'
     },
     {
       type: "coming-soon",
-      name: "Applications Delivery",
-      icon: ArrowPathIcon,
+      name: "Infrastructure Drivers",
+      icon: CpuChipIcon,
     },
     {
       type: "coming-soon",
@@ -270,6 +280,7 @@ interface ExternalLinkNav {
   name: string;
   icon: Icon;
   href: string;
+  id?: string;
 }
 
 interface SectionNav {

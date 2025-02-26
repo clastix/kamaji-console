@@ -78,6 +78,25 @@ export class ClastixCli {
     return Buffer.from(hashedConf, "base64").toString("ascii");
   }
 
+  async getSveltosToken() {
+    const namespace = process.env.SVELTOS_NAMESPACE || '';
+    const secretName = process.env.SVELTOS_SECRET_NAME || '';
+    if (!secretName) {
+      throw new TRPCError({ code: "NOT_FOUND", message: "not found" });
+    }
+    const res = await this.k8sCli.coreV1.readNamespacedSecret(
+        secretName,
+        namespace
+    );
+
+    const hashedToken = res.body?.data?.token;
+    if (!hashedToken) {
+      throw new TRPCError({ code: "NOT_FOUND", message: "not found" });
+    }
+
+    return Buffer.from(hashedToken, "base64").toString("ascii");
+  }
+
   async getTcpNodesOrThrow(
     tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
   ): Promise<k8s.V1Node[]> {

@@ -94,7 +94,7 @@ const SignInWithCredentials = () => {
       }}
       onSubmit={async (values) => {
         try {
-          await login(values.email, values.password);
+          await login(values.email, values.password)
         } catch (error) {
           if (error instanceof TRPCClientError) {
             return { login: error.message };
@@ -104,6 +104,7 @@ const SignInWithCredentials = () => {
       }}
     >
       {({ handleSubmit, dirtySinceLastSubmit, submitErrors, submitting }) => {
+        console.log("submit errors:" , submitErrors)
         return (
           <form onSubmit={handleSubmit}>
             <TextField name="email" label="Email" />
