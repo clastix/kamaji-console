@@ -58,7 +58,6 @@ export class Auth {
   }
 
   async login(input: LoginInput) {
-    console.log("Entered login: ", input)
     const user = await this.authorize(input);
     const accessToken = singAccessJWT(user, this.secret);
     const refreshToken = singRefreshJWT(user, this.secret);

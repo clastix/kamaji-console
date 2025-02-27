@@ -149,24 +149,27 @@ const Navigation = () => {
 
           const href = item?.id === RedirectUrlSveltosKey ? getSveltosURLRedirection(q?.data) : item.href
 
-          return (
-            <a
-              target="_blank"
-              key={id}
-              href={href}
-              className={clsx(
-                isCurrentPath(item.href)
-                  ? "bg-primary-800 text-white"
-                  : "text-primary-100 hover:bg-primary-600",
-                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
-              )}
-            >
-              <item.icon
-                className="mr-3 h-6 w-6 flex-shrink-0 text-primary-300"
-                aria-hidden="true"
-              />
-              {item.name}
-            </a>
+          return (<>
+              {href !== '' &&
+                  <a
+                    target="_blank"
+                    key={id}
+                    href={href}
+                    className={clsx(
+                      isCurrentPath(item.href)
+                        ? "bg-primary-800 text-white"
+                        : "text-primary-100 hover:bg-primary-600",
+                      "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+                    )}
+                  >
+                    <item.icon
+                      className="mr-3 h-6 w-6 flex-shrink-0 text-primary-300"
+                      aria-hidden="true"
+                    />
+                    {item.name}
+                  </a>
+              }
+              </>
           );
         } else if (item.type === "coming-soon") {
           return (

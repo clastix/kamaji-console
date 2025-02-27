@@ -104,7 +104,6 @@ const SignInWithCredentials = () => {
       }}
     >
       {({ handleSubmit, dirtySinceLastSubmit, submitErrors, submitting }) => {
-        console.log("submit errors:" , submitErrors)
         return (
           <form onSubmit={handleSubmit}>
             <TextField name="email" label="Email" />
