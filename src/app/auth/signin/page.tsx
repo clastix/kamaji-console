@@ -94,7 +94,7 @@ const SignInWithCredentials = () => {
       }}
       onSubmit={async (values) => {
         try {
-          await login(values.email, values.password);
+          await login(values.email, values.password)
         } catch (error) {
           if (error instanceof TRPCClientError) {
             return { login: error.message };

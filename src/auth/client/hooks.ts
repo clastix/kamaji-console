@@ -27,7 +27,6 @@ export function useSession(): ClientSession {
 
 export function useLogin() {
   const { send } = AuthMachineContext.useActorRef();
-
   const signIn = async (email: string, password: string) => {
     const tokens = await vanillaAPI.auth.login.mutate({
       email,
