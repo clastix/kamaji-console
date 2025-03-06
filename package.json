@@ -52,7 +52,7 @@
     "@openapitools/openapi-generator-cli": "^2.15.3",
     "@storybook/addon-essentials": "^7.0.21",
     "@storybook/addon-interactions": "^7.0.21",
-    "@storybook/addon-links": "^7.2.3",
+    "@storybook/addon-links": "^8.6.4",
     "@storybook/blocks": "^8.5.8",
     "@storybook/nextjs": "^7.0.21",
     "@storybook/react": "^8.6.0",
