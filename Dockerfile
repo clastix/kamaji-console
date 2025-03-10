@@ -1,11 +1,14 @@
 ARG NEXT_PUBLIC_BASE_PATH=/ui
 
-FROM node:18-alpine3.16 as base
+FROM node:18-alpine3.16 AS base
+
 # Install dependencies only when needed
 FROM base AS deps
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 WORKDIR /app
 COPY package.json package-lock.json ./
+# Add dependencies for native modules (like bufferutil) that rely on node-gyp
+RUN apk add --no-cache python3 make g++
 RUN npm ci 
 
 # Rebuild the source code only when needed
@@ -20,7 +23,7 @@ RUN SKIP_ENV_VALIDATION=true npm run build
 FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
@@ -41,7 +44,7 @@ ARG NEXT_PUBLIC_BASE_PATH
 USER nextjs
 
 EXPOSE 3000
-ENV NEXT_PUBLIC_BASE_PATH $NEXT_PUBLIC_BASE_PATH
-ENV PORT 3000
+ENV NEXT_PUBLIC_BASE_PATH=$NEXT_PUBLIC_BASE_PATH
+ENV PORT=3000
 
 CMD ["node", "server.js"]
