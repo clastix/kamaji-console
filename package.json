@@ -21,7 +21,7 @@
     "@codemirror/fold": "^0.19.4",
     "@codemirror/legacy-modes": "^6.3.2",
     "@codemirror/stream-parser": "^0.19.9",
-    "@headlessui/react": "^1.7.15",
+    "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@kubernetes/client-node": "^0.18.1",
     "@tailwindcss/forms": "^0.5.3",
