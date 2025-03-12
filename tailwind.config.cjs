@@ -43,9 +43,12 @@ module.exports = {
     themes: [
       {
         clastix: {
-          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
           primary: colors.primary.base,
           accent: colors.secondary.base,
+          "base-100": "#ffffff", // Define base color
+          "base-content": "#333333", // Define base text color
+          "neutral": "#3d4451",
+          "neutral-content": "#ffffff",
         },
       },
       "cupcake",
