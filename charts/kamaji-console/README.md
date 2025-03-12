@@ -1,6 +1,6 @@
 # kamaji-console
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.1.0](https://img.shields.io/badge/AppVersion-v0.1.0-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.1.1](https://img.shields.io/badge/AppVersion-v0.1.1-informational?style=flat-square)
 
 Kamaji deploys and operates Kubernetes at scale with a fraction of the operational burden. This chart install a console for Kamaji.
 
@@ -94,6 +94,9 @@ Here the values you can override:
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
+| sveltos.namespace | string | `nil` | Namespace where the Project Sveltos is deployed |
+| sveltos.secretName | string | `nil` | Secret containing the access token |
+| sveltos.url | string | `""` | URL of the Project Sveltos Dashboard, required for the Application Delivery |
 | tolerations | list | `[]` |  |
 
 ## Maintainers

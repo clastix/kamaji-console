@@ -19,6 +19,14 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+sveltos:
+  # -- URL of the Project Sveltos Dashboard, required for the Application Delivery
+  url: ""
+  # -- Namespace where the Project Sveltos is deployed
+  namespace:
+  # -- Secret containing the access token
+  secretName:
+
 credentialsSecret:
   generate: false
   # name of the secret hosting sensitive info
