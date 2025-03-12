@@ -39,8 +39,8 @@ jobs:
             ghcr.io/${{ github.repository }}
           tag-sha: true
           tag-semver: |
-            {{version}}
-            {{major}}.{{minor}}
+            v{{version}}
+            v{{major}}.{{minor}}
           tag-custom: |
             ${{steps.get_vars.outputs.branch}}-${{steps.get_vars.outputs.sha}}-${{ steps.get_vars.outputs.ts }}
       - name: Log in to the Container registry
