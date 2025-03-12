@@ -21,8 +21,10 @@ export const serverSchema = z.object({
   // admin user
   ADMIN_EMAIL: z.string().email(),
   ADMIN_PASSWORD: z.string(),
-  AWS_ACCESS_KEY_ID: z.string().optional(),
-  AWS_SECRET_ACCESS_KEY: z.string().optional(),
+  // sveltos
+  SVELTOS_NAMESPACE: z.string().optional(),
+  SVELTOS_SECRET_NAME: z.string().optional(),
+  SVELTOS_URL: z.string().optional(),
 });
 
 /**
@@ -39,8 +41,9 @@ export const serverEnv = {
     "/api/auth",
   ADMIN_EMAIL: process.env.ADMIN_EMAIL,
   ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
-  AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID,
-  AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
+  SVELTOS_NAMESPACE: process.env.SVELTOS_NAMESPACE,
+  SVELTOS_SECRET_NAME: process.env.SVELTOS_SECRET_NAME,
+  SVELTOS_URL: process.env.SVELTOS_URL,
 };
 
 /**

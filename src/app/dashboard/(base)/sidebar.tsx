@@ -24,7 +24,6 @@ import { useSidebarStore } from "./sidebar.store";
 import { useSession } from "@/auth/client";
 import { useSignOut } from "@/auth/client/hooks";
 import {reactApi} from "@/utils/api";
-import {getSveltosURLRedirection} from "@/components/utils/get-redirect-urls";
 import {RedirectUrlSveltosKey} from "@/constants/constants";
 
 export function SideBar() {
@@ -121,7 +120,7 @@ const Navigation = () => {
     [pathname]
   );
 
-  const q = reactApi.k8s.getSveltosToken.useQuery();
+  const q = reactApi.k8s.getSveltosURL.useQuery();
 
   return (
     <nav className="flex-1 space-y-1 px-2 pb-4">
@@ -147,7 +146,7 @@ const Navigation = () => {
           );
         } else if (item.type === "external-link") {
 
-          const href = item?.id === RedirectUrlSveltosKey ? getSveltosURLRedirection(q?.data) : item.href
+          const href = item?.id === RedirectUrlSveltosKey ? q?.data : item.href
 
           return (<>
               {href !== '' &&
