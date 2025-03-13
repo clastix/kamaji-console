@@ -233,7 +233,7 @@ function useNavigation(): Nav[] {
     },
     {
       type: "external-link",
-      name: "Applications Delivery",
+      name: "Application Delivery",
       href: '',
       icon: ArrowPathIcon,
       id: 'Sveltos'
