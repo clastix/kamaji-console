@@ -115,7 +115,7 @@ const Navigation = () => {
   const navigation = useNavigation();
   const isCurrentPath = useCallback(
     (path: string) => {
-      const allP = (env.NEXT_PUBLIC_BASE_PATH || "") + path;
+      const allP = (env?.NEXT_PUBLIC_BASE_PATH || "") + path;
       return pathname?.startsWith(allP);
     },
     [pathname]

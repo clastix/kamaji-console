@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: {
+   children,
+}: {
     children: React.ReactNode;
 }) {
     return (
         <html lang="en" data-theme="clastix">
         <head>
-            <meta content="width=device-width, initial-scale=1" name="viewport" />
+            <meta content="width=device-width, initial-scale=1" name="viewport"/>
             <link
                 rel="apple-touch-icon"
                 sizes="57x57"
@@ -23,8 +23,8 @@ export default function RootLayout({
             />
             {/* Include all your other link and meta tags here */}
         </head>
-        <body>
-            <ClientWrapper>{children}</ClientWrapper>
+        <body data-theme="clastix">
+        <ClientWrapper>{children}</ClientWrapper>
         </body>
         </html>
     );
