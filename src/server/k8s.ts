@@ -78,10 +78,11 @@ export class ClastixCli {
     return Buffer.from(hashedConf, "base64").toString("ascii");
   }
 
-  async getSveltosToken() {
+  async getSveltosURL() {
+    const sveltosURL = process.env.SVELTOS_URL || '';
     const namespace = process.env.SVELTOS_NAMESPACE || '';
     const secretName = process.env.SVELTOS_SECRET_NAME || '';
-    if (!secretName) {
+    if (!secretName || !namespace || !sveltosURL) {
       throw new TRPCError({ code: "NOT_FOUND", message: "not found" });
     }
     const res = await this.k8sCli.coreV1.readNamespacedSecret(
@@ -94,7 +95,7 @@ export class ClastixCli {
       throw new TRPCError({ code: "NOT_FOUND", message: "not found" });
     }
 
-    return Buffer.from(hashedToken, "base64").toString("ascii");
+    return `${sveltosURL}/sveltos/clusters?auth=${encodeURIComponent(Buffer.from(hashedToken, "base64").toString("ascii"))}`;
   }
 
   async getTcpNodesOrThrow(

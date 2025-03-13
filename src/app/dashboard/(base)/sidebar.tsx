@@ -24,7 +24,6 @@ import { useSidebarStore } from "./sidebar.store";
 import { useSession } from "@/auth/client";
 import { useSignOut } from "@/auth/client/hooks";
 import {reactApi} from "@/utils/api";
-import {getSveltosURLRedirection} from "@/components/utils/get-redirect-urls";
 import {RedirectUrlSveltosKey} from "@/constants/constants";
 
 export function SideBar() {
@@ -121,7 +120,7 @@ const Navigation = () => {
     [pathname]
   );
 
-  const q = reactApi.k8s.getSveltosToken.useQuery();
+  const q = reactApi.k8s.getSveltosURL.useQuery();
 
   return (
     <nav className="flex-1 space-y-1 px-2 pb-4">
@@ -146,30 +145,44 @@ const Navigation = () => {
             </Link>
           );
         } else if (item.type === "external-link") {
+          const href = item?.id === RedirectUrlSveltosKey ? q?.data : item.href
+          // Sveltos has been configured with the required environment variables:
+          // presenting the link active
+          if (href !== undefined) {
+            return (
+              <a
+                target="_blank"
+                key={id}
+                href={href}
+                className={clsx(
+                  "text-primary-100 hover:bg-primary-600",
+                  "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+                )}
+              >
+                <item.icon
+                  className="mr-3 h-6 w-6 flex-shrink-0 text-primary-300"
+                  aria-hidden="true"
+                />
+                {item.name}
+              </a>
+            );
+          }
 
-          const href = item?.id === RedirectUrlSveltosKey ? getSveltosURLRedirection(q?.data) : item.href
-
-          return (<>
-              {href !== '' &&
-                  <a
-                    target="_blank"
-                    key={id}
-                    href={href}
-                    className={clsx(
-                      isCurrentPath(item.href)
-                        ? "bg-primary-800 text-white"
-                        : "text-primary-100 hover:bg-primary-600",
-                      "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
-                    )}
-                  >
-                    <item.icon
-                      className="mr-3 h-6 w-6 flex-shrink-0 text-primary-300"
-                      aria-hidden="true"
-                    />
-                    {item.name}
-                  </a>
-              }
-              </>
+          return (
+            <div
+              key={id}
+              className={clsx(
+                "flex items-center",
+                "text-primary-400 ",
+                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+              )}
+            >
+              <item.icon
+                className="mr-3 h-6 w-6 flex-shrink-0 text-primary-300"
+                aria-hidden="true"
+              />
+              {item.name}
+            </div>
           );
         } else if (item.type === "coming-soon") {
           return (
@@ -220,7 +233,7 @@ function useNavigation(): Nav[] {
     },
     {
       type: "external-link",
-      name: "Applications Delivery",
+      name: "Application Delivery",
       href: '',
       icon: ArrowPathIcon,
       id: 'Sveltos'
