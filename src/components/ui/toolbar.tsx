@@ -45,7 +45,7 @@ export function ToolBarContainer() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-gray-600 bg-opacity-75" />
+            <div className="fixed inset-0 bg-gray-600 bg-opacity-75" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
