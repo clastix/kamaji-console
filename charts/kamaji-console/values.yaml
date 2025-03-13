@@ -2,18 +2,14 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount: 2
 
 image:
-  repository: clastix/kamaji-console
+  repository: ghcr.io/clastix/kamaji-console
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
+  # -- Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
-# create a secret containing token to pull the image from Docker Hub 
-# kubectl -n <namespace> create secret generic <secret> \
-# --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
-# --type=kubernetes.io/dockerconfigjson
 imagePullSecrets: []
 
 nameOverride: ""
@@ -22,30 +18,30 @@ fullnameOverride: ""
 sveltos:
   # -- URL of the Project Sveltos Dashboard, required for the Application Delivery
   url: ""
-  # -- Namespace where the Project Sveltos is deployed
+  # -- Namespace where the Project Sveltos is deployed, required for the Application Delivery
   namespace:
-  # -- Secret containing the access token
+  # -- Secret containing the access token, required for the Application Delivery
   secretName:
 
 credentialsSecret:
   generate: false
-  # name of the secret hosting sensitive info
+  # -- Name of the Secret containing sensitive info
   name: "kamaji-console"
-  # URL where the console is accessible, eg. https://kamaji.labs.clastix.io/
+  # -- URL where the console is accessible, eg. https://kamaji.labs.clastix.io/
   nextAuthUrl: ""
-  # Secret used to sign the browser session
+  # -- Session-secret used to sign cookies
   jwtSecret: ""
-  # Credentials to login into console
+  # -- Username to login into the console
   email: ""
+  # -- Password to login into the console
   password: ""
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # -- Specifies whether a service account should be created
   create: true
-  # Annotations to add to the service account
+  # -- Annotations to add to the service account
   annotations: {}
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
+  # -- The name of the service account to use. If not set and create is true, a name is generated using the fullname template
   name: ""
 
 podAnnotations: {}
