@@ -10,9 +10,10 @@ import { type IoClastixKamajiV1alpha1TenantControlPlane } from "@/gen/api";
 import { reactApi } from "@/utils/api";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Nodes } from "./nodes";
 import { ReleatedObjects } from "./related-objects";
+import { TerminalComponent } from "@/components/terminal";
 
 interface Params {
   name: string;
@@ -96,6 +97,7 @@ const TopBar = ({
 }) => {
   const editoTcp = useEditTenantControlPlane();
   const deleteTcp = useDeleteTCP();
+  const [showTerminal, setShowTerminal] = useState(false);
 
   return (
     <div className="flex justify-between py-4">
@@ -128,9 +130,42 @@ const TopBar = ({
             >
               Delete
             </button>
+            <button
+              className="btn-primary btn-sm btn"
+              onClick={() => setShowTerminal(!showTerminal)}
+            >
+              Terminal
+            </button>
           </>
         )}
       </div>
+      {showTerminal && (
+        <div 
+          id="kamaji-terminal-container"
+          className="fixed inset-x-0 bottom-0 h-96 bg-black shadow-lg z-50"
+        >
+          <div className="relative w-full h-full flex flex-col">
+            <div className="flex justify-between items-center px-4 py-2 border-b border-gray-700">
+              <div className="text-white opacity-50 text-sm">Terminal</div>
+              <button
+                className="text-gray-400 hover:text-white transition-colors"
+                onClick={() => {
+                  const event = new CustomEvent('terminal-cleanup');
+                  window.dispatchEvent(event);
+                  setShowTerminal(false);
+                }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="flex-1 overflow-hidden">
+              {tcp && <TerminalComponent tcp={tcp} onClose={() => setShowTerminal(false)} />}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
