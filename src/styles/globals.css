@@ -17,3 +17,32 @@
   left: 0px;
   z-index: 11;
 }
+
+/* Stile per la scrollbar principale */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Traccia della scrollbar (il "binario") */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+/* "Maniglia" della scrollbar */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+/* Effetto hover sulla "maniglia" */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Parte finale della scrollbar */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

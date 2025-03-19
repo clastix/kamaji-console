@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { useDeleteTCP } from "@/components/actions/tcps/delete-tcp";
 import { useEditTenantControlPlane } from "@/components/actions/tcps/edit-tcp";
 import { useScaleTcp } from "@/components/actions/tcps/scale-tcp";
@@ -13,6 +14,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Nodes } from "./nodes";
 import { ReleatedObjects } from "./related-objects";
+import {Button} from "@/components/ui/Button";
 
 interface Params {
   name: string;
@@ -23,8 +25,8 @@ const Page = ({ params }: { params: Params }) => {
   const router = useRouter();
   const q = reactApi.k8s.getClastixTCP.useQuery(
     {
-      name: params.name,
-      namespace: params.namespace,
+      name: React.use(params).name,
+      namespace: React.use(params).namespace,
     },
     {
       refetchInterval: 2000,
@@ -78,8 +80,8 @@ const TCPPage = ({
               scale={() => scaleTcp(tcp)}
               viewKubeconfig={() => viewKubeconfig(params)}
             />
-            <ReleatedObjects {...params} />
-            <Nodes {...params} />
+            <ReleatedObjects {...React.use(params)} />
+            <Nodes {...React.use(params)} />
           </div>
         </div>
       </main>
@@ -103,31 +105,16 @@ const TopBar = ({
         <Link href="/dashboard/tcps" className="mr-4">
           Tenant Control Plane
         </Link>
-        <span className="font-bold text-primary-800">
-          {params.namespace} / {params.name}
+        <span className="font-bold text-text-lightBlue">
+          {React.use(params).namespace} / {React.use(params).name}
         </span>
       </h2>
       <div className="space-x-2">
         {tcp && (
           <>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editoTcp(tcp, false)}
-            >
-              View
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editoTcp(tcp, true)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => deleteTcp(params)}
-            >
-              Delete
-            </button>
+            <Button label={'View'} onClick={() => editoTcp(tcp, false)} />
+            <Button label={'Edit'} onClick={() => editoTcp(tcp, true)} />
+            <Button label={'Delete'} onClick={() => deleteTcp(params)} />
           </>
         )}
       </div>

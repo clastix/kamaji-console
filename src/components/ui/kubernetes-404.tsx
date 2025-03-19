@@ -1,5 +1,6 @@
 "use client"
 import { useSignOut } from "@/auth/client";
+import {Button} from "@/components/ui/Button";
 
 export function NotFoundK8s() {
   const signOut = useSignOut();
@@ -17,7 +18,7 @@ export function NotFoundK8s() {
             Sorry, it seams that kubernetes API server is not reachable from our
             server, pleace check your installation.
           </p>
-          <button onClick={() => signOut()}> SignOut</button>
+          <Button onClick={() => signOut()}> SignOut</Button>
         </div>
       </main>
     </>

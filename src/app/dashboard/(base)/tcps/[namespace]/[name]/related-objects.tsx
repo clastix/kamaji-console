@@ -9,6 +9,7 @@ import { PodsList } from "../../../../../../components/kubernetes/core/pods-list
 import { SecretsList } from "../../../../../../components/kubernetes/core/secrets";
 import { ServicesList } from "../../../../../../components/kubernetes/core/services";
 import { reactApi } from "../../../../../../utils/api";
+import {Tabs} from "@/components/ui/Tabs";
 
 const options = [
   "pods",
@@ -23,19 +24,11 @@ export const ReleatedObjects = (params: Params) => {
   const [selected, setSelected] = useState<Option>(options[0]);
   return (
     <div className="flex h-48 flex-col overflow-hidden rounded ">
-      <div className="tabs">
-        {options.map((option) => (
-          <button
-            key={option}
-            className={clsx("tab-bordered tab", {
-              "tab-active": selected === option,
-            })}
-            onClick={() => setSelected(option)}
-          >
-            {option}
-          </button>
-        ))}
-      </div>
+      <Tabs
+        items={options}
+        onChange={setSelected}
+        activeTab={selected}
+      />
       <div className="flex-grow overflow-y-scroll">
         <Suspense fallback={<Loading />}>
           <Objects params={params} type={selected} />

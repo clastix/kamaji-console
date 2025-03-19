@@ -6,6 +6,7 @@ import { reactApi } from "@/utils/api";
 import { Dialog } from "@headlessui/react";
 import clsx from "clsx";
 import { z } from "zod";
+import {Button} from "@/components/ui/Button";
 
 export const useScaleTcp = () => {
   const openDialog = useCreateDialog();
@@ -35,7 +36,7 @@ const ScaleDialog = ({
     <>
       <Dialog.Title
         as="h3"
-        className="text-lg font-medium leading-6 text-gray-900"
+        className="text-lg font-medium leading-6"
       >
         Scale Tenant Control Plane {tcp.metadata?.name}
       </Dialog.Title>
@@ -57,15 +58,13 @@ const ScaleDialog = ({
           <form onSubmit={handleSubmit} className="mt-4 space-y-4">
             <NumberInputField label="Replicas" name="replicas" />
             <div className="flex justify-end">
-              <button
-                type="submit"
-                disabled={invalid || submitting}
-                className={clsx("btn-primary btn-sm btn", {
-                  loading: submitting,
-                })}
-              >
-                Scale
-              </button>
+                <Button
+                    type={"submit"}
+                    disabled={invalid || submitting}
+                    loading={submitting}
+                    label={'Scale'}
+                    size={"small"}
+                />
             </div>
           </form>
         )}

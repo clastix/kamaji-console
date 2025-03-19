@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { SVGProps } from "react";
+import {Button} from "@/components/ui/Button";
 
 
 type Icon = React.ForwardRefExoticComponent<Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
@@ -63,7 +64,7 @@ function TableHeader<T>({
     <tr>
       {!!selectable && <th></th>}
       {headers.map((h, idx) => (
-        <th key={idx}>{h}</th>
+        <th key={idx} className='text-sm'>{h}</th>
       ))}
       {actions.length > 0 && <th></th>}
     </tr>
@@ -99,7 +100,7 @@ function TableRow<T>({
         </td>
       )}
       {rows.map((r, idx) => (
-        <td onClick={() => onClick?.(obj)} key={idx} className="">
+        <td onClick={() => onClick?.(obj)} key={idx} className="text-base">
           {r}
         </td>
       ))}
@@ -111,14 +112,14 @@ function TableRow<T>({
               className="tooltip tooltip-top tooltip-info"
               data-tip={a.tooltip}
             >
-              <button
-                onClick={(e) => {
+              <Button
+                onClick={() => {
                   a.action(obj);
                 }}
-                className="btn-ghost btn-sm btn-circle btn-group btn"
+                variant={"ghost"}
               >
                 <a.icon className="w-5" />
-              </button>
+              </Button>
             </div>
           ))}
         </td>
