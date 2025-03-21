@@ -18,6 +18,20 @@ Alternatively, install with Helm:
     helm repo update
     helm install console clastix/kamaji-console -n kamaji-system --create-namespace
 
+## Application Delivery
+
+Application Delivery with Kamaji is achieved with [Project Sveltos](https://projectsveltos.github.io/sveltos/).
+
+The menu item will connect directly to the Project Sveltos [Dashboard](https://github.com/projectsveltos/dashboard)
+when the following environment variables are set:
+
+- `SVELTOS_NAMESPACE`: Kubernetes Namespace where the Project Sveltos Dashboard has been installed
+- `SVELTOS_SECRET_NAME`: Kubernetes Secret name of the Project Sveltos Dashboard token
+- `SVELTOS_URL`: FQDN of the Project Sveltos Dashboard to access
+
+> When all these data is provided, Kamaji Console will redirect the user directly to the Project Sveltos Dashboard,
+> without the need for typing manually the required token.
+
 ## Development
 
 Create a `.env` file with the information contained in [.env.example](.env.example)
@@ -27,7 +41,7 @@ $ npm install
 $ npm run dev
 ```
 
-The console should be run in an environment with a default connection to kubenretes API.
+The console requires connectivity to the Management cluster's Kubernetes API Server.
 
 ## Storybook
 
@@ -39,26 +53,32 @@ $ npm run storybook
 
 ## Connect to a child cluster
 
-When reading child cluster resources, such as node, the console uses the TCP kubeconfig in order to connect to the child cluster.
-When running in dev mode, using `npm run dev`, the console uses raw kubeconfig to connect to the cluster, in this way you should check that the child kubernetes API are reachable from your local development tool.
+When reading child cluster resources such as Nodes the console uses the Tenant Control Plane admin `kubeconfig` in order to connect to the child cluster.
 
-When build and deployed using docker, the console supposes to be runned inside parent kubernetes cluster, so it connects to the TCP using the tcp service fqdn in order to talk with child cluster kubernetes api.
+This could be problematic when running in outside-of-the-cluster or in dev mode (`npm run dev`):
+given the console uses raw `kubeconfig` to connect to the clusters,
+ensure the required connectivity with the Tenant Control Plane API Server is working as expected.
 
-## Generating OpenAPI client from kubernetes Spec
+A valid `kubeconfig` to connect to the management cluster must be provided by using Service Account data
+(e.g.: running in a Pod) or by declaring a valid `kubeconfig`.
 
-OpenAPI client can be generated using the [OpenAPI Generator](https://openapi-generator.tech) tool. See the [OpenAPI Generator](https://openapi-generator.tech/docs/installation) documentation for installation instructions.
+> When the console is running as `NODE_ENV=production` it takes for granted as running in a Pod in the management cluster,
+> connecting to the Tenant Control Plane API Server using the Kubernetes Service FQDN.
 
-The console uses the OpenAPI client generated from the kubernetes spec to interact with the kubernetes API.
+## Generating OpenAPI client from kubernetes API Specification
 
-First of all, you need access to a kubernetes cluster with kamaiji installed, and the kubernetes API exposed.
+OpenAPI client can be generated using the [OpenAPI Generator](https://openapi-generator.tech) tool.
+See the [OpenAPI Generator](https://openapi-generator.tech/docs/installation) documentation for installation instructions.
 
-To expose the kubernetes API, you can use the following command:
+The console uses the OpenAPI client generated from the Kubernetes API specification.
+
+A `kamaji` Kubernetes cluster is required, with a proxied Kubernetes API Server:
 
 ```bash
 $ kubectl proxy --port=8080
 ```
 
-Then, you can generate the OpenAPI client using the following command:
+Generate the OpenAPI client:
 
 ```bash
 openapi-generator generate -g typescript-node  -i http://localhost:8080/openapi/v2 -o src/gen
