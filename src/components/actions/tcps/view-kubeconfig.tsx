@@ -6,6 +6,7 @@ import { StreamLanguage } from "@codemirror/language";
 import * as yamlMode from "@codemirror/legacy-modes/mode/yaml";
 import CodeMirror from "@uiw/react-codemirror";
 import { EditorView } from "codemirror";
+import type { IoClastixKamajiV1alpha1TenantControlPlane } from "@/gen/api";
 
 interface TCP {
   name: string;
