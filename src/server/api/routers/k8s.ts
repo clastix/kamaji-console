@@ -215,7 +215,7 @@ export const k8sRouter = createTRPCRouter({
     )
     .query(async ({ ctx, input }) => {
       const tcp = await ctx.clastix.getTcpOrThrow(input.name, input.namespace);
-      return ctx.clastix.getTcpKubeConfigOrThrow(tcp);
+      return ctx.clastix.getTcpKubeConfigOrThrow(tcp, "admin.conf");
     }),
   getSveltosURL: protectedProcedure
     .query(async ({ ctx }) => {
