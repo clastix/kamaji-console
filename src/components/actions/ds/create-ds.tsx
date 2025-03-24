@@ -88,38 +88,38 @@ export const CreateDataStore = () => {
 };
 
 const getBaseYtaml = () => {
-  return `apiVersion: kamaji.clastix.io/v1alpha1
-          kind: DataStore
-          metadata:
-            name: #name 
-          spec:
-            driver: etcd
-            endpoints:
-              - etcd-0.etcd.kamaji-system.svc.cluster.local:2379
-              - etcd-1.etcd.kamaji-system.svc.cluster.local:2379
-              - etcd-2.etcd.kamaji-system.svc.cluster.local:2379
-            tlsConfig:
-              certificateAuthority:
-                certificate:
-                  secretReference:
-                    keyPath: ca.crt
-                    name: etcd-certs
-                    namespace: kamaji-system
-                privateKey:
-                  secretReference:
-                    keyPath: ca.key
-                    name: etcd-certs
-                    namespace: kamaji-system
-              clientCertificate:
-                certificate:
-                  secretReference:
-                    keyPath: tls.crt
-                    name: root-client-certs
-                    namespace: kamaji-system
-                privateKey:
-                  secretReference:
-                    keyPath: tls.key
-                    name: root-client-certs
-                    namespace: kamaji-system
-          `;
+  return (``+
+`apiVersion: kamaji.clastix.io/v1alpha1
+kind: DataStore
+metadata:
+  name: #name 
+spec:
+  driver: etcd
+  endpoints:
+    - etcd-0.etcd.kamaji-system.svc.cluster.local:2379
+    - etcd-1.etcd.kamaji-system.svc.cluster.local:2379
+    - etcd-2.etcd.kamaji-system.svc.cluster.local:2379
+  tlsConfig:
+    certificateAuthority:
+      certificate:
+        secretReference:
+          keyPath: ca.crt
+          name: etcd-certs
+          namespace: kamaji-system
+      privateKey:
+        secretReference:
+          keyPath: ca.key
+          name: etcd-certs
+          namespace: kamaji-system
+    clientCertificate:
+      certificate:
+        secretReference:
+          keyPath: tls.crt
+          name: root-client-certs
+          namespace: kamaji-system
+      privateKey:
+        secretReference:
+          keyPath: tls.key
+          name: root-client-certs
+          namespace: kamaji-system`).replace(/^\n+/, '');
 };

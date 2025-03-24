@@ -90,32 +90,31 @@ const CreateTCP = () => {
 };
 
 const getBaseYtaml = () => {
-  return `
-  apiVersion: kamaji.clastix.io/v1alpha1
-  kind: TenantControlPlane
-  metadata:
-    name: #name
-    namespace: #namespace
-  spec:
-    dataStore: default
-    controlPlane:
-      deployment:
-        replicas: 2
-      service:
-        serviceType: LoadBalancer
-    kubernetes:
-      version: v1.31.0
-      kubelet:
-        cgroupfs: systemd
-    networkProfile:
-      port: 6443
-    addons:
-      coreDNS: {}
-      kubeProxy: {}
-      konnectivity:
-        server:
-          port: 8132
-          resources: {}
-        agent: {}
-	`;
+  return (``+
+`apiVersion: kamaji.clastix.io/v1alpha1
+kind: TenantControlPlane
+metadata:
+  name: #name
+  namespace: #namespace
+spec:
+  dataStore: default
+  controlPlane:
+    deployment:
+      replicas: 2
+    service:
+      serviceType: LoadBalancer
+  kubernetes:
+    version: v1.31.0
+    kubelet:
+      cgroupfs: systemd
+  networkProfile:
+    port: 6443
+  addons:
+    coreDNS: {}
+    kubeProxy: {}
+    konnectivity:
+      server:
+        port: 8132
+        resources: {}
+      agent: {}`).replace(/^\n+/, '');
 };
