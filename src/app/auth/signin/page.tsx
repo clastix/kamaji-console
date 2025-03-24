@@ -3,7 +3,7 @@
 import { useSession } from "@/auth/client";
 import { useLogin } from "@/auth/client/hooks";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { z } from "zod";
 import { ClastixLogo } from "../../../components/clastix/logos/logo";
 import { TextField } from "../../../components/forms/text-field";
@@ -41,7 +41,7 @@ const errors: Record<SignInErrorTypes, string> = {
   default: "Non riesco a fare il login.",
 };
 
-export default function SignIn() {
+function SignInContent() {
   const { status } = useSession();
   const router = useRouter();
   const query = useSearchParams();
@@ -75,6 +75,14 @@ export default function SignIn() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SignIn() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInContent />
+    </Suspense>
   );
 }
 

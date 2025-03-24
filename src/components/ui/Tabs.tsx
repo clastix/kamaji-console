@@ -1,12 +1,12 @@
 import clsx from "clsx";
 
-type TabsProps<T = any> = {
-    items: string[];
-    activeTab: string;
-    onChange: (value: string) => void;
+type TabsProps<T extends string> = {
+    items: readonly T[];
+    activeTab: T;
+    onChange: (value: T) => void;
 };
 
-export function Tabs<T>({ items, activeTab, onChange }: TabsProps<T>) {
+export function Tabs<T extends string>({ items, activeTab, onChange }: TabsProps<T>) {
     return (
         <div className="tabs">
             {items.map((item) => (
