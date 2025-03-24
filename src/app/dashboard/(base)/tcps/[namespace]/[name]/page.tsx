@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { useDeleteTCP } from "@/components/actions/tcps/delete-tcp";
 import { useEditTenantControlPlane } from "@/components/actions/tcps/edit-tcp";
 import { useScaleTcp } from "@/components/actions/tcps/scale-tcp";
@@ -13,6 +14,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Nodes } from "./nodes";
 import { ReleatedObjects } from "./related-objects";
+import {Button} from "@/components/ui/Button";
 import { TerminalComponent } from "@/components/terminal";
 
 interface Params {
@@ -20,16 +22,19 @@ interface Params {
   namespace: string;
 }
 
-const Page = ({ params }: { params: Params }) => {
+const Page = ({ params }: { params: Promise<Params> }) => {
   const router = useRouter();
+
+  const { name, namespace } = React.use(params);
+
   const q = reactApi.k8s.getClastixTCP.useQuery(
-    {
-      name: params.name,
-      namespace: params.namespace,
-    },
-    {
-      refetchInterval: 2000,
-    }
+      {
+        name,
+        namespace,
+      },
+      {
+        refetchInterval: 2000,
+      }
   );
 
   useEffect(() => {
@@ -40,21 +45,22 @@ const Page = ({ params }: { params: Params }) => {
 
   if (q.isError || q.isLoading || !q.data) {
     return (
-      <>
-        <main className="w-full">
-          <div className="py-6">
-            <div className="mx-auto space-y-6 px-4 sm:px-6 md:px-8">
-              <TopBar params={params} />
-              <Loading />
+        <>
+          <main className="w-full">
+            <div className="py-6">
+              <div className="mx-auto space-y-6 px-4 sm:px-6 md:px-8">
+                <TopBar params={{ name, namespace }} />
+                <Loading />
+              </div>
             </div>
-          </div>
-        </main>
-      </>
+          </main>
+        </>
     );
   }
 
-  return <TCPPage params={params} tcp={q.data} />;
+  return <TCPPage params={{ name, namespace }} tcp={q.data} />;
 };
+
 
 export default Page;
 
@@ -105,37 +111,17 @@ const TopBar = ({
         <Link href="/dashboard/tcps" className="mr-4">
           Tenant Control Plane
         </Link>
-        <span className="font-bold text-primary-800">
+        <span className="font-bold text-text-lightBlue">
           {params.namespace} / {params.name}
         </span>
       </h2>
       <div className="space-x-2">
         {tcp && (
           <>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editoTcp(tcp, false)}
-            >
-              View
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editoTcp(tcp, true)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => deleteTcp(params)}
-            >
-              Delete
-            </button>
-            <button
-              className="btn-primary btn-sm btn"
-              onClick={() => setShowTerminal(!showTerminal)}
-            >
-              Terminal
-            </button>
+            <Button label={'View'} onClick={() => editoTcp(tcp, false)} />
+            <Button label={'Edit'} onClick={() => editoTcp(tcp, true)} />
+            <Button label={'Delete'} onClick={() => deleteTcp(params)} />
+            <Button label={'Terminal'} onClick={() => setShowTerminal(!showTerminal)} />
           </>
         )}
       </div>

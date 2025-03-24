@@ -1,6 +1,9 @@
 import "../src/styles/globals.css";
+
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: {
+    handles: ["onClick", "onChange", "onSubmit", "onMouseEnter", "onMouseLeave", "onFocus", "onBlur"],
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,

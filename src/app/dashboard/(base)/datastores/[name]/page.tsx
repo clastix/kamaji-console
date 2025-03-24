@@ -8,17 +8,18 @@ import { IoClastixKamajiV1alpha1DataStore as DS } from "@/gen/api";
 import { reactApi } from "@/utils/api";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import {Button} from "@/components/ui/Button";
 
 interface Params {
   name: string;
 }
 
-const DatastorePage = ({ params }: { params: Params }) => {
+const DatastorePage = ({ params }: { params: Promise<Params> }) => {
   const router = useRouter();
   const q = reactApi.k8s.getClastixDastastore.useQuery(
     {
-      name: params.name,
+      name: React.use(params).name,
     },
     {
       refetchInterval: 2000,
@@ -37,7 +38,7 @@ const DatastorePage = ({ params }: { params: Params }) => {
         <main className="w-full">
           <div className="py-6">
             <div className="mx-auto space-y-6 px-4 sm:px-6 md:px-8">
-              <TopBar params={params} />
+              <TopBar params={{ name: React.use(params).name }} />
               <Loading />
             </div>
           </div>
@@ -51,7 +52,7 @@ const DatastorePage = ({ params }: { params: Params }) => {
       <main className="w-full">
         <div className="py-6">
           <div className="mx-auto  px-4 sm:px-6 md:px-8">
-            <TopBar params={params} ds={q.data} />
+            <TopBar params={{ name: React.use(params).name }} ds={q.data} />
             <DatastoreDetails datastore={q.data!} />
           </div>
         </div>
@@ -72,29 +73,14 @@ const TopBar = ({ params, ds }: { ds?: DS; params: Params }) => {
         <Link href="/dashboard/datastores" className="mr-4">
           Datastore
         </Link>
-        <span className="font-bold text-primary-800">{params.name}</span>
+        <span className="font-bold text-text-lightBlue">{params.name}</span>
       </h2>
       <div className="space-x-2">
         {ds && (
           <>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editDS(ds, false)}
-            >
-              View
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editDS(ds, true)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => deleteDS(params)}
-            >
-              Delete
-            </button>
+            <Button label={'View'} onClick={() => editDS(ds, false)}/>
+            <Button label={'Edit'} onClick={() => editDS(ds, true)}/>
+            <Button label={'Delete'} onClick={() => deleteDS(params)}/>
           </>
         )}
       </div>

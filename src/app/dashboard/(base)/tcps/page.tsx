@@ -13,6 +13,7 @@ import Fuse from "fuse.js";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import { NameSpaceSwith } from "./ns-switch";
+import {Button} from "@/components/ui/Button";
 
 type TCP = IoClastixKamajiV1alpha1TenantControlPlane;
 
@@ -35,7 +36,7 @@ const DashboardPage = () => {
         <div className="py-6">
           <div className="mx-auto  px-4 sm:px-6 md:px-8">
             <div className="py-4">
-              <h2 className="text-2xl font-bold text-primary-800">
+              <h2 className="text-2xl font-bold text-white">
                 Tenant Control Planes
               </h2>
             </div>
@@ -88,26 +89,20 @@ const GlobalActions = ({ selected }: { selected: TCP[] }) => {
   return (
     <div className="flex items-center space-x-2">
       <div className="space-x-2">
-        <button
-          className="btn-outline btn-primary btn-sm btn"
+        <Button
           onClick={createTCP}
-        >
-          Create
-        </button>
-        <button
-          className="btn-ghost btn-sm btn"
-          disabled={selected.length === 0}
-          onClick={() => downloadTPCs(selected, "tcps")}
-        >
-          Download
-        </button>
-        <button
-          className="btn-ghost btn-sm btn"
-          disabled={selected.length === 0}
-          onClick={onDelete}
-        >
-          Delete
-        </button>
+          label={'Create'}
+        />
+        <Button
+            disabled={selected.length === 0}
+            onClick={() => downloadTPCs(selected, "tcps")}
+            label={'Download'}
+        />
+        <Button
+            disabled={selected.length === 0}
+            onClick={onDelete}
+            label={'Delete'}
+        />
       </div>
       <div>
         {selected.length > 0 && (
@@ -228,20 +223,16 @@ const Filters = ({
       <div className="form-control ml-2 rounded-lg ring-1 ring-primary-400">
         <div className="input-group-sm input-group ">
           <input
-            type="text"
-            placeholder="Search…"
-            className="input input-sm"
-            name="filter"
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
+              type="text"
+              placeholder="Search…"
+              className="input input-sm focus:outline-none"
+              name="filter"
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
           />
-          <button
-            className="btn-ghost btn-square btn-sm btn disabled:bg-primary-200 disabled:text-primary-400"
-            disabled={!filter}
-            onClick={() => setFilter("")}
-          >
-            <XMarkIcon className="h-4" />
-          </button>
+          <Button size={"small"} variant={"ghost"} disabled={!filter} onClick={() => setFilter("")}>
+            <XMarkIcon className="h-4"/>
+          </Button>
         </div>
       </div>
     </div>
@@ -250,18 +241,18 @@ const Filters = ({
 
 function useSelected(tcps: TCP[]) {
   const [selected, setSelected] = useState<
-    { name: string; namespace: string }[]
+      { name: string; namespace: string }[]
   >([]);
 
   const isSelected = useCallback(
-    (tcp: TCP) => {
-      return selected.some(
-        (s) =>
-          s.name === tcp.metadata?.name &&
-          s.namespace === tcp.metadata?.namespace
-      );
-    },
-    [selected]
+      (tcp: TCP) => {
+        return selected.some(
+            (s) =>
+                s.name === tcp.metadata?.name &&
+                s.namespace === tcp.metadata?.namespace
+        );
+      },
+      [selected]
   );
 
   const setSelect = useCallback(

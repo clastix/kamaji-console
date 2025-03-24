@@ -13,6 +13,7 @@ import { DataStoresTable } from "../../../../components/clastix/kamaji/dastastor
 import { useSearchState } from "../../../../components/utils/search-state";
 import type { IoClastixKamajiV1alpha1DataStore as DS } from "../../../../gen/api";
 import { reactApi } from "../../../../utils/api";
+import {Button} from "@/components/ui/Button";
 
 const DashboardPage = () => {
   const res = reactApi.k8s.listClastixDatastores.useQuery(undefined, {
@@ -37,7 +38,7 @@ const DashboardPage = () => {
         <div className="py-6">
           <div className="mx-auto px-4 sm:px-6 md:px-8">
             <div className="py-4">
-              <h2 className="text-2xl font-bold text-primary-800">
+              <h2 className="text-2xl font-bold text-white">
                 Datastores
               </h2>
             </div>
@@ -101,18 +102,14 @@ const Filters = ({
           <input
             type="text"
             placeholder="Search…"
-            className="input input-sm"
+            className="input input-sm focus:outline-none"
             name="filter"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           />
-          <button
-            className="btn-ghost btn-square btn-sm btn disabled:bg-primary-200 disabled:text-primary-400"
-            disabled={!filter}
-            onClick={() => setFilter("")}
-          >
+          <Button size={"small"} variant={"ghost"} disabled={!filter} onClick={() => setFilter("")}>
             <XMarkIcon className="h-4" />
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -185,26 +182,20 @@ const GlobalActions = ({ selected }: { selected: DS[] }) => {
   return (
     <div className="flex items-center space-x-2">
       <div className="space-x-2">
-        <button
-          className="btn-outline btn-primary btn-sm btn"
-          onClick={createDS}
-        >
-          Create
-        </button>
-        <button
-          className="btn-ghost btn-sm btn"
-          disabled={selected.length === 0}
-          onClick={() => downloadDSs(selected, "datastores")}
-        >
-          Download
-        </button>
-        <button
-          className="btn-ghost btn-sm btn"
-          disabled={selected.length === 0}
-          onClick={onDelete}
-        >
-          Delete
-        </button>
+        <Button
+            onClick={createDS}
+            label={'Create'}
+        />
+        <Button
+            disabled={selected.length === 0}
+            onClick={() => downloadDSs(selected, "datastores")}
+            label={'Download'}
+        />
+        <Button
+            disabled={selected.length === 0}
+            onClick={onDelete}
+            label={'Delete'}
+        />
       </div>
       <div>
         {selected.length > 0 && (

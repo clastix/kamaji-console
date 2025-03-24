@@ -6,6 +6,7 @@ import { StreamLanguage } from "@codemirror/language";
 import * as yamlMode from "@codemirror/legacy-modes/mode/yaml";
 import CodeMirror from "@uiw/react-codemirror";
 import { EditorView } from "codemirror";
+import {Button} from "@/components/ui/Button";
 import type { IoClastixKamajiV1alpha1TenantControlPlane } from "@/gen/api";
 
 interface TCP {
@@ -28,10 +29,10 @@ const ViewKubeconfig = ({ tcp }: { tcp: TCP }) => {
 
   return (
     <div className="flex h-screen max-h-screen flex-col">
-      <h2 className="px-2 py-1 font-semibold">
+      <h2 className="px-4 py-3 font-semibold bg-base-200 text-base-content border-b border-base-300">
         Kubeconfig of {tcp.namespace} / {tcp.name}
       </h2>
-      <div className="flex-grow overflow-y-scroll">
+      <div className="flex-grow overflow-y-scroll h-full">
         <CodeMirror
           editable={false}
           extensions={[
@@ -47,32 +48,16 @@ const ViewKubeconfig = ({ tcp }: { tcp: TCP }) => {
           readOnly={true}
           value={q.data}
           height="100%"
+          theme={"dark"}
+          className="h-full"
         />
       </div>
-      <div className="flex p-2">
-        <button
-          type="button"
-          className="btn-ghost btn-sm btn"
-          onClick={() => closeToolbar()}
-        >
-          close
-        </button>
+      <div  className="flex items-center px-4 py-3 bg-base-200 border-t border-base-300">
+        <Button onClick={() => closeToolbar()} label={'close'} />
         <div className="flex-grow"> </div>
         <div className="space-x-2">
-          <button
-            type="button"
-            className="btn-outline btn-primary btn-sm btn"
-            onClick={() => downloadText(tcp.name + "-kubeconfig.yaml", q.data)}
-          >
-            download
-          </button>
-          <button
-            type="button"
-            className="btn-outline btn-primary btn-sm btn"
-            onClick={() => copyToClipboard(q.data)}
-          >
-            copy to clipboard
-          </button>
+          <Button label={'download'} onClick={() => downloadText(tcp.name + "-kubeconfig.yaml", q.data)} />
+          <Button label={'copy to clipboard'} onClick={() => copyToClipboard(q.data)} />
         </div>
       </div>
     </div>
