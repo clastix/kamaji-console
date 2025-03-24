@@ -11,6 +11,7 @@ import { FORM_ERROR } from "final-form";
 import { Field, Form } from "react-final-form";
 import yaml from "yaml";
 import { z } from "zod";
+import {Button} from "@/components/ui/Button";
 
 const ToolbarYamlSchema = z.object({
   yaml: z.string(),
@@ -62,72 +63,70 @@ const EditTenantControlPlane = ({
       }}
     >
       {({ handleSubmit, submitErrors, submitting, invalid }) => (
-        <form
-          onSubmit={handleSubmit}
-          className="flex h-screen max-h-screen flex-col"
-        >
-          <h2 className="px-2 py-1 font-semibold">
-            {" "}
-            TCP {namespace} / {name}
-          </h2>
-          <div className="flex-grow overflow-y-scroll">
-            <Field<string> type="text" name="yaml">
-              {({ input }) => {
-                return (
-                  <CodeMirror
-                    editable={editable}
-                    extensions={[
-                      EditorView.lineWrapping,
-                      StreamLanguage.define(yamlMode.yaml),
-                    ]}
-                    basicSetup={{
-                      foldGutter: true,
-                      foldKeymap: true,
-                      lineNumbers: true,
-                      closeBrackets: true,
-                    }}
-                    onChange={(e) => {
-                      input.onChange(e);
-                    }}
-                    readOnly={false}
-                    value={input.value}
-                    height="100%"
-                  />
-                );
-              }}
-            </Field>
-          </div>
-          {submitErrors?.[FORM_ERROR] && (
-            <div className="min-h-10">
-              <div className="text-sm text-red-500">
-                {submitErrors[FORM_ERROR]}
-              </div>
+          <form
+              onSubmit={handleSubmit}
+              className="flex flex-col h-full bg-base-100 rounded-md shadow-md overflow-hidden"
+          >
+            <h2 className="px-4 py-3 font-semibold bg-base-200 text-base-content border-b border-base-300">
+              TCP {namespace} / {name}
+            </h2>
+            <div className="flex-grow overflow-y-scroll scrollbar-thin">
+              <Field<string> type="text" name="yaml">
+                {({input}) => {
+                  return (
+                      <div className="h-full">
+                        <CodeMirror
+                            editable={editable}
+                            extensions={[
+                              EditorView.lineWrapping,
+                              StreamLanguage.define(yamlMode.yaml),
+                            ]}
+                            basicSetup={{
+                              foldGutter: true,
+                              foldKeymap: true,
+                              lineNumbers: true,
+                              closeBrackets: true,
+                            }}
+                            onChange={(e) => {
+                              input.onChange(e);
+                            }}
+                            theme="dark"
+                            readOnly={false}
+                            value={input.value}
+                            height="100%"
+                            className="h-full text-sm"
+                        />
+                      </div>
+                  );
+                }}
+              </Field>
             </div>
-          )}
-
-          <div className="flex p-2">
-            <button
-              type="button"
-              className="btn-ghost btn-sm btn"
-              onClick={() => closeToolbar()}
-            >
-              close
-            </button>
-            <div className="flex-grow"> </div>
-
-            {editable && (
-              <button
-                type="submit"
-                disabled={invalid}
-                className={clsx("btn-primary btn-sm btn", {
-                  loading: submitting,
-                })}
-              >
-                update
-              </button>
+            {submitErrors?.[FORM_ERROR] && (
+                <div className="min-h-10 px-3 py-2 bg-red-900 bg-opacity-25">
+                  <div className="text-sm text-red-400">
+                    {submitErrors[FORM_ERROR]}
+                  </div>
+                </div>
             )}
-          </div>
-        </form>
+
+            <div className="flex items-center px-4 py-3 bg-base-200 border-t border-base-300">
+              <Button
+                variant={"ghost"}
+                onClick={() => closeToolbar()}
+                label={'close'}
+              />
+              <div className="flex-grow"></div>
+
+              {editable && (
+                  <Button
+                      type={"submit"}
+                      loading={submitting}
+                      disabled={invalid}
+                      label={'update'}
+                  />
+              )}
+            </div>
+          </form>
       )}
     </Form>
   );

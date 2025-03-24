@@ -5,10 +5,10 @@ import { reactApi } from "@/utils/api";
 import { StreamLanguage } from "@codemirror/language";
 import * as yamlMode from "@codemirror/legacy-modes/mode/yaml";
 import CodeMirror from "@uiw/react-codemirror";
-import clsx from "clsx";
 import { EditorView } from "codemirror";
 import { useState } from "react";
 import { Form } from "react-final-form";
+import {Button} from "@/components/ui/Button";
 
 export const useCreateTCP = () => {
   const openToolbar = useOpenToolbar();
@@ -40,12 +40,14 @@ const CreateTCP = () => {
       {({ handleSubmit, submitErrors, submitting }) => (
         <form
           onSubmit={handleSubmit}
-          className="flex h-screen max-h-screen flex-col"
+          className="flex flex-col h-full bg-base-100 rounded-md shadow-md overflow-hidden"
         >
-          <h2 className="px-2 py-1 font-semibold"> Create TCP</h2>
-          <div className="flex-grow overflow-y-scroll">
+          <h2 className="px-4 py-3 font-semibold bg-base-200 text-base-content border-b border-base-300">
+            Create TCP
+          </h2>
+          <div className="flex-grow overflow-y-scroll h-full">
             <CodeMirror
-              extensions={[
+                extensions={[
                 EditorView.lineWrapping,
                 StreamLanguage.define(yamlMode.yaml),
               ]}
@@ -60,7 +62,9 @@ const CreateTCP = () => {
               }}
               readOnly={false}
               value={value}
-              className=""
+              theme={"dark"}
+              height="100%"
+              className="h-full"
             />
           </div>
 
@@ -69,23 +73,15 @@ const CreateTCP = () => {
               <span className="text-red-500">{submitErrors["submit"]}</span>
             </div>
           )}
-          <div className="flex h-16 items-center px-2">
-            <button
-              type="button"
-              className="btn-ghost btn-sm btn"
-              onClick={() => closeToolbar()}
-            >
-              close
-            </button>
-            <div className="flex-grow"> </div>
-            <button
-              type="submit"
-              className={clsx("btn-primary btn-sm btn", {
-                loading: submitting,
-              })}
-            >
-              create
-            </button>
+          <div className="flex items-center px-4 py-3 bg-base-200 border-t border-base-300">
+            <Button variant={"ghost"} size={"small"} onClick={() => closeToolbar()} label={'Close'} />
+            <div className="flex-grow"></div>
+            <Button
+                type="submit"
+                loading={submitting}
+                size={"small"}
+                label={'Create'}
+            />
           </div>
         </form>
       )}

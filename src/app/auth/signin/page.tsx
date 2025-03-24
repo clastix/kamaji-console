@@ -10,6 +10,7 @@ import { TextField } from "../../../components/forms/text-field";
 import { ZodForm } from "../../../components/zod-form/form";
 import { TRPCClientError } from "@trpc/client";
 import clsx from "clsx";
+import {Button} from "@/components/ui/Button";
 
 export type SignInErrorTypes =
   | "Signin"
@@ -59,9 +60,9 @@ export default function SignIn() {
   const error = query?.get("error") as SignInErrorTypes | undefined;
 
   return (
-    <div className="flex min-h-screen w-screen flex-col  bg-gray-100 py-12 sm:px-6 lg:px-8">
+    <div className="flex min-h-screen w-screen flex-col py-12 sm:px-6 lg:px-8">
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-background-modalPanel px-4 py-8 shadow sm:rounded-lg sm:px-10">
           <div className="mb-10 sm:mx-auto sm:w-full sm:max-w-md">
             <ClastixLogo className="m-auto w-32" />
           </div>
@@ -106,16 +107,9 @@ const SignInWithCredentials = () => {
       {({ handleSubmit, dirtySinceLastSubmit, submitErrors, submitting }) => {
         return (
           <form onSubmit={handleSubmit}>
-            <TextField name="email" label="Email" />
+            <TextField name="email" label="Email" className="bg-background-input"/>
             <TextField name="password" label="Password" type="password" />
-            <button
-              type="submit"
-              className={clsx("btn-primary btn w-full", {
-                loading: submitting,
-              })}
-            >
-              Sign In
-            </button>
+            <Button label={'Sign In'} fullWidth={true} loading={submitting} type={"submit"}/>
             <div className="h-12 text-sm text-red-400">
               {!dirtySinceLastSubmit && submitErrors?.login && (
                 <p className="my-4 rounded bg-red-400 py-2 text-center text-white ring-2 ring-red-600">

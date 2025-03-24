@@ -8,10 +8,6 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    appDir: true,
-  },
   output: "standalone",
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   async redirects() {
@@ -24,4 +20,5 @@ const config = {
     ];
   },
 };
+
 export default config;

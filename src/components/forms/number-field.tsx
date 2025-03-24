@@ -15,13 +15,13 @@ export const NumberInputField = ({ label, name }: NumberInputFieldProps) => (
         <div>
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium"
           >
             {label}
           </label>
-          <div className="mt-1 flex  rounded-md shadow-sm">
+          <div className="mt-1 flex rounded-md shadow-sm">
             <input
-              className="input-primary input input-sm w-full"
+              className="w-full px-3 py-2 bg-background-input text-white border border-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 input-sm"
               {...input}
               onChange={(e) => input.onChange(parseInt(e.target.value) || 0)}
             />

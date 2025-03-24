@@ -9,6 +9,7 @@ import { reactApi } from "@/utils/api";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import {Button} from "@/components/ui/Button";
 
 interface Params {
   name: string;
@@ -72,29 +73,14 @@ const TopBar = ({ params, ds }: { ds?: DS; params: Params }) => {
         <Link href="/dashboard/datastores" className="mr-4">
           Datastore
         </Link>
-        <span className="font-bold text-primary-800">{params.name}</span>
+        <span className="font-bold text-text-lightBlue">{params.name}</span>
       </h2>
       <div className="space-x-2">
         {ds && (
           <>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editDS(ds, false)}
-            >
-              View
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => editDS(ds, true)}
-            >
-              Edit
-            </button>
-            <button
-              className="btn-ghost btn-sm btn"
-              onClick={() => deleteDS(params)}
-            >
-              Delete
-            </button>
+            <Button label={'View'} onClick={() => editDS(ds, false)}/>
+            <Button label={'Edit'} onClick={() => editDS(ds, true)}/>
+            <Button label={'Delete'} onClick={() => deleteDS(params)}/>
           </>
         )}
       </div>

@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { formatAge } from "../../../utils/format-age";
 import { StatusBtn } from "./tcp-status";
+import {Button} from "@/components/ui/Button";
 
 export const TenantControlPlaneDetails = ({
   tcp,
@@ -38,7 +39,7 @@ export const TenantControlPlaneDetails = ({
           <div className="flex h-8 items-center">
             <span className="mr-4 text-gray-400">Status</span>
             <StatusBtn tcpStatus={trpStatus} size={10} />
-            <span className="ml-1 text-gray-800">{trpStatus}</span>
+            <span className="ml-1">{trpStatus}</span>
           </div>
           <div className="flex h-8 items-center align-baseline">
             <span className="mr-4 text-gray-400">Datastore</span>
@@ -62,13 +63,8 @@ export const TenantControlPlaneDetails = ({
               <span className="">
                 {deployment?.availableReplicas || 0}/{deployment?.replicas}
               </span>
-              <span className="ml-1 text-gray-500">pods</span>
-              <button
-                className="btn-outline btn-primary btn-xs btn ml-4"
-                onClick={scale}
-              >
-                Scale
-              </button>
+              <span className="ml-1 text-gray-500 mr-4">pods</span>
+              <Button size={"small"} onClick={scale} label={'Scale'} />
             </span>
           </div>
           <div className="flex h-8 items-center align-baseline">
@@ -86,18 +82,13 @@ export const TenantControlPlaneDetails = ({
           <div className="flex h-8 items-center align-baseline">
             <span className="mr-4 text-gray-400">Kubeconfig</span>
             <span>
-              <button
-                className="btn-outline btn-primary btn-xs btn"
-                onClick={viewKubeconfig}
-              >
-                View Kubeconfig
-              </button>
+              <Button size={"small"} onClick={viewKubeconfig} label={'View Kubeconfig'} />
             </span>
           </div>
         </div>
         <div className="mt-2 flex flex-col space-y-2">
           <div className="align-baseline">
-            <span className="mr-4 text-gray-400">Admission Controllers</span>
+            <span className="mr-4 text-primary">Admission Controllers</span>
             <ul className="h-28 list-disc overflow-y-scroll">
               {adminssionControllers.map((ac) => (
                 <li key={ac} className="ml-5 text-gray-500">
@@ -107,7 +98,7 @@ export const TenantControlPlaneDetails = ({
             </ul>
           </div>
           <div className="items-center align-baseline">
-            <span className="mr-4 text-gray-400">Addons</span>
+            <span className="mr-4 text-primary">Addons</span>
             <Addons addons={addons} />
           </div>
         </div>

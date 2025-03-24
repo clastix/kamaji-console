@@ -27,7 +27,7 @@ export const TextField = ({
         <div>
           <label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium"
           >
             {label}
           </label>
@@ -36,13 +36,18 @@ export const TextField = ({
               <textarea
                 {...input}
                 rows={numRows}
-                className="block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                className="block w-full px-3 py-2 bg-background-input text-white border border-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 input-sm"
               />
             ) : (
               <input
-                className={clsx("input-primary input w-full", {
-                  "input-sm": size === "sm",
-                })}
+                className={clsx(
+                    "w-full px-3 py-2 bg-background-input text-white border border-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500",
+                    {
+                        "input-sm": size === "sm",
+                        "input-md": size === "md",
+                        "input-lg": size === "lg",
+                    }
+                )}
                 {...input}
               />
             )}

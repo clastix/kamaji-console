@@ -25,6 +25,7 @@ import { useSession } from "@/auth/client";
 import { useSignOut } from "@/auth/client/hooks";
 import {reactApi} from "@/utils/api";
 import {RedirectUrlSveltosKey} from "@/constants/constants";
+import {Button} from "@/components/ui/Button";
 
 export function SideBar() {
   const { isOpen, setIsOpen } = useSidebarStore();
@@ -56,7 +57,7 @@ export function SideBar() {
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
           >
-            <div className="relative flex w-full max-w-xs flex-1 flex-col bg-primary-700 pb-4 pt-5">
+            <div className="relative flex w-full max-w-xs flex-1 flex-col bg-background-sidebar pb-4 pt-5">
               <Transition.Child
                 as={Fragment}
                 enter="ease-in-out duration-300"
@@ -95,7 +96,7 @@ export function SideBar() {
         </Dialog>
       </Transition.Root>
       <div className="z-20 hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-        <div className="flex flex-grow flex-col overflow-y-auto bg-primary-700 pt-5">
+        <div className="flex flex-grow flex-col bg-background-sidebar pt-5">
           <div className="flex flex-shrink-0 items-center px-4">
             <ClastixLogoHorizontal className="h-10 text-white" />
           </div>
@@ -114,12 +115,12 @@ const Navigation = () => {
   const navigation = useNavigation();
   const isCurrentPath = useCallback(
     (path: string) => {
-      const allP = (env.NEXT_PUBLIC_BASE_PATH || "") + path;
+      const allP = (env?.NEXT_PUBLIC_BASE_PATH || "") + path;
       return pathname?.startsWith(allP);
     },
     [pathname]
   );
-
+  
   const q = reactApi.k8s.getSveltosURL.useQuery();
 
   return (
@@ -132,9 +133,9 @@ const Navigation = () => {
               href={item.href}
               className={clsx(
                 isCurrentPath(item.href)
-                  ? "bg-primary-800 text-white"
+                  ? "bg-background-sidebarSelected text-white"
                   : "text-primary-100 hover:bg-primary-600",
-                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+                "group flex items-center rounded-md px-2 py-2 text-md font-medium"
               )}
             >
               <item.icon
@@ -146,8 +147,6 @@ const Navigation = () => {
           );
         } else if (item.type === "external-link") {
           const href = item?.id === RedirectUrlSveltosKey ? q?.data : item.href
-          // Sveltos has been configured with the required environment variables:
-          // presenting the link active
           if (href !== undefined) {
             return (
               <a
@@ -167,23 +166,6 @@ const Navigation = () => {
               </a>
             );
           }
-
-          return (
-            <div
-              key={id}
-              className={clsx(
-                "flex items-center",
-                "text-primary-400 ",
-                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
-              )}
-            >
-              <item.icon
-                className="mr-3 h-6 w-6 flex-shrink-0 text-primary-300"
-                aria-hidden="true"
-              />
-              {item.name}
-            </div>
-          );
         } else if (item.type === "coming-soon") {
           return (
             <div
@@ -191,7 +173,7 @@ const Navigation = () => {
               className={clsx(
                 "flex items-center",
                 "text-primary-400 ",
-                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+                "group flex items-center rounded-md px-2 py-2 text-md font-medium"
               )}
             >
               <item.icon
@@ -207,7 +189,7 @@ const Navigation = () => {
           );
         } else if (item.type === "section") {
           return (
-            <div key={id} className="ml-3 pt-4 text-sm text-white">
+            <div key={id} className="ml-3 pt-4 text-md text-white">
               <span>{item.name}</span>
             </div>
           );
@@ -315,15 +297,12 @@ const SidebarProfile = () => {
   }
 
   return (
-    <div className="flex items-center justify-between border-t border-primary-800 px-2 py-4 text-sm text-primary-200">
+    <div className="flex items-center justify-between border-t border-primary-800 px-2 py-4 text-md text-primary-200">
       <div>{session.user.email}</div>
-      <div className="tooltip tooltip-left" data-tip="signout">
-        <button
-          className="btn-ghost btn-sm btn-circle btn"
-          onClick={() => signOut()}
-        >
+      <div className="tooltip tooltip-top" data-tip="signout">
+        <Button onClick={() => signOut()} variant={"ghost"}>
           <ArrowRightOnRectangleIcon className="w-5" />
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -25,14 +25,54 @@ const colors = {
     900: "#871441",
     base: "#D81D56",
   },
+  background: {
+    dark: "#0A253F",
+    sidebar: "#0A1A2A",
+    sidebarSelected: "#1A5389",
+    card: "#1a2b47",
+    dropdown: "#2a3b59",
+    modalPanel: "#1E2A3E",
+    input: "#2A3952",
+    codemirrorFrame: "#2A2E37"
+  },
+  text: {
+    primary: "#e5e7eb",
+    secondary: "#9ca3af",
+    lightBlue: "#A9CDEF"
+  },
+  button: {
+    primary: "#1A5389",
+    secondary: "#1f2937",
+    disabled: "#9CA3AF",
+    hover: "#235BA2",
+  }
 };
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: colors,
+      colors: {
+        ...colors,
+        sidebar: colors.background.sidebar,
+        card: colors.background.card,
+        dropdown: colors.background.dropdown,
+      },
+      backgroundColor: {
+        dark: colors.background.dark,
+        sidebar: colors.background.sidebar,
+        card: colors.background.card,
+        dropdown: colors.background.dropdown,
+        "button-primary": colors.button.primary,
+        "button-secondary": colors.button.secondary,
+      },
+      textColor: {
+        light: colors.text.primary,
+        muted: colors.text.secondary,
+      },
+      borderColor: {
+        dark: "#2a3855",
+      },
       transitionProperty: {
         height: "height",
       },
@@ -43,12 +83,18 @@ module.exports = {
     themes: [
       {
         clastix: {
-          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
           primary: colors.primary.base,
           accent: colors.secondary.base,
+          "base-100": colors.background.dark,
+          "base-content": colors.text.primary,
+          neutral: colors.background.card,
+          "neutral-content": colors.text.primary,
+          sidebar: colors.background.sidebar,
+          card: colors.background.card,
+          dropdown: colors.background.dropdown,
         },
       },
-      "cupcake",
+      "dark",
     ],
     styled: true,
     base: true,
