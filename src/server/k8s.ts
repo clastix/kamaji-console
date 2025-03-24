@@ -4,7 +4,7 @@ import { handleKubernetesError } from "./api/httperr";
 import { TRPCError } from "@trpc/server";
 import { generateKubeadmToken, parseCa } from "./kubeadm/kubeadm";
 import { getTokenSecret } from "./kubeadm/kubeadm";
-import { replaceKubeconfigWithInternalConn } from "./k8s-utils";
+import { IoClastixKamajiV1alpha1TenantControlPlane } from "../gen/api";
 
 export function getK8sCli(kc: k8s.KubeConfig) {
   return {
@@ -57,9 +57,7 @@ export class ClastixCli {
     }
   }
 
-  async getTcpKubeConfigOrThrow(
-    tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
-  ) {
+  async getTcpKubeConfigOrThrow(tcp: IoClastixKamajiV1alpha1TenantControlPlane, secretKey: string) {
     const namespace = tcp.metadata?.namespace!;
     const secretName = tcp.status?.kubeconfig?.admin?.secretName;
     if (!secretName) {
@@ -70,7 +68,7 @@ export class ClastixCli {
       namespace
     );
 
-    const hashedConf = res.body?.data?.["admin.conf"] as string;
+    const hashedConf = res.body?.data?.[secretKey] as string;
     if (!hashedConf) {
       throw new TRPCError({ code: "NOT_FOUND", message: "not found" });
     }
@@ -109,11 +107,9 @@ export class ClastixCli {
   async getTcpK8sApiCliOrThrow(
     tcp: api.IoClastixKamajiV1alpha1TenantControlPlane
   ) {
-    let kubeConfig = await this.getTcpKubeConfigOrThrow(tcp);
+    let secretKey = process.env.NODE_ENV === "production" ? "admin.svc" : "admin.conf"
+    let kubeConfig = await this.getTcpKubeConfigOrThrow(tcp, secretKey);
     const _kc = new k8s.KubeConfig();
-    if (process.env.NODE_ENV === "production") {
-      kubeConfig = replaceKubeconfigWithInternalConn(kubeConfig, tcp);
-    }
     _kc.loadFromString(kubeConfig);
     return getK8sCli(_kc);
   }
