@@ -166,6 +166,27 @@ const Navigation = () => {
               </a>
             );
           }
+
+          return (
+            <div
+              key={id}
+              className={clsx(
+                "flex items-center",
+                "text-primary-400",
+                "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+              )}
+            >
+              <item.icon
+                className="mr-3 h-6 w-6 flex-shrink-0 text-primary-300"
+                aria-hidden="true"
+              />
+              {item.name}
+              <span
+                className="ml-auto inline-flex items-center gap-x-1.5 rounded-full bg-primary-300 leading-none px-[4px] py-[2px] text-[8px] font-light text-primary-700">
+                DISABLED
+              </span>
+            </div>
+          );
         } else if (item.type === "coming-soon") {
           return (
             <div
