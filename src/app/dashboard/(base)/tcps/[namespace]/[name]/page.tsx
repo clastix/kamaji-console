@@ -16,6 +16,7 @@ import { Nodes } from "./nodes";
 import { ReleatedObjects } from "./related-objects";
 import {Button} from "@/components/ui/Button";
 import { TerminalComponent } from "@/components/terminal";
+import clsx from "clsx";
 
 interface Params {
   name: string;
@@ -104,6 +105,28 @@ const TopBar = ({
   const editoTcp = useEditTenantControlPlane();
   const deleteTcp = useDeleteTCP();
   const [showTerminal, setShowTerminal] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
+
+  const handleCloseTerminal = () => {
+    setIsClosing(true);
+    const event = new CustomEvent('terminal-cleanup');
+    window.dispatchEvent(event);
+    setTimeout(() => {
+      setShowTerminal(false);
+      setIsClosing(false);
+      setIsOpening(false);
+    }, 300); // Match the transition duration
+  };
+
+  const handleOpenTerminal = () => {
+    setShowTerminal(true);
+    setIsOpening(false);
+    // Small delay to ensure the element is in the DOM before starting the animation
+    requestAnimationFrame(() => {
+      setIsOpening(true);
+    });
+  };
 
   return (
     <div className="flex justify-between py-4">
@@ -121,25 +144,25 @@ const TopBar = ({
             <Button label={'View'} onClick={() => editoTcp(tcp, false)} />
             <Button label={'Edit'} onClick={() => editoTcp(tcp, true)} />
             <Button label={'Delete'} onClick={() => deleteTcp(params)} />
-            <Button label={'Terminal'} onClick={() => setShowTerminal(!showTerminal)} />
+            <Button label={'Terminal'} onClick={handleOpenTerminal} />
           </>
         )}
       </div>
       {showTerminal && (
         <div 
           id="kamaji-terminal-container"
-          className="fixed inset-x-0 bottom-0 h-96 bg-black shadow-lg z-50"
+          className={clsx(
+            "fixed inset-x-0 bottom-0 h-96 bg-black shadow-lg z-50",
+            "transition-all duration-300 ease-in-out transform",
+            isClosing ? "translate-y-full" : isOpening ? "translate-y-0" : "translate-y-full"
+          )}
         >
           <div className="relative w-full h-full flex flex-col">
             <div className="flex justify-between items-center px-4 py-2 border-b border-gray-700">
               <div className="text-white opacity-50 text-sm">Terminal</div>
               <button
                 className="text-gray-400 hover:text-white transition-colors"
-                onClick={() => {
-                  const event = new CustomEvent('terminal-cleanup');
-                  window.dispatchEvent(event);
-                  setShowTerminal(false);
-                }}
+                onClick={handleCloseTerminal}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -147,7 +170,7 @@ const TopBar = ({
               </button>
             </div>
             <div className="flex-1 overflow-hidden">
-              {tcp && <TerminalComponent tcp={tcp} onClose={() => setShowTerminal(false)} />}
+              {tcp && <TerminalComponent tcp={tcp} onClose={handleCloseTerminal} isOpen={!isClosing} />}
             </div>
           </div>
         </div>

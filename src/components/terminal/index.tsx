@@ -3,13 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { reactApi } from "@/utils/api";
 import type { IoClastixKamajiV1alpha1TenantControlPlane } from "@/gen/api";
+import clsx from "clsx";
 
 interface TerminalProps {
   tcp: IoClastixKamajiV1alpha1TenantControlPlane;
   onClose?: () => void;
+  isOpen?: boolean;
 }
 
-export function TerminalComponent({ tcp, onClose }: TerminalProps) {
+export function TerminalComponent({ tcp, onClose, isOpen = true }: TerminalProps) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState<string[]>([]);
   const [kubeconfigPath, setKubeconfigPath] = useState<string>("");
@@ -231,7 +233,12 @@ export function TerminalComponent({ tcp, onClose }: TerminalProps) {
   return (
     <div 
       ref={terminalRef}
-      className="h-full flex flex-col text-white font-mono relative"
+      className={clsx(
+        "h-full flex flex-col text-white font-mono relative",
+        "transition-all duration-300 ease-in-out transform",
+        "fixed bottom-0 left-0 right-0 bg-gray-900 shadow-lg",
+        isOpen ? "translate-y-0" : "translate-y-full"
+      )}
     >
       {kubeconfig.isLoading && (
         <div className="text-yellow-400 px-4 py-2">Loading kubeconfig...</div>
