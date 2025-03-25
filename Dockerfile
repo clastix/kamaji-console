@@ -1,6 +1,6 @@
 ARG NEXT_PUBLIC_BASE_PATH=/ui
 
-FROM node:18-alpine3.16 AS base
+FROM node:18.18.2-alpine3.18 AS base
 
 # Install dependencies only when needed
 FROM base AS deps
