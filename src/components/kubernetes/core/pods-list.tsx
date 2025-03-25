@@ -25,7 +25,7 @@ export const PodsList = ({ pods }: { pods: V1Pod[] }) => {
   );
 };
 
-const headers = ["Name", "Ready", "Status", "Restarts", "AGE", "IP", "Node"];
+const headers = ["Name", "Ready", "Status", "Restarts", "Age", "IP", "Node"];
 
 const mapper = (p: V1Pod) => {
   const containers = p.status?.containerStatuses?.length || 0;

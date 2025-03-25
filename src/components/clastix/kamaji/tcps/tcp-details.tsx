@@ -118,11 +118,11 @@ const Addons = ({
       active: !!addons?.coreDNS,
     },
     {
-      name: "konnectivity",
+      name: "Konnectivity",
       active: !!addons?.konnectivity,
     },
     {
-      name: "kubeProxy",
+      name: "kube-proxy",
       active: !!addons?.kubeProxy,
     },
   ];

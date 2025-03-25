@@ -1,7 +1,6 @@
 "use client";
 
 import { Loading } from "@/components/ui/loading";
-import clsx from "clsx";
 import { Suspense, useState } from "react";
 import { ConfigMapsList } from "../../../../../../components/kubernetes/core/config-maps";
 import { DeploymentsList } from "../../../../../../components/kubernetes/core/deplyoment-list";
@@ -12,11 +11,11 @@ import { reactApi } from "../../../../../../utils/api";
 import {Tabs} from "@/components/ui/Tabs";
 
 const options = [
-  "pods",
-  "deployments",
-  "services",
-  "secrets",
-  "configmaps",
+  "Pods",
+  "Deployments",
+  "Services",
+  "Secrets",
+  "ConfigMaps",
 ] as const;
 type Option = (typeof options)[number];
 
@@ -39,18 +38,20 @@ export const ReleatedObjects = (params: Params) => {
 };
 
 const Objects = ({ params, type }: { params: Params; type: Option }) => {
-  if (type === "pods") {
-    return <Pods {...params} />;
-  } else if (type === "deployments") {
-    return <Deplyoments {...params} />;
-  } else if (type === "services") {
-    return <Services {...params} />;
-  } else if (type === "secrets") {
-    return <Secrets {...params} />;
-  } else if (type === "configmaps") {
-    return <ConfigMaps {...params} />;
+  switch (type) {
+    case "Pods":
+      return <Pods {...params} />;
+    case "Deployments":
+      return <Deplyoments {...params} />;
+    case "Services":
+      return <Services {...params} />;
+    case "Secrets":
+      return <Secrets {...params} />;
+    case "ConfigMaps":
+      return <ConfigMaps {...params} />;
+    default:
+      return null;
   }
-  return null;
 };
 
 const Pods = (params: Params) => {
