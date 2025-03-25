@@ -2,11 +2,12 @@
 
 View and control Kamaji with a simple user interface from the web.
 
-![Kamaji Console](.github/images/screen.png)
+![Kamaji Console](.github/images/flow.gif)
 
 ## Deploy on Kubernetes
 
-A sample manifest is available: `deploy/kamaji-console.yaml`. To deploy the console in the admin cluster, edit the manifest according to your environment and apply:
+A sample manifest is available: `deploy/kamaji-console.yaml`.
+To deploy the console in the admin cluster, edit the manifest according to your environment and apply:
 
 ```bash
 kubectl apply -f deploy/
@@ -29,7 +30,7 @@ when the following environment variables are set:
 - `SVELTOS_SECRET_NAME`: Kubernetes Secret name of the Project Sveltos Dashboard token
 - `SVELTOS_URL`: FQDN of the Project Sveltos Dashboard to access
 
-> When all these data is provided, Kamaji Console will redirect the user directly to the Project Sveltos Dashboard,
+> When all these inputs are provided, Kamaji Console will redirect the user directly to the Project Sveltos Dashboard,
 > without the need for typing manually the required token.
 
 ## Development
