@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { reactApi } from "@/utils/api";
+import { reactApi, getBaseUrl } from "@/utils/api";
 import type { IoClastixKamajiV1alpha1TenantControlPlane } from "@/gen/api";
 import clsx from "clsx";
 
@@ -100,7 +100,7 @@ export function TerminalComponent({ tcp, onClose, isOpen = true }: TerminalProps
       try {
         console.log("Cleaning up file:", kubeconfigPath); // Debug log
 
-        const response = await fetch("/api/kubectl/cleanup", {
+        const response = await fetch(`${getBaseUrl()}/api/kubectl/cleanup`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -172,7 +172,7 @@ export function TerminalComponent({ tcp, onClose, isOpen = true }: TerminalProps
         throw new Error("Kubeconfig data is empty");
       }
 
-      const response = await fetch("/api/kubectl", {
+      const response = await fetch(`${getBaseUrl()}/api/kubectl`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
