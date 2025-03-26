@@ -21,6 +21,8 @@ const getBaseUrl = () => {
   return `http://localhost:${process.env.PORT ?? 3000}${baseUrl}`; // dev SSR should use localhost
 };
 
+export { getBaseUrl };
+
 /**
  * A set of typesafe react-query hooks for your tRPC API
  */

@@ -19,6 +19,9 @@ COPY . .
 ARG NEXT_PUBLIC_BASE_PATH
 RUN SKIP_ENV_VALIDATION=true npm run build
 
+# kubectl image, multi-arch
+FROM clastix/kubectl:v1.30 AS kubectl
+
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
@@ -30,6 +33,8 @@ ENV NODE_ENV=production
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# kubectl dependency required for the terminal component
+COPY --from=kubectl /usr/local/bin/kubectl /usr/local/bin/kubectl
 # You only need to copy next.config.js if you are NOT using the default configuration
 # COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
