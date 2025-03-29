@@ -13,7 +13,7 @@ name: kamaji-console
 sources:
 - https://github.com/clastix/kamaji-console
 type: application
-version: 0.1.1
+version: 0.1.2
 annotations:
   catalog.cattle.io/certified: partner
   catalog.cattle.io/release-name: kamaji-console
