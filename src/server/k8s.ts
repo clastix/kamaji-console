@@ -93,7 +93,7 @@ export class ClastixCli {
       throw new TRPCError({ code: "NOT_FOUND", message: "not found" });
     }
 
-    return `${sveltosURL}/sveltos/clusters?auth=${encodeURIComponent(Buffer.from(hashedToken, "base64").toString("ascii"))}`;
+    return `${sveltosURL}/sveltos/login?auth=${encodeURIComponent(Buffer.from(hashedToken, "base64").toString("ascii"))}`;
   }
 
   async getTcpNodesOrThrow(
