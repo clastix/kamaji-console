@@ -62,7 +62,7 @@
     "@storybook/addon-links": "^8.6.8",
     "@storybook/blocks": "^8.6.8",
     "@storybook/nextjs": "^8.6.9",
-    "@storybook/react": "^8.6.8",
+    "@storybook/react": "^9.0.12",
     "@storybook/test": "^8.6.8",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^22.13.10",
