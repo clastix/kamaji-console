@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: v0.2.0
+appVersion: v0.2.1
 description: Kamaji deploys and operates Kubernetes at scale with a fraction of the operational burden. This chart install a console for Kamaji.
 home: https://github.com/clastix/kamaji-console
 icon: https://github.com/clastix/kamaji/raw/master/assets/logo-colored.png
@@ -13,7 +13,7 @@ name: kamaji-console
 sources:
 - https://github.com/clastix/kamaji-console
 type: application
-version: 0.1.2
+version: 0.1.3
 annotations:
   catalog.cattle.io/certified: partner
   catalog.cattle.io/release-name: kamaji-console
